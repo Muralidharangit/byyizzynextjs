@@ -11,38 +11,36 @@ export default function Footer() {
       {/* ✅ Subscribe Area */}
       <section className="bg-[#067afd] py-12">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="flex flex-col items-center gap-8 lg:flex-row">
             {/* Logo */}
-            <div className="lg:w-2/12 flex justify-center lg:justify-start">
+            <div className="flex justify-center lg:w-2/12 lg:justify-start">
               <Link href="/">
                 <Image src={logowhite} alt="Logo" className="w-40" priority />
               </Link>
             </div>
 
             {/* Text */}
-            <div className="lg:w-5/12 text-center lg:text-left">
-              <span className="block text-white text-sm mb-2">
+            <div className="text-center lg:w-5/12 lg:text-left">
+              <span className="mb-2 block text-sm text-white">
                 30% Discount For Your First Order
               </span>
-              <h3 className="text-xl font-semibold text-white">
-                Subscribe To Our Newsletter
-              </h3>
-              <p className="text-white mt-2">
+              <h3 className="text-xl font-semibold text-white">Subscribe To Our Newsletter</h3>
+              <p className="mt-2 text-white">
                 Subscribe to the newsletter for all the latest updates
               </p>
             </div>
 
             {/* Form */}
-            <div className="lg:w-5/12 w-full">
+            <div className="w-full lg:w-5/12">
               <form className="relative w-full">
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="w-full h-[55px] pr-[140px] px-4 rounded-sm focus:outline-none bg-white text-gray-700 placeholder-gray-400"
+                  className="h-[55px] w-full rounded-sm bg-white px-4 pr-[140px] text-gray-700 placeholder-gray-400 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 h-[50px] bg-[#067afd] text-white px-6 rounded-sm hover:bg-blue-600 transition"
+                  className="absolute top-1/2 right-1 h-[50px] -translate-y-1/2 rounded-sm bg-[#067afd] px-6 text-white transition hover:bg-blue-600"
                 >
                   Subscribe
                 </button>
@@ -55,19 +53,19 @@ export default function Footer() {
       {/* ✅ Footer Area */}
       <footer className="bg-white pt-12 pb-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Info */}
             <div>
-              <Image src={logoblue} alt="Logo" className="w-40 mb-2" priority />
+              <Image src={logoblue} alt="Logo" className="mb-2 w-40" priority />
               <p className="text-sm text-[#9c9c9c]">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                architecto amet quae nesciunt quod molestiae.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto amet quae
+                nesciunt quod molestiae.
               </p>
             </div>
 
             {/* Information */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Information</h3>
+              <h3 className="mb-4 text-lg font-semibold">Information</h3>
               <ul className="space-y-2 text-sm text-[#9c9c9c]">
                 <li>
                   <Link href="/about" className="hover:text-[#067afd]">
@@ -80,10 +78,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/terms-conditions"
-                    className="hover:text-[#067afd]"
-                  >
+                  <Link href="/terms-conditions" className="hover:text-[#067afd]">
                     Terms &amp; Conditions
                   </Link>
                 </li>
@@ -107,7 +102,7 @@ export default function Footer() {
 
             {/* Customer Service */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
+              <h3 className="mb-4 text-lg font-semibold">Customer Service</h3>
               <ul className="space-y-2 text-sm text-[#9c9c9c]">
                 <li>
                   <Link href="/faq" className="hover:text-[#067afd]">
@@ -120,10 +115,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/terms-conditions"
-                    className="hover:text-[#067afd]"
-                  >
+                  <Link href="/terms-conditions" className="hover:text-[#067afd]">
                     Money-back Guarantee!
                   </Link>
                 </li>
@@ -147,7 +139,7 @@ export default function Footer() {
 
             {/* Quick Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Information</h3>
+              <h3 className="mb-4 text-lg font-semibold">Quick Information</h3>
               <ul className="space-y-3 text-sm text-[#9c9c9c]">
                 <li className="flex items-start gap-2">
                   <i className="ri-map-pin-line text-[#067afd]" />
@@ -155,19 +147,13 @@ export default function Footer() {
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-phone-line text-[#067afd]" />
-                  <a
-                    href="tel:+1-(514)-321-4566"
-                    className="hover:text-[#067afd]"
-                  >
+                  <a href="tel:+1-(514)-321-4566" className="hover:text-[#067afd]">
                     +1 (514) 321-4566
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-mail-send-line text-[#067afd]" />
-                  <a
-                    href="mailto:[email protected]"
-                    className="hover:text-[#067afd]"
-                  >
+                  <a href="mailto:[email protected]" className="hover:text-[#067afd]">
                     [email protected]
                   </a>
                 </li>
@@ -179,36 +165,18 @@ export default function Footer() {
 
               {/* Socials */}
               <div className="mt-4">
-                <span className="block text-black-800 mb-2">
-                  Stay connected:
-                </span>
+                <span className="text-black-800 mb-2 block">Stay connected:</span>
                 <div className="flex gap-3 text-lg">
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    className="hover:text-[#067afd]"
-                  >
+                  <a href="https://facebook.com" target="_blank" className="hover:text-[#067afd]">
                     <i className="ri-facebook-fill" />
                   </a>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    className="hover:text-[#067afd]"
-                  >
+                  <a href="https://twitter.com" target="_blank" className="hover:text-[#067afd]">
                     <i className="ri-twitter-fill" />
                   </a>
-                  <a
-                    href="https://linkedin.com"
-                    target="_blank"
-                    className="hover:text-[#067afd]"
-                  >
+                  <a href="https://linkedin.com" target="_blank" className="hover:text-[#067afd]">
                     <i className="ri-linkedin-fill" />
                   </a>
-                  <a
-                    href="https://instagram.com"
-                    target="_blank"
-                    className="hover:text-[#067afd]"
-                  >
+                  <a href="https://instagram.com" target="_blank" className="hover:text-[#067afd]">
                     <i className="ri-instagram-fill" />
                   </a>
                 </div>
@@ -222,11 +190,7 @@ export default function Footer() {
       <div className="border-t border-gray-300 py-4 text-center text-sm text-[#9c9c9c]">
         <p>
           © {new Date().getFullYear()} Murali is Proudly Owned by{" "}
-          <a
-            href="#"
-            target="_blank"
-            className="text-[#067afd] hover:underline"
-          >
+          <a href="#" target="_blank" className="text-[#067afd] hover:underline">
             Syscorptheme
           </a>
         </p>

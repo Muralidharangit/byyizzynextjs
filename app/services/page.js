@@ -2,72 +2,72 @@ import Link from "next/link";
 import { Factory, ShoppingCart, Package, Globe, Boxes } from "lucide-react"; // Example icons
 
 export default function ServicesPage() {
- const services = [
-   {
-     href: "/services/eprocurement",
-     icon: "/images/icons/1.png",
-     title: "Industrial Products Aggregation",
-   },
-   {
-     href: "/services/saas",
-     icon: "/images/icons/2.png",
-     title: "Manufacturing as (MaaS)",
-   },
-   {
-     href: "/services/chainofhardware",
-     icon: "/images/icons/3.png",
-     title: "Chain of Hardware Stores",
-   },
-   {
-     href: "/services/pass",
-     icon: "/images/icons/4.png",
-     title: "Procurement as (PaaS)",
-   },
-   {
-     href: "/services/esourcing",
-     icon: "/images/icons/5.png",
-     title: "E-Sourcing Platform",
-   },
- ];
+  const services = [
+    {
+      href: "/services/eprocurement",
+      icon: "/images/icons/1.png",
+      title: "Industrial Products Aggregation",
+    },
+    {
+      href: "/services/saas",
+      icon: "/images/icons/2.png",
+      title: "Manufacturing as (MaaS)",
+    },
+    {
+      href: "/services/chainofhardware",
+      icon: "/images/icons/3.png",
+      title: "Chain of Hardware Stores",
+    },
+    {
+      href: "/services/pass",
+      icon: "/images/icons/4.png",
+      title: "Procurement as (PaaS)",
+    },
+    {
+      href: "/services/esourcing",
+      icon: "/images/icons/5.png",
+      title: "E-Sourcing Platform",
+    },
+  ];
 
   return (
     <div className="mt-[120px] min-h-screen bg-gray-100 text-gray-900">
       {/* Start Page Title Area */}
       <div classname="bg-white py-5 w-full">
-        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600 ">
+        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="hover:text-black font-medium">
+              <a href="#" className="font-medium hover:text-black">
                 Byyizzy
               </a>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="hover:text-black font-medium">
+              <a href="#" className="font-medium hover:text-black">
                 Home
               </a>
             </li>
             <li>/</li>
-            <li className="text-[#067afd] font-semibold">Services</li>
+            <li className="font-semibold text-[#067afd]">Services</li>
           </ol>
         </nav>
       </div>
       {/* End Page Title Area */}
 
-      <div className="relative w-full h-64 md:h-96 overflow-hidden">
+      <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
           alt="About Banner"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center px-4">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Services
           </h1>
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="mx-auto max-w-6xl px-4 py-12">
         {/* <h1 className="text-4xl font-bold text-center mb-10 text-[#067afd]">
           Our Services
         </h1> */}
@@ -77,12 +77,9 @@ export default function ServicesPage() {
             {/* Section Header */}
             <div className="mb-10 flex items-center justify-between">
               <div>
-                <h2 className="text-3xl md:text-3xl font-bold text-[#067afd] mb-2">
-                  Our Services
-                </h2>
+                <h2 className="mb-2 text-3xl font-bold text-[#067afd] md:text-3xl">Our Services</h2>
                 <p className="text-md text-gray-500">
-                  Hover on a card to reveal the theme gradient and highlight the
-                  service.
+                  Hover on a card to reveal the theme gradient and highlight the service.
                 </p>
               </div>
 
@@ -92,12 +89,8 @@ export default function ServicesPage() {
                   {/* Arrows */}
 
                   {/* Action Button */}
-                  <button
-                    className="px-5 py-2 rounded-lg text-sm font-medium flex items-center gap-2 text-white 
-                     bg-gradient-to-r from-[#067afd] to-[#004aad] shadow-md hover:opacity-90 transition"
-                  >
-                    Contact us{" "}
-                    <i className="ri-arrow-right-s-line text-xl"></i>
+                  <button className="flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#067afd] to-[#004aad] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
+                    Contact us <i className="ri-arrow-right-s-line text-xl"></i>
                   </button>
                 </div>
               </div>
@@ -109,35 +102,32 @@ export default function ServicesPage() {
                 <Link
                   key={index}
                   href={service.href || "#"}
-                  className="group relative rounded-xl shadow-lg p-6 cursor-pointer overflow-hidden transition-transform duration-300 
-                 bg-white hover:bg-gradient-to-r hover:from-[#067afd] hover:to-[#004aad] 
-                 hover:scale-[1.02] hover:shadow-xl
-                 flex flex-col items-center justify-center h-full text-center"
+                  className="group relative flex h-full cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl bg-white p-6 text-center shadow-lg transition-transform duration-300 hover:scale-[1.02] hover:bg-gradient-to-r hover:from-[#067afd] hover:to-[#004aad] hover:shadow-xl"
                 >
                   {/* Icon */}
-                  <div className="w-20 h-20 flex items-center justify-center rounded-lg bg-blue-100 group-hover:bg-white transition-all duration-500">
+                  <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-blue-100 transition-all duration-500 group-hover:bg-white">
                     <img
                       src={service.icon}
-                      className="w-12 h-12 transition-colors duration-500 group-hover:invert"
+                      className="h-12 w-12 transition-colors duration-500 group-hover:invert"
                       alt={service.title}
                     />
                   </div>
 
                   {/* Title */}
-                  <h4 className="text-lg font-semibold mt-5 mb-2 text-gray-900 group-hover:text-white transition-colors duration-500">
+                  <h4 className="mt-5 mb-2 text-lg font-semibold text-gray-900 transition-colors duration-500 group-hover:text-white">
                     {service.title}
                   </h4>
 
                   {/* Description */}
                   {service.description && (
-                    <p className="text-sm text-gray-600 group-hover:text-gray-200 transition-colors duration-500">
+                    <p className="text-sm text-gray-600 transition-colors duration-500 group-hover:text-gray-200">
                       {service.description}
                     </p>
                   )}
 
                   {/* Read More */}
                   <div className="mt-4 flex items-center justify-center text-sm font-medium">
-                    <span className="flex items-center gap-2 text-blue-600 group-hover:text-white transition-colors duration-500">
+                    <span className="flex items-center gap-2 text-blue-600 transition-colors duration-500 group-hover:text-white">
                       Read More <i className="ri-arrow-right-line text-lg"></i>
                     </span>
                   </div>

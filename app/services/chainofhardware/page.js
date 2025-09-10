@@ -7,67 +7,66 @@ export default function ChainHardware() {
     <div>
       {/* Start Page Title Area */}
       <div classname="bg-white py-5 w-full mt-[110px]">
-        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600 ">
+        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="hover:text-black font-medium">
+              <a href="#" className="font-medium hover:text-black">
                 Byyizzy
               </a>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="hover:text-black font-medium">
+              <a href="#" className="font-medium hover:text-black">
                 Home
               </a>
             </li>
             <li>/</li>
-            <li className="text-[#067afd] font-semibold">Services</li>
+            <li className="font-semibold text-[#067afd]">Services</li>
           </ol>
         </nav>
       </div>
       {/* End Page Title Area */}
 
-      <div className="relative w-full h-64 md:h-96 overflow-hidden">
+      <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
           alt="About Banner"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center px-4">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Chain of Hardware
           </h1>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-16 space-y-24 ">
+      <div className="mx-auto max-w-7xl space-y-24 px-4 py-16">
         {/* Hero / Intro Section */}
-        <section className="py-16 bg-gray-50 rounded-xl">
+        <section className="rounded-xl bg-gray-50 py-16">
           <div className="container mx-auto px-6 lg:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               {/* Left Content */}
               <div className="space-y-6">
-                <span className="px-3 py-1 text-sm font-medium text-[#067afd] bg-blue-100 rounded-full">
+                <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-[#067afd]">
                   About Us
                 </span>
 
-                <h3 className="text-3xl font-bold text-black leading-snug mt-3">
+                <h3 className="mt-3 text-3xl leading-snug font-bold text-black">
                   Chain of Hardware Stores
                 </h3>
 
-                <p className="text-lg text-[#067afd] font-semibold">
+                <p className="text-lg font-semibold text-[#067afd]">
                   Management of Hardware Stores &amp; Tools
                 </p>
 
-                <p className="text-gray-600 leading-relaxed">
-                  We aim to bring together local hardware stores under one
-                  unified platform — boosting competitiveness, reducing dead
-                  inventory, and improving margins through technology and
-                  expertise.
+                <p className="leading-relaxed text-gray-600">
+                  We aim to bring together local hardware stores under one unified platform —
+                  boosting competitiveness, reducing dead inventory, and improving margins through
+                  technology and expertise.
                 </p>
 
                 {/* Points */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
                   {[
                     "Reduce dead inventory",
                     "Improve margins & volume",
@@ -79,12 +78,12 @@ export default function ChainHardware() {
                     "Seamless shopping experience",
                   ].map((point, i) => (
                     <div key={i} className="flex items-start space-x-2">
-                      <span className="flex-shrink-0 w-5 h-5 flex items-center justify-center rounded-full bg-green-100 text-green-600">
+                      <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600">
                         {/* <i className="fas fa-check text-sm"></i> */}
 
-                        <Check className="w-4 h-4 text-green-600" />
+                        <Check className="h-4 w-4 text-green-600" />
                       </span>
-                      <span className="text-gray-700 text-sm">{point}</span>
+                      <span className="text-sm text-gray-700">{point}</span>
                     </div>
                   ))}
                 </div>
@@ -103,29 +102,26 @@ export default function ChainHardware() {
         </section>
 
         {/* Service Cards */}
-        <section className="py-0 mb-1 via-white to-blue-50">
+        <section className="mb-1 via-white to-blue-50 py-0">
           <div className="container mx-auto px-5 lg:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
               {[1, 2, 3].map((i) => (
                 <div
                   key={i}
-                  className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
+                  className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                 >
                   {/* Icon in a circle */}
-                  <div className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full bg-blue-100 text-blue-600 text-3xl">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl text-blue-600">
                     {/* <i className="ti-settings"></i> */}
-                    <Settings className="w-8 h-8 text-[#067afd]" />
+                    <Settings className="h-8 w-8 text-[#067afd]" />
                   </div>
 
                   {/* Title */}
-                  <h5 className="font-bold text-xl text-gray-800">
-                    Efficient Sourcing
-                  </h5>
+                  <h5 className="text-xl font-bold text-gray-800">Efficient Sourcing</h5>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-base mt-3 leading-relaxed">
-                    There are many variations of have to make your process
-                    smooth and reliable.
+                  <p className="mt-3 text-base leading-relaxed text-gray-600">
+                    There are many variations of have to make your process smooth and reliable.
                   </p>
                 </div>
               ))}
@@ -134,24 +130,23 @@ export default function ChainHardware() {
         </section>
 
         {/* Contact Form */}
-        <section className="bg-white py-20 px-6 lg:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto">
+        <section className="bg-white px-6 py-20 lg:px-10">
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
             {/* Contact Info */}
-            <div className="lg:col-span-4 bg-gradient-to-br from-[#067afd] to-[#004aad] text-white p-10 rounded-2xl shadow-lg space-y-8">
+            <div className="space-y-8 rounded-2xl bg-gradient-to-br from-[#067afd] to-[#004aad] p-10 text-white shadow-lg lg:col-span-4">
               <div>
                 <h3 className="text-3xl font-bold">Get in Touch</h3>
-                <p className="text-blue-100 mt-3 leading-relaxed">
-                  We’re here to answer your questions and explore opportunities
-                  to grow together.
+                <p className="mt-3 leading-relaxed text-blue-100">
+                  We’re here to answer your questions and explore opportunities to grow together.
                 </p>
               </div>
               {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
                   <Mail size={22} />
                 </div>
                 <div>
-                  <p className="text-blue-200 text-sm">Email us at</p>
+                  <p className="text-sm text-blue-200">Email us at</p>
                   <p className="font-semibold">Byizzy@gmail.com</p>
                 </div>
               </div>
@@ -159,26 +154,26 @@ export default function ChainHardware() {
               {/* Office Locations */}
               {/* India Office */}
               <div>
-                <p className="font-semibold text-lg">India</p>
-                <div className="flex items-start gap-4 mt-3">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
+                <p className="text-lg font-semibold">India</p>
+                <div className="mt-3 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
                     <MapPin size={22} />
                   </div>
                   <div>
-                    <p className="text-blue-200 text-sm">Head Office</p>
+                    <p className="text-sm text-blue-200">Head Office</p>
                     <p className="font-semibold">123 Business Street, City</p>
                   </div>
                 </div>
               </div>
               {/* Singapore Office */}
               <div>
-                <p className="font-semibold text-lg">Singapore</p>
-                <div className="flex items-start gap-4 mt-3">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
+                <p className="text-lg font-semibold">Singapore</p>
+                <div className="mt-3 flex items-start gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
                     <MapPin size={22} />
                   </div>
                   <div>
-                    <p className="text-blue-200 text-sm">Branch Office</p>
+                    <p className="text-sm text-blue-200">Branch Office</p>
                     <p className="font-semibold">456 Market Road, Singapore</p>
                   </div>
                 </div>
@@ -186,34 +181,32 @@ export default function ChainHardware() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-8 bg-gray-50 p-10 rounded-2xl shadow-lg">
-              <h3 className="text-3xl font-bold text-gray-800 mb-8">
-                Send a Message
-              </h3>
+            <div className="rounded-2xl bg-gray-50 p-10 shadow-lg lg:col-span-8">
+              <h3 className="mb-8 text-3xl font-bold text-gray-800">Send a Message</h3>
               <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <input
                     type="text"
                     placeholder="First Name"
-                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     required
                   />
                   <input
                     type="text"
                     placeholder="Last Name"
-                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     required
                   />
                   <input
                     type="email"
                     placeholder="Email"
-                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     required
                   />
                   <input
                     type="text"
                     placeholder="Phone Number"
-                    className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                     required
                   />
                 </div>
@@ -221,13 +214,13 @@ export default function ChainHardware() {
                 <textarea
                   placeholder="Your Message"
                   rows="6"
-                  className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   required
                 ></textarea>
 
                 <button
                   type="submit"
-                  className="w-full md:w-auto bg-[#067afd] text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300"
+                  className="w-full rounded-lg bg-[#067afd] px-8 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-blue-700 md:w-auto"
                 >
                   Send Message
                 </button>
