@@ -1,78 +1,73 @@
 import React from "react";
 
-
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900 ">
+    <div className="min-h-screen bg-gray-100 text-gray-900">
       {/* Start Page Title Area */}
       <div classname="bg-white py-5 w-full mt-[110px]">
-        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600 ">
+        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="hover:text-black font-medium">
+              <a href="#" className="font-medium hover:text-black">
                 Byyizzy
               </a>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="hover:text-black font-medium">
+              <a href="#" className="font-medium hover:text-black">
                 Home
               </a>
             </li>
             <li>/</li>
-            <li className="text-[#067afd] font-semibold">Contact</li>
+            <li className="font-semibold text-[#067afd]">Contact</li>
           </ol>
         </nav>
       </div>
       {/* End Page Title Area */}
 
-      <div className="relative w-full h-64 md:h-96 overflow-hidden">
+      <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
           alt="About Banner"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center px-4">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Contact Us
           </h1>
         </div>
       </div>
 
-      <div className="bg-gray py-12 min-h-screen">
-        <div className="max-w-6xl mx-auto px-5">
+      <div className="bg-gray min-h-screen py-12">
+        <div className="mx-auto max-w-6xl px-5">
           {/* Contact Info Cards */}
           {/* Contact Info Cards */}
-          <div className="flex flex-wrap justify-center gap-6 mt-5">
+          <div className="mt-5 flex flex-wrap justify-center gap-6">
             {/* Address */}
-            <div className="flex-1 min-w-[280px] max-w-sm text-center bg-white p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd]">
-              <div className="relative mx-auto mb-4 h-20 w-20 rounded-full border border-gray-200 flex items-center justify-center overflow-hidden group">
+            <div className="max-w-sm min-w-[280px] flex-1 rounded-xl border border-gray-200 bg-white p-8 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd] hover:shadow-xl">
+              <div className="group relative mx-auto mb-4 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-200">
                 <i className="ri-map-pin-line text-2xl text-[#067afd] transition-colors duration-500 group-hover:text-white"></i>
-                <span className="absolute inset-0 bg-[#067afd] scale-0 group-hover:scale-100 rounded-full transition-transform duration-500 -z-10"></span>
+                <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
-                <span className="block font-semibold text-lg text-gray-800 mb-1">
-                  Address
-                </span>
-                <p className="text-gray-500 text-sm">
-                  123 Street, Old Trafford, London, UK
-                </p>
+                <span className="mb-1 block text-lg font-semibold text-gray-800">Address</span>
+                <p className="text-sm text-gray-500">123 Street, Old Trafford, London, UK</p>
               </div>
             </div>
 
             {/* Email */}
-            <div className="flex-1 min-w-[280px] max-w-sm text-center bg-white p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd]">
-              <div className="relative mx-auto mb-4 h-20 w-20 rounded-full border border-gray-200 flex items-center justify-center overflow-hidden group">
+            <div className="max-w-sm min-w-[280px] flex-1 rounded-xl border border-gray-200 bg-white p-8 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd] hover:shadow-xl">
+              <div className="group relative mx-auto mb-4 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-200">
                 <i className="ri-mail-line text-2xl text-[#067afd] transition-colors duration-500 group-hover:text-white"></i>
-                <span className="absolute inset-0 bg-[#067afd] scale-0 group-hover:scale-100 rounded-full transition-transform duration-500 -z-10"></span>
+                <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
-                <span className="block font-semibold text-lg text-gray-800 mb-1">
+                <span className="mb-1 block text-lg font-semibold text-gray-800">
                   Email Address
                 </span>
                 <a
                   href="mailto:info@yourmail.com"
-                  className="text-gray-500 text-sm hover:text-[#067afd] transition-colors"
+                  className="text-sm text-gray-500 transition-colors hover:text-[#067afd]"
                 >
                   info@yourmail.com
                 </a>
@@ -80,80 +75,75 @@ export default function ContactPage() {
             </div>
 
             {/* Phone */}
-            <div className="flex-1 min-w-[280px] max-w-sm text-center bg-white p-8 rounded-xl border border-gray-200 shadow-md hover:shadow-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd]">
-              <div className="relative mx-auto mb-4 h-20 w-20 rounded-full border border-gray-200 flex items-center justify-center overflow-hidden group">
+            <div className="max-w-sm min-w-[280px] flex-1 rounded-xl border border-gray-200 bg-white p-8 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd] hover:shadow-xl">
+              <div className="group relative mx-auto mb-4 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-200">
                 <i className="ri-phone-line text-2xl text-[#067afd] transition-colors duration-500 group-hover:text-white"></i>
-                <span className="absolute inset-0 bg-[#067afd] scale-0 group-hover:scale-100 rounded-full transition-transform duration-500 -z-10"></span>
+                <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
-                <span className="block font-semibold text-lg text-gray-800 mb-1">
-                  Phone
-                </span>
-                <p className="text-gray-500 text-sm">+ 457 789 789 65</p>
+                <span className="mb-1 block text-lg font-semibold text-gray-800">Phone</span>
+                <p className="text-sm text-gray-500">+ 457 789 789 65</p>
               </div>
             </div>
           </div>
 
           {/* Contact Section */}
-          <div className="flex flex-wrap gap-8 mt-12">
+          <div className="mt-12 flex flex-wrap gap-8">
             {/* Contact Form */}
-            <div className="flex-1 min-w-[320px] bg-white rounded-xl shadow-lg p-8 border border-gray-100 hover:shadow-2xl transition-all duration-500">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-2">
-                Get In Touch
-              </h2>
-              <p className="text-gray-600 mb-6">
-                We’d love to hear from you. Fill out the form and we’ll get back
-                to you shortly.
+            <div className="min-w-[320px] flex-1 rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:shadow-2xl">
+              <h2 className="mb-2 text-2xl font-semibold text-gray-800">Get In Touch</h2>
+              <p className="mb-6 text-gray-600">
+                We’d love to hear from you. Fill out the form and we’ll get back to you shortly.
               </p>
 
               <form className="space-y-4">
                 {/* Name */}
                 <div className="relative">
-                  <i className="ri-user-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                  <i className="ri-user-line absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"></i>
                   <input
                     type="text"
                     placeholder="Enter Name *"
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#067afd] transition"
+                    className="w-full rounded-lg border border-gray-300 py-3 pr-4 pl-10 text-sm transition focus:border-[#067afd] focus:outline-none"
                   />
                 </div>
 
                 {/* Email */}
                 <div className="relative">
-                  <i className="ri-mail-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                  <i className="ri-mail-line absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"></i>
                   <input
                     type="email"
                     placeholder="Enter Email *"
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#067afd] transition"
+                    className="w-full rounded-lg border border-gray-300 py-3 pr-4 pl-10 text-sm transition focus:border-[#067afd] focus:outline-none"
                   />
                 </div>
 
                 {/* Phone */}
                 <div className="relative">
-                  <i className="ri-phone-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                  <i className="ri-phone-line absolute top-1/2 left-3 -translate-y-1/2 text-gray-400"></i>
                   <input
                     type="tel"
                     placeholder="Enter Phone No. *"
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#067afd] transition"
+                    className="w-full rounded-lg border border-gray-300 py-3 pr-4 pl-10 text-sm transition focus:border-[#067afd] focus:outline-none"
                   />
                 </div>
 
                 {/* Message */}
                 <div className="relative">
-                  <i className="ri-chat-1-line absolute left-3 top-4 text-gray-400"></i>
+                  <i className="ri-chat-1-line absolute top-4 left-3 text-gray-400"></i>
                   <textarea
                     rows="4"
                     placeholder="Message *"
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-[#067afd] transition"
+                    className="w-full rounded-lg border border-gray-300 py-3 pr-4 pl-10 text-sm transition focus:border-[#067afd] focus:outline-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full md:w-auto bg-[#067afd] hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition"
+                  className="w-full rounded-lg bg-[#067afd] px-6 py-3 font-medium text-white shadow-md transition hover:bg-blue-700 hover:shadow-lg md:w-auto"
                 >
                   Send Message
                 </button>
@@ -161,12 +151,12 @@ export default function ContactPage() {
             </div>
 
             {/* Map */}
-            <div className="flex-1 min-w-[320px] rounded-xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500">
+            <div className="min-w-[320px] flex-1 overflow-hidden rounded-xl border border-gray-100 shadow-lg transition-all duration-500 hover:shadow-2xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19804.28130573357!2d-0.145!3d51.509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b3333333333%3A0x123456789abcdef!2sLondon!5e0!3m2!1sen!2suk!4v1693500000000!5m2!1sen!2suk"
                 allowFullScreen
                 loading="lazy"
-                className="w-full h-full border-0"
+                className="h-full w-full border-0"
               ></iframe>
             </div>
           </div>

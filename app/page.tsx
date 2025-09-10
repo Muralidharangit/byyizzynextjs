@@ -2,14 +2,7 @@
 
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Autoplay,
-  EffectFade,
-  Grid,
-  A11y,
-} from "swiper/modules";
+import { Navigation, Pagination, Autoplay, EffectFade, Grid, A11y } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,7 +10,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { useEffect, useRef, useState } from "react";
+import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
+import Link from "next/link";
 
+import Category from "@/components/category";
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -339,917 +335,13 @@ export default function Home() {
     <>
       <div>
         <div className="container mx-auto px-4 py-6">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full mt-[122px]">
-            {/* Sidebar */}
-
-            <aside className="md:col-span-3 bg-white shadow rounded p-2 relative z-50">
-              <div className="sticky top-[130px] bg-white shadow rounded">
-                <div className="container mx-auto">
-                  <div className="w-full">
-                    <div className="bg-white border border-gray-200 shadow-sm rounded-lg">
-                      <ul className="text-gray-700">
-                        {/* 1. Heavy Machinery */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 text-sm hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-truck-line mr-2" /> Heavy
-                              Machinery
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[800px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/4 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Construction
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Excavators
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Cranes
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Bulldozers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Compactors
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/4 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Mining
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Drilling Rigs
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Loaders
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Haul Trucks
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/4 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Agriculture
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Tractors
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Harvesters
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Seeders
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/4 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Industrial
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    CNC Machines
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Press Machines
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Lathe Machines
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 2. Power Tools */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-flashlight-line mr-2" /> Power
-                              Tools
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Cutting
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Angle Grinders
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Circular Saws
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Jigsaws
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Drilling
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Cordless Drills
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Hammer Drills
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Rotary Hammers
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 3. Spare Parts */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-settings-3-line mr-2" /> Spare
-                              Parts
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Engine
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Filters
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Belts
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Bearings
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Hydraulics
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Pumps
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Valves
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Hoses
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 4. Safety Equipment */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-shield-check-line mr-2" /> Safety
-                              Equipment
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Protective Gear
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Helmets
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Gloves
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Safety Boots
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Fire Safety
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Extinguishers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Alarms
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Sprinklers
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 5. Agricultural Machinery */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-leaf-line mr-2" /> Agricultural
-                              Machinery
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Field
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Ploughs
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Cultivators
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Rotavators
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Processing
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Threshers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Milling Machines
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 6. Packaging Machinery */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-archive-line mr-2" /> Packaging
-                              Machinery
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Sealing
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Shrink Wrappers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Sealers
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Filling
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Bottle Fillers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Pouch Fillers
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 7. Food Processing Machines */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-cup-line mr-2" /> Food Processing
-                              Machines
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Beverage
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Juicers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Mixers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Blenders
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Snacks
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Fryers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Extruders
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 8. Textile Machinery */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-stack-line mr-2" /> Textile
-                              Machinery
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Weaving
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Looms
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Jacquards
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Finishing
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Dyeing
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Printing
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 9. Printing Machinery */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-printer-line mr-2" /> Printing
-                              Machinery
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Offset
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Sheet-fed
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Web-fed
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Digital
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Inkjet
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Laser
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 10. Chemical Machinery */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-flask-line mr-2" /> Chemical
-                              Machinery
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Mixing
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Reactors
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Mixers
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Separation
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Distillers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Centrifuges
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 11. Construction Materials */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-building-line mr-2" />{" "}
-                              Construction Materials
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Raw
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Cement
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Bricks
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Finishing
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Tiles
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Paints
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-
-                        {/* 12. Electrical Equipment */}
-                        <li className="group relative border-b border-gray-100 last:border-b-0">
-                          <a
-                            href="#"
-                            className="flex items-center justify-between px-5 py-3 hover:bg-gray-100 hover:text-[#067afd] transition"
-                          >
-                            <span className="flex items-center">
-                              <i className="ri-plug-line mr-2" /> Electrical
-                              Equipment
-                            </span>
-                            <i className="ri-arrow-right-s-line text-gray-400" />
-                          </a>
-                          <div className="absolute left-full top-0 w-[600px] bg-white shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 ease-out p-6 flex flex-wrap z-50">
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Wiring
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Cables
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Switches
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="w-1/2 px-4">
-                              <h4 className="uppercase text-sm font-semibold mb-3">
-                                Power
-                              </h4>
-                              <ul className="space-y-1">
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Transformers
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="#"
-                                    className="block hover:text-[#067afd]"
-                                  >
-                                    Generators
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </aside>
+          <div className="mt-[122px] grid h-full grid-cols-1 gap-6 md:grid-cols-12">
+            {/* Sidebar Starts*/}
+            <Category />
+            {/* Sidebar Ends */}
 
             {/* Body Content */}
-            <main className="md:col-span-9 bg-white shadow rounded p-2 overflow-hidden relative z-10">
+            <main className="relative z-10 overflow-hidden rounded bg-white p-2 shadow md:col-span-9">
               <div className="slider bg-red">
                 {/* swiper slide main banner */}
                 <div className="">
@@ -1268,19 +360,19 @@ export default function Home() {
                       >
                         {slides.map((slide, index) => (
                           <SwiperSlide key={index}>
-                            <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10">
+                            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
                               {/* Left Content */}
-                              <div className="text-white space-y-6 animate-fadeIn">
-                                <h1 className="text-4xl md:text-4xl font-bold leading-tight">
+                              <div className="animate-fadeIn space-y-6 text-white">
+                                <h1 className="text-4xl leading-tight font-bold md:text-4xl">
                                   {slide.title}
                                 </h1>
-                                <p className="text-lg md:text-xl text-gray-200">
+                                <p className="text-lg text-gray-200 md:text-xl">
                                   {slide.description}
                                 </p>
                                 <div className="flex gap-4">
                                   <a
                                     href={slide.link1.href}
-                                    className={`px-6 py-3 font-semibold rounded-lg shadow-md transition ${
+                                    className={`rounded-lg px-6 py-3 font-semibold shadow-md transition ${
                                       slide.link1.primary
                                         ? "bg-white text-[#004aad] hover:bg-gray-200"
                                         : "border border-white text-white hover:bg-white hover:text-[#004aad]"
@@ -1290,7 +382,7 @@ export default function Home() {
                                   </a>
                                   <a
                                     href={slide.link2.href}
-                                    className="px-6 py-3 border border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#004aad] transition"
+                                    className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
                                   >
                                     {slide.link2.text}
                                   </a>
@@ -1298,7 +390,7 @@ export default function Home() {
                               </div>
 
                               {/* Right Image */}
-                              <div className="flex justify-center lg:justify-end animate-fadeIn delay-300">
+                              <div className="animate-fadeIn flex justify-center delay-300 lg:justify-end">
                                 <img
                                   src={slide.img}
                                   alt="Banner Illustration"
@@ -1316,14 +408,13 @@ export default function Home() {
 
                 {/* tilt */}
                 <div className="w-full">
-                  <h2 className="text-3xl md:text-2xl font-bold text-gray-900 mb-2 text-center pt-[30px]">
+                  <h2 className="mb-2 pt-[30px] text-center text-3xl font-bold text-gray-900 md:text-2xl">
                     Main Topic Product
                   </h2>
-                  <p className="text-center md:text-md text-gray-600 leading-relaxed w-full">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni quibusdam repudiandae alias odit porro eos quasi unde
-                    ducimus assumenda.Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Magni quibusdam repudiandae alias odit
+                  <p className="md:text-md w-full text-center leading-relaxed text-gray-600">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni quibusdam
+                    repudiandae alias odit porro eos quasi unde ducimus assumenda.Lorem, ipsum dolor
+                    sit amet consectetur adipisicing elit. Magni quibusdam repudiandae alias odit
                     porro eos quasi unde ducimus assumenda.
                   </p>
                 </div>
@@ -1331,17 +422,16 @@ export default function Home() {
                 <div>
                   {/* new added */}
 
-                  <section className="py-16 bg-[#f8f8f9] ">
-                    <div className="container mx-auto px-4 ">
+                  <section className="bg-[#f8f8f9] py-16">
+                    <div className="container mx-auto px-4">
                       {/* Section Header with Navigation Arrows */}
                       <div className="mb-10 flex items-center justify-between">
                         <div>
-                          <h2 className="text-3xl md:text-2xl font-bold text-gray-900 mb-2">
+                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
                             Trending Products
                           </h2>
                           <p className="text-md text-gray-500">
-                            Discover the most popular machinery and equipment
-                            available now.
+                            Discover the most popular machinery and equipment available now.
                           </p>
                         </div>
 
@@ -1349,13 +439,13 @@ export default function Home() {
                         <div className="flex space-x-3">
                           <button
                             ref={prevRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
                           >
                             <i className="ri-arrow-left-s-line text-xl"></i>
                           </button>
                           <button
                             ref={nextRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full text-white transition bg-gradient-to-r from-[#067afd] to-[#004aad] hover:opacity-90 shadow-md"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad] text-white shadow-md transition hover:opacity-90"
                           >
                             <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
@@ -1418,40 +508,38 @@ export default function Home() {
                           },
                         ].map((product, i) => (
                           <SwiperSlide key={i}>
-                            <div className="w-full h-full flex justify-center">
-                              <div className="group w-full max-w-xs bg-white rounded-sm shadow-md overflow-hidden border border-gray-200 hover:shadow-2xl hover:-translate-y-0 transition-all duration-500">
+                            <div className="flex h-full w-full justify-center">
+                              <div className="group w-full max-w-xs overflow-hidden rounded-sm border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-0 hover:shadow-2xl">
                                 {/* Product Image */}
-                                <div className="relative w-full h-52 overflow-hidden">
+                                <div className="relative h-52 w-full overflow-hidden">
                                   <img
                                     src={product.img}
                                     alt={product.name}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                                   />
                                   {/* Overlay effect */}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
                                 </div>
 
                                 {/* Product Info */}
-                                <div className="p-5 flex flex-col justify-between">
+                                <div className="flex flex-col justify-between p-5">
                                   <div>
                                     <h3 className="text-lg font-semibold text-gray-900">
                                       {product.name}
                                     </h3>
-                                    <p className="text-sm text-gray-500 mt-1">
+                                    <p className="mt-1 text-sm text-gray-500">
                                       High quality machinery
                                     </p>
                                   </div>
 
                                   {/* Price & Enquiry Button */}
-                                  <div className="flex justify-between items-center mt-4">
+                                  <div className="mt-4 flex items-center justify-between">
                                     <span className="text-xl font-bold text-black">
                                       ${product.price}
                                     </span>
-                                    <button className="relative flex items-center gap-2 px-5 py-2 rounded bg-[#067afd] text-white font-medium text-sm shadow-md hover:shadow-lg hover:bg-blue-700 transition-all duration-300 overflow-hidden">
-                                      <span className="relative z-10">
-                                        Enquiry
-                                      </span>
-                                      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-150%] group-hover:translate-x-[150%] transition duration-700"></span>
+                                    <button className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg">
+                                      <span className="relative z-10">Enquiry</span>
+                                      <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
                                     </button>
                                   </div>
                                 </div>
@@ -1469,12 +557,11 @@ export default function Home() {
                       {/* Section Header with Navigation Arrows */}
                       <div className="mb-10 flex items-center justify-between">
                         <div>
-                          <h2 className="text-3xl md:text-2xl font-bold text-gray-900 mb-2">
+                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
                             Our Services
                           </h2>
                           <p className="text-md text-gray-500">
-                            Hover on a card to reveal the theme gradient and
-                            highlight the service.
+                            Hover on a card to reveal the theme gradient and highlight the service.
                           </p>
                         </div>
 
@@ -1482,13 +569,13 @@ export default function Home() {
                         <div className="flex space-x-3">
                           <button
                             ref={prevRef}
-                            className="w-10 h-10 flex items-center justify-center  rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
                           >
                             <i className="ri-arrow-left-s-line text-xl"></i>
                           </button>
                           <button
                             ref={nextRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full text-white transition bg-gradient-to-r from-[#067afd] to-[#004aad] hover:opacity-90 shadow-md"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad] text-white shadow-md transition hover:opacity-90"
                           >
                             <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
@@ -1520,7 +607,7 @@ export default function Home() {
                           <SwiperSlide key={index}>
                             {({ isActive }) => (
                               <div
-                                className={`group relative rounded-xl shadow-lg p-6 cursor-pointer overflow-hidden transition-transform duration-300 relative ${
+                                className={`group relative cursor-pointer overflow-hidden rounded-xl p-6 shadow-lg transition-transform duration-300 ${
                                   isActive
                                     ? "bg-gradient-to-r from-[#067afd] to-[#004aad] text-white"
                                     : "bg-white"
@@ -1538,20 +625,16 @@ export default function Home() {
 
                                 {/* Icon */}
                                 <div
-                                  className={`w-20 h-20 flex items-center justify-center rounded-lg transition-all duration-500 ${
+                                  className={`flex h-20 w-20 items-center justify-center rounded-lg transition-all duration-500 ${
                                     isActive ? "bg-white" : "bg-blue-100"
                                   }`}
                                 >
-                                  <img
-                                    src={service.icon}
-                                    className="w-12 h-12"
-                                    alt="icon"
-                                  />
+                                  <img src={service.icon} className="h-12 w-12" alt="icon" />
                                 </div>
 
                                 {/* Title */}
                                 <h4
-                                  className={`text-lg font-semibold mt-5 mb-2 transition-colors duration-500 ${
+                                  className={`mt-5 mb-2 text-lg font-semibold transition-colors duration-500 ${
                                     isActive ? "text-white" : "text-gray-900"
                                   }`}
                                 >
@@ -1582,15 +665,14 @@ export default function Home() {
 
                   {/*  Shop By CategoriesSection */}
                   <section>
-                    <div className="w-full max-w-7xl mx-auto p-6 font-sans relative bg-[#f8f8f9] ">
+                    <div className="relative mx-auto w-full max-w-7xl bg-[#f8f8f9] p-6 font-sans">
                       <div className="mb-10 flex items-center justify-between">
                         <div>
-                          <h2 className="text-3xl md:text-2xl font-bold text-gray-900 mb-2">
+                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
                             Our Categories
                           </h2>
                           <p className="text-md text-gray-500">
-                            Hover on a card to reveal the theme gradient and
-                            highlight the service.
+                            Hover on a card to reveal the theme gradient and highlight the service.
                           </p>
                         </div>
 
@@ -1598,13 +680,13 @@ export default function Home() {
                         <div className="flex space-x-3">
                           <button
                             ref={prevRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-200 hover:bg-blue-600 hover:text-white transition"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
                           >
                             <i className="ri-arrow-left-s-line text-xl"></i>
                           </button>
                           <button
                             ref={nextRef}
-                            className="w-10 h-10 flex items-center justify-center rounded-full text-white transition bg-gradient-to-r from-[#067afd] to-[#004aad] hover:opacity-90 shadow-md"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad] text-white shadow-md transition hover:opacity-90"
                           >
                             <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
@@ -1629,18 +711,18 @@ export default function Home() {
                       >
                         {categories.map((category) => (
                           <SwiperSlide key={category.id}>
-                            <div className="flex flex-row items-center gap-4 p-6 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-lg transition-shadow duration-300 cursor-pointer h-full min-h-[120px]">
+                            <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
                               {/* Icon */}
-                              <div className="w-14 h-14 flex items-center justify-center overflow-hidden flex-shrink-0">
+                              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden">
                                 <img
                                   src={category.image}
                                   alt={category.title}
-                                  className="object-contain w-full h-full"
+                                  className="h-full w-full object-contain"
                                 />
                               </div>
 
                               {/* Text */}
-                              <h6 className="font-semibold text-gray-700 text-sm line-clamp-2">
+                              <h6 className="line-clamp-2 text-sm font-semibold text-gray-700">
                                 {category.title}
                               </h6>
                             </div>
@@ -1723,19 +805,17 @@ export default function Home() {
                     </div>
                   </section>
                   {/* Why Byizzy Section */}
-                  <section className="py-16 lg:py-20 bg-gradient-to-b from-white via-[#f9fbff] to-white">
-                    <div className="max-w-7xl mx-auto px-4">
+                  <section className="bg-gradient-to-b from-white via-[#f9fbff] to-white py-16 lg:py-20">
+                    <div className="mx-auto max-w-7xl px-4">
                       {/* Section Header */}
                       <div className="mb-10 flex items-center justify-between">
                         {/* Left: Title + Subtitle */}
                         <div>
-                          <h2 className="text-3xl md:text-2xl font-bold text-gray-900 mb-2">
-                            Why Choose{" "}
-                            <span className="text-[#067afd]">Byyizzy?</span>
+                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                            Why Choose <span className="text-[#067afd]">Byyizzy?</span>
                           </h2>
                           <p className="text-md text-gray-500">
-                            Discover the benefits that make Byyizzy stand out
-                            from the rest.
+                            Discover the benefits that make Byyizzy stand out from the rest.
                           </p>
                         </div>
 
@@ -1744,9 +824,8 @@ export default function Home() {
                           {/* Arrows */}
 
                           {/* Action Button */}
-                          <button className="px-5 py-2 rounded-lg text-sm font-medium flex items-center text-white bg-gradient-to-r from-[#067afd] to-[#004aad] shadow-md hover:opacity-90 transition">
-                            Learn More{" "}
-                            <i className="ri-arrow-right-s-line text-xl"></i>
+                          <button className="flex items-center rounded-lg bg-gradient-to-r from-[#067afd] to-[#004aad] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
+                            Learn More <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
                         </div>
                       </div>
@@ -1754,11 +833,11 @@ export default function Home() {
                         {whyByizzy.map((card, index) => (
                           <div
                             key={index}
-                            className="relative bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden group cursor-pointer h-80 transition-all duration-500 hover:shadow-xl hover:border-[#067afd]"
+                            className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:border-[#067afd] hover:shadow-xl"
                           >
                             {/* Always visible content */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                              <div className="w-20 h-20 flex items-center justify-center rounded-full bg-[#067afd]/10 mb-4 transition-transform duration-500 group-hover:scale-110">
+                            <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                              <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#067afd]/10 transition-transform duration-500 group-hover:scale-110">
                                 <Image
                                   src={card.img}
                                   alt={card.title}
@@ -1767,17 +846,17 @@ export default function Home() {
                                   className="object-contain"
                                 />
                               </div>
-                              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-[#067afd] transition-colors">
+                              <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-[#067afd]">
                                 {card.title}
                               </h3>
                             </div>
 
                             {/* Hover Overlay */}
-                            <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-white opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0">
-                              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            <div className="absolute inset-0 flex translate-y-4 flex-col items-center justify-center bg-white p-6 text-center opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                              <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
                                 {card.text}
                               </p>
-                              <div className="mt-5 w-14 h-1 bg-gradient-to-r from-[#067afd] to-[#004aad] rounded-full"></div>
+                              <div className="mt-5 h-1 w-14 rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad]"></div>
                             </div>
                           </div>
                         ))}

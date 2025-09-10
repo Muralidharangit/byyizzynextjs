@@ -14,26 +14,24 @@ import {
 } from "lucide-react";
 
 export default function SaaSService() {
-
-
   return (
-    <div className="max-w-7xl mx-auto px-4 py-16 space-y-24">
+    <div className="mx-auto max-w-7xl space-y-24 px-4 py-16">
       {/* Page Title */}
       <header className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#067afd] mb-4">
+        <h1 className="mb-4 text-4xl font-bold text-[#067afd] md:text-5xl">
           SaaS Product Overview
         </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Discover how our SaaS solutions streamline procurement, partner
-          management, payment automation, and analytics.
+        <p className="mx-auto max-w-2xl text-gray-600">
+          Discover how our SaaS solutions streamline procurement, partner management, payment
+          automation, and analytics.
         </p>
       </header>
 
       {/* Section 1: Partner Management */}
 
-      <section className="flex flex-col lg:flex-row items-center gap-5 py-5 m-0">
+      <section className="m-0 flex flex-col items-center gap-5 py-5 lg:flex-row">
         {/* Image */}
-        <div className="lg:w-1/2 text-center">
+        <div className="text-center lg:w-1/2">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fimg01.jpg?alt=media&token=4e9163fa-8026-4fe3-9cae-9a670ecf30d8"
             alt="Partner Management"
@@ -42,10 +40,8 @@ export default function SaaSService() {
         </div>
 
         {/* Content */}
-        <div className="lg:w-1/2 space-y-6">
-          <h2 className="text-3xl font-semibold text-[#067afd]">
-            Partner Management
-          </h2>
+        <div className="space-y-6 lg:w-1/2">
+          <h2 className="text-3xl font-semibold text-[#067afd]">Partner Management</h2>
           <ul className="space-y-4">
             {[
               "Seamless Registration and Onboarding: Easy access to new suppliers from your corporate website with workflow based approval.",
@@ -55,12 +51,9 @@ export default function SaaSService() {
               "Real-Time Updates: Suppliers can update their details and documents to avoid costly mistakes.",
               "Vendor Performance Management: Multi-person rating system to see dynamic ratings of your suppliers.",
             ].map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-2 text-gray-700 p-1"
-              >
+              <li key={i} className="flex items-start gap-2 p-1 text-gray-700">
                 <div className="flex-shrink-0 p-1">
-                  <CheckCircle className="w-5 h-5 text-green-500" />
+                  <CheckCircle className="h-5 w-5 text-green-500" />
                 </div>
                 <span>{item}</span>
               </li>
@@ -70,9 +63,9 @@ export default function SaaSService() {
       </section>
 
       {/* Section 2: Source-to-Pay */}
-      <section className="flex flex-col lg:flex-row-reverse items-center gap-5 py-5 m-0">
+      <section className="m-0 flex flex-col items-center gap-5 py-5 lg:flex-row-reverse">
         {/* Left Image */}
-        <div className="lg:w-1/2 text-center">
+        <div className="text-center lg:w-1/2">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fabout2.svg?alt=media&token=d76eed87-d222-4a14-bc63-489abf58e6c8"
             alt="Source-to-Pay"
@@ -81,10 +74,8 @@ export default function SaaSService() {
         </div>
 
         {/* Right Content */}
-        <div className="lg:w-1/2 space-y-6">
-          <h2 className="text-3xl font-semibold text-[#067afd]">
-            Source-to-Pay
-          </h2>
+        <div className="space-y-6 lg:w-1/2">
+          <h2 className="text-3xl font-semibold text-[#067afd]">Source-to-Pay</h2>
 
           {/* Steps */}
           {[
@@ -113,12 +104,9 @@ export default function SaaSService() {
               icon: TrendingUp,
             },
           ].map(({ text, icon: Icon }, i) => (
-            <div
-              key={i}
-              className="flex items-start gap-3 text-gray-700 p-1"
-            >
+            <div key={i} className="flex items-start gap-3 p-1 text-gray-700">
               <div className="flex-shrink-0 p-1">
-                <Icon className="w-5 h-5 text-green-500" />
+                <Icon className="h-5 w-5 text-green-500" />
               </div>
               <p>{text}</p>
             </div>
@@ -128,9 +116,9 @@ export default function SaaSService() {
 
       {/* Section 3:   Procure to Pay */}
 
-      <section className="flex flex-col lg:flex-row-reverse items-center gap-5 py-5 m-0">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <section className="m-0 flex flex-col items-center gap-5 py-5 lg:flex-row-reverse">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Image */}
             <div className="text-center lg:text-left">
               <img
@@ -143,20 +131,15 @@ export default function SaaSService() {
             {/* Right Content */}
             <div>
               {/* Heading */}
-              <h3 className="text-3xl font-bold text-[#067afd] mb-3">
-                Procure to Pay
-              </h3>
-              <p className="text-gray-600 mb-8">
-                A streamlined process from identifying needs to ensuring
-                supplier payments — enhancing transparency and efficiency across
-                procurement.
+              <h3 className="mb-3 text-3xl font-bold text-[#067afd]">Procure to Pay</h3>
+              <p className="mb-8 text-gray-600">
+                A streamlined process from identifying needs to ensuring supplier payments —
+                enhancing transparency and efficiency across procurement.
               </p>
 
               {/* Steps */}
               <div className="mb-4">
-                <h4 className="text-xl font-semibold text-gray-800 mb-4">
-                  Key Steps
-                </h4>
+                <h4 className="mb-4 text-xl font-semibold text-gray-800">Key Steps</h4>
                 <ul className="space-y-3">
                   {[
                     {
@@ -188,9 +171,9 @@ export default function SaaSService() {
                       icon: CreditCard,
                     },
                   ].map(({ text, icon: Icon }, i) => (
-                    <li key={i} className="flex items-start gap-3 text-gray-700 p-1">
-                      <Icon className="w-5 h-5 text-green-500 mt-1 mr-3" />
-                      <span className="flex items-start gap-3 text-gray-700 p-1">{text}</span>
+                    <li key={i} className="flex items-start gap-3 p-1 text-gray-700">
+                      <Icon className="mt-1 mr-3 h-5 w-5 text-green-500" />
+                      <span className="flex items-start gap-3 p-1 text-gray-700">{text}</span>
                     </li>
                   ))}
                 </ul>
@@ -198,9 +181,7 @@ export default function SaaSService() {
 
               {/* Benefits */}
               <div>
-                <h4 className="text-xl font-semibold text-gray-800 mb-4">
-                  Major Benefits
-                </h4>
+                <h4 className="mb-4 text-xl font-semibold text-gray-800">Major Benefits</h4>
                 <ul className="space-y-3">
                   {[
                     "Automated procure-to-pay solution",
@@ -210,7 +191,7 @@ export default function SaaSService() {
                     "Measurable goals and performance tracking",
                   ].map((benefit, i) => (
                     <li key={i} className="flex items-start">
-                      <CheckCircle className="w-5 h-5 text-green-500 mt-1 mr-3" />
+                      <CheckCircle className="mt-1 mr-3 h-5 w-5 text-green-500" />
                       <span className="text-gray-700">{benefit}</span>
                     </li>
                   ))}
@@ -222,13 +203,11 @@ export default function SaaSService() {
       </section>
 
       {/* Section 4: Payment Automation */}
-      <section className="flex flex-col lg:flex-row items-center gap-5 py-5 m-0">
+      <section className="m-0 flex flex-col items-center gap-5 py-5 lg:flex-row">
         {/* Left Content */}
-        <div className="lg:w-1/2 space-y-6">
+        <div className="space-y-6 lg:w-1/2">
           {/* Heading */}
-          <h2 className="text-3xl font-semibold text-[#067afd]">
-            Payment Automation
-          </h2>
+          <h2 className="text-3xl font-semibold text-[#067afd]">Payment Automation</h2>
 
           {/* Features */}
           {[
@@ -238,23 +217,21 @@ export default function SaaSService() {
             "Stay compliant with automated tax code handling and tax calculations",
             "Pull data directly into a centralized dashboard to get 100% spend visibility without lifting a finger",
           ].map((item, i) => (
-            <p key={i} className="flex items-start gap-3 text-gray-700 p-1">
-              <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+            <p key={i} className="flex items-start gap-3 p-1 text-gray-700">
+              <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-green-500" />
               {item}
             </p>
           ))}
 
           {/* Major Benefits */}
           <div className="mt-6">
-            <h3 className="text-xl font-medium text-[#067afd] mb-3">
-              Major Benefits
-            </h3>
+            <h3 className="mb-3 text-xl font-medium text-[#067afd]">Major Benefits</h3>
             {[
               "Automated matching for PO-based spend",
               "Automated matching for non-PO-based spend",
             ].map((item, i) => (
-              <p key={i} className="flex items-start gap-3 text-gray-700 p-1">
-                <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+              <p key={i} className="flex items-start gap-3 p-1 text-gray-700">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-green-500" />
                 {item}
               </p>
             ))}
@@ -262,7 +239,7 @@ export default function SaaSService() {
         </div>
 
         {/* Right Image */}
-        <div className="lg:w-1/2 text-center">
+        <div className="text-center lg:w-1/2">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FpaymentAutomation.jpg?alt=media&token=0a4d5a90-c8ee-47aa-88de-4def3167575d"
             alt="Payment Automation"
@@ -272,9 +249,9 @@ export default function SaaSService() {
       </section>
 
       {/* Section 5: Analytics */}
-      <section className="flex flex-col lg:flex-row items-center gap-5 py-5">
+      <section className="flex flex-col items-center gap-5 py-5 lg:flex-row">
         {/* Left Image */}
-        <div className="lg:w-1/2 text-center">
+        <div className="text-center lg:w-1/2">
           <img
             src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FpaymentAutomation.jpg?alt=media&token=0a4d5a90-c8ee-47aa-88de-4def3167575d"
             alt="Analytics"
@@ -283,7 +260,7 @@ export default function SaaSService() {
         </div>
 
         {/* Right Content */}
-        <div className="lg:w-1/2 space-y-6">
+        <div className="space-y-6 lg:w-1/2">
           {/* Title */}
           <h2 className="text-3xl font-semibold text-[#067afd]">Analytics</h2>
 
@@ -294,25 +271,23 @@ export default function SaaSService() {
             "Gain visibility into spend by organisation, category, supplier, cost center, GL accounts, or by managed vs unmanaged spend",
             "Optimise cash flow by generating predictions on upcoming payments and spend commitments",
           ].map((item, i) => (
-            <p key={i} className="flex items-start gap-3 text-gray-700 p-1">
-              <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+            <p key={i} className="flex items-start gap-3 p-1 text-gray-700">
+              <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-green-500" />
               {item}
             </p>
           ))}
 
           {/* Major Benefits */}
           <div className="mt-6">
-            <h3 className="text-xl font-medium text-[#067afd] mb-3">
-              Major Benefits
-            </h3>
+            <h3 className="mb-3 text-xl font-medium text-[#067afd]">Major Benefits</h3>
             {[
               "Holistic Spend Analysis",
               "KPIs and Benchmarking",
               "Predictive Analytics",
               "Supplier Quality and Performance",
             ].map((item, i) => (
-              <p key={i} className="flex items-start gap-3 text-gray-700 p-1">
-                <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
+              <p key={i} className="flex items-start gap-3 p-1 text-gray-700">
+                <CheckCircle className="mt-1 h-5 w-5 flex-shrink-0 text-green-500" />
                 {item}
               </p>
             ))}
@@ -321,9 +296,9 @@ export default function SaaSService() {
       </section>
 
       {/* Section 6: Service Cards */}
-      <section className="py-5 mb-1">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="mb-1 py-5">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
                 title: "Efficient Sourcing",
@@ -343,22 +318,20 @@ export default function SaaSService() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300"
+                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
               >
                 {/* Icon */}
-                <div className="flex items-center justify-center h-16 w-16 rounded-xl bg-blue-100 text-[#067afd] mx-auto mb-6">
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
                   {item.icon}
                 </div>
 
                 {/* Title */}
-                <h5 className="text-xl font-semibold text-gray-800 mb-3 text-center">
+                <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
                   {item.title}
                 </h5>
 
                 {/* Description */}
-                <p className="text-gray-600 text-center leading-relaxed">
-                  {item.desc}
-                </p>
+                <p className="text-center leading-relaxed text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -367,23 +340,22 @@ export default function SaaSService() {
 
       {/* Contact Form */}
       <section className="bg-white py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-7xl mx-auto">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
           {/* Contact Info */}
-          <div className="lg:col-span-4 bg-gradient-to-br from-blue-600 to-blue-800 text-white p-10 rounded-2xl shadow-lg space-y-8">
+          <div className="space-y-8 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-10 text-white shadow-lg lg:col-span-4">
             <div>
               <h3 className="text-3xl font-bold">Get in Touch</h3>
-              <p className="text-blue-100 mt-3 leading-relaxed">
-                We’re here to answer your questions and explore opportunities to
-                grow together.
+              <p className="mt-3 leading-relaxed text-blue-100">
+                We’re here to answer your questions and explore opportunities to grow together.
               </p>
             </div>
             {/* Email */}
             <div className="flex items-start gap-4">
-              <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
+              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
                 <Mail size={22} />
               </div>
               <div>
-                <p className="text-blue-200 text-sm">Email us at</p>
+                <p className="text-sm text-blue-200">Email us at</p>
                 <p className="font-semibold">Byizzy@gmail.com</p>
               </div>
             </div>
@@ -391,26 +363,26 @@ export default function SaaSService() {
             {/* Office Locations */}
             {/* India Office */}
             <div>
-              <p className="font-semibold text-lg">India</p>
-              <div className="flex items-start gap-4 mt-3">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
+              <p className="text-lg font-semibold">India</p>
+              <div className="mt-3 flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <p className="text-blue-200 text-sm">Head Office</p>
+                  <p className="text-sm text-blue-200">Head Office</p>
                   <p className="font-semibold">123 Business Street, City</p>
                 </div>
               </div>
             </div>
             {/* Singapore Office */}
             <div>
-              <p className="font-semibold text-lg">Singapore</p>
-              <div className="flex items-start gap-4 mt-3">
-                <div className="flex items-center justify-center w-12 h-12 rounded-full bg-white/20 text-white">
+              <p className="text-lg font-semibold">Singapore</p>
+              <div className="mt-3 flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <p className="text-blue-200 text-sm">Branch Office</p>
+                  <p className="text-sm text-blue-200">Branch Office</p>
                   <p className="font-semibold">456 Market Road, Singapore</p>
                 </div>
               </div>
@@ -418,34 +390,32 @@ export default function SaaSService() {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-8 bg-gray-50 p-10 rounded-2xl shadow-lg">
-            <h3 className="text-3xl font-bold text-gray-800 mb-8">
-              Send a Message
-            </h3>
+          <div className="rounded-2xl bg-gray-50 p-10 shadow-lg lg:col-span-8">
+            <h3 className="mb-8 text-3xl font-bold text-gray-800">Send a Message</h3>
             <form className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   required
                 />
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   required
                 />
                 <input
                   type="email"
                   placeholder="Email"
-                  className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   required
                 />
                 <input
                   type="text"
                   placeholder="Phone Number"
-                  className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                   required
                 />
               </div>
@@ -453,13 +423,13 @@ export default function SaaSService() {
               <textarea
                 placeholder="Your Message"
                 rows="6"
-                className="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none w-full"
+                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
                 required
               ></textarea>
 
               <button
                 type="submit"
-                className="w-full md:w-auto bg-[#067afd] text-white px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-700 transition duration-300"
+                className="w-full rounded-lg bg-[#067afd] px-8 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-blue-700 md:w-auto"
               >
                 Send Message
               </button>
