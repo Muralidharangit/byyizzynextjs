@@ -13,7 +13,7 @@ export default function EnquiryModal({ open, onClose }: EnquiryModalProps) {
     alert("Enquiry submitted!");
     onClose();
   };
-
+// adasd
   if (!open) return null;
 
   return (
