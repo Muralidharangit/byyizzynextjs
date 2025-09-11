@@ -46,14 +46,14 @@ export default function AboutPage() {
           />
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">
-              About Us
+              About  Us
             </h1>
           </div>
         </div>
       </section>
 
       {/* Overview Section */}
-      <section className="py-16">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Images */}
@@ -73,7 +73,7 @@ export default function AboutPage() {
             {/* Content */}
             <div className="flex flex-col gap-8">
               <h2 className="text-4xl font-bold lg:text-left text-center">
-                Empowering Each Other to Succeed
+                Empowering Each <span className="text-[#067afd]">Other to Succeed </span>
               </h2>
               <p className="text-gray-600 text-center lg:text-left">
                 Every project we have undertaken has been a collaborative effort, where every
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <button className="self-center lg:self-start px-6 py-3 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-500">
+              <button className="self-center lg:self-start px-6 py-3 bg-[#067afd] text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-500">
                 Read More
               </button>
             </div>
@@ -106,11 +106,17 @@ export default function AboutPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#f8f8f9]">
         <div className="container mx-auto px-6 lg:px-12">
-          <h2 className="text-3xl font-bold text-center mb-10">
-            Why Choose <span className="text-blue-600">Byyizzy</span>
+          <div className="text-center py-5">
+ <h2 className="text-3xl font-bold text-center mb-2">
+            Why Choose <span className="text-[#067afd]">Byyizzy</span>
           </h2>
+            <p className="text-md text-gray-500">
+                            Discover the benefits that make Byyizzy stand out from the rest.
+                          </p>
+          </div>
+         
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {sections.map((section, idx) => (
               <div
@@ -134,14 +140,14 @@ export default function AboutPage() {
       <section className="py-16">
         <div className="container mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-8">
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
-            <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+            <h2 className="text-2xl font-bold mb-4">Our <span className="text-[#067afd]">Mission</span> </h2>
             <p className="text-gray-700">
               Our mission is to provide Izzy with a seamless and transparent shopping experience
               in the complex & fragmented Industrial and Hardware products sector.
             </p>
           </div>
           <div className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
-            <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+            <h2 className="text-2xl font-bold mb-4">Our <span className="text-[#067afd]"> Vision</span></h2>
             <p className="text-gray-700">
               Our vision is to bring revolutionary change in the Industrial and Hardware supply
               chain to create more value, enhance profitability, and ensure sustainable operations

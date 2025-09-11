@@ -33,7 +33,7 @@ export default function ServicesPage() {
   return (
     <div className="mt-[120px] min-h-screen bg-gray-100 text-gray-900">
       {/* Start Page Title Area */}
-      <div classname="bg-white py-5 w-full">
+      <div classname="bg-white py-5 w-full mt-[110px]">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
@@ -77,7 +77,10 @@ export default function ServicesPage() {
             {/* Section Header */}
             <div className="mb-10 flex items-center justify-between">
               <div>
-                <h2 className="mb-2 text-3xl font-bold text-[#067afd] md:text-3xl">Our Services</h2>
+                 <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                            Our <span className="text-[#067afd]">Services</span>
+                          </h2>
+                {/* <h2 className="mb-2 text-3xl font-bold text-[#067afd] md:text-3xl">Our Services</h2> */}
                 <p className="text-md text-gray-500">
                   Hover on a card to reveal the theme gradient and highlight the service.
                 </p>
