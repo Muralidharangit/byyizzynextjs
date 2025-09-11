@@ -1,30 +1,43 @@
 "use client";
-import { useState } from "react";
-import EnquiryModal from "@/components/pop";
-import { filterProductsBy, getMainBySlug, getSubcats } from "@/data/shopBycatlog";
+
+import { useMemo, useState } from "react";
+import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
+import { filterProductsBy, getMainBySlug, getSubcats } from "@/data/shopBycatlog";
+import EnquiryDialog from "@/components/EnquiryDialog";
 
-export default function MachineryShopPage({
-  params,
-  searchParams,
-}: {
-  params: { category: string };
-  searchParams: { sub?: string };
-}) {
-  const cat = getMainBySlug(params.category);
+type Tab = { slug: string; name: string };
+
+export default function MachineryShopPage() {
+  // ✅ Read route/query from client hooks (no props)
+  const params = useParams<{ category: string }>();
+  const searchParams = useSearchParams();
+
+  const category = params?.category ?? "";
+  const sub = (searchParams.get("sub") ?? "all").toLowerCase();
+
+  // ✅ Derive data safely
+  const cat = useMemo(() => getMainBySlug(category), [category]);
+  const subs = useMemo(() => getSubcats(category), [category]);
+  const products = useMemo(() => filterProductsBy(category, sub), [category, sub]);
+
+  // Tabs: All + each subcat
+  const tabs: Tab[] = useMemo(() => [{ slug: "all", name: "All" }, ...subs], [subs]);
+
   if (!cat) {
     return <main className="p-6">Category not found.</main>;
   }
 
-  const sub = (searchParams.sub ?? "all").toLowerCase();
-  const subs = getSubcats(params.category);
-  const products = filterProductsBy(params.category, sub);
+  // enquiry form
+  const [open, setOpen] = useState(false); // ⬅️ changed
+  const [selected, setSelected] = useState<{ name?: string; code?: string } | null>(null); // ⬅️ changed
 
-  // tabs: All + each subcat from `categories` (excluding "All")
-  const tabs = [{ slug: "all", name: "All" }, ...subs];
+  function openEnquiry(name?: string, code?: string) {
+    setSelected({ name, code });
+    setOpen(true);
+  }
 
-  const [open, setOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gray-100 text-gray-900">
       {/* Breadcrumbs */}
@@ -32,18 +45,18 @@ export default function MachineryShopPage({
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="/" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="/shop" className="font-medium hover:text-black">
                 Shop
-              </a>
+              </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Machinery</li>
+            <li className="font-semibold text-[#067afd]">{cat.title ?? "Machinery"}</li>
           </ol>
         </nav>
       </div>
@@ -52,29 +65,25 @@ export default function MachineryShopPage({
       <main className="container mx-auto mt-[112px] grid grid-cols-1 gap-8 px-6 py-6 lg:grid-cols-4">
         {/* Sidebar - Machinery Categories */}
         <aside className="sticky top-6 self-start rounded-2xl bg-white p-6 shadow">
-          <h2 className="mb-6 text-xl font-bold text-black">Categoriessss</h2>
+          <h2 className="mb-6 text-xl font-bold text-black">Categories</h2>
 
-          <ul className="space-y-4 text-gray-700">
+          <ul className="space-y-1 text-gray-700">
             {tabs.map((t) => {
               const href =
-                t.slug === "all"
-                  ? `/shop/${params.category}?sub=all`
-                  : `/shop/${params.category}?sub=${t.slug}`;
+                t.slug === "all" ? `/shop/${category}?sub=all` : `/shop/${category}?sub=${t.slug}`;
               const active = sub === t.slug;
               return (
-                <Link
-                  key={t.slug}
-                  href={href}
-                  className={` ${
-                    active ? "font-semibold text-[#067afd]" : "bg-white hover:bg-gray-100"
-                  }`}
-                >
-                  <li className="flex items-center justify-between border-b border-gray-200 py-2 pb-2">
-                    {"name" in t ? t.name : "All"}
-
-                    <i className="ri-arrow-right-s-line text-gray-400"></i>
-                  </li>
-                </Link>
+                <li key={t.slug} className="border-b border-gray-200">
+                  <Link
+                    href={href}
+                    className={`flex items-center justify-between px-2 py-3 transition ${
+                      active ? "font-semibold text-[#067afd]" : "text-gray-700 hover:bg-gray-100"
+                    }`}
+                  >
+                    <span>{t.name}</span>
+                    <i className="ri-arrow-right-s-line text-gray-400" />
+                  </Link>
+                </li>
               );
             })}
           </ul>
@@ -82,7 +91,13 @@ export default function MachineryShopPage({
           {/* Filter Section */}
           <div className="mt-8">
             <h3 className="mb-3 font-semibold text-gray-700">Price Range</h3>
-            <input type="range" min="100" max="5000" value="2500" className="w-full bg-[#067afd]" />
+            <input
+              type="range"
+              min={100}
+              max={5000}
+              defaultValue={2500}
+              className="w-full"
+            />
             <p className="mt-2 text-sm text-gray-500">Up to $2500</p>
           </div>
         </aside>
@@ -90,122 +105,72 @@ export default function MachineryShopPage({
         {/* Products Section */}
         <section className="space-y-12 lg:col-span-3">
           {/* Products Grid */}
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {products.length === 0 ? (
+              <p className="text-gray-500">No products found.</p>
+            ) : (
+              products.map((product, idx) => (
+                <div
+                  key={`${product.materialName}-${idx}`}
+                  className="group relative overflow-hidden rounded-sm shadow-lg transition-transform duration-500 hover:-translate-y-3 hover:shadow-2xl"
+                >
+                  {/* Full Image */}
+                  <div className="relative">
+                    <Image
+                      src={product.image}
+                      alt={product.materialName || "Product"}
+                      width={800}
+                      height={600}
+                      className="h-72 w-full transform object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
+                    />
 
-          {/* <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-                  {products.length === 0 ? (
-                    <p className="text-gray-500">No products found.</p>
-                  ) : (
-                    products.map((p, idx) => (
-                      <div
-                        key={p.materialCode ?? p.materialName ?? idx}
-                        className="rounded-lg border bg-white p-4"
+                    {/* Floating Heart */}
+                    <button
+                      type="button"
+                      className="absolute top-3 right-3 rounded-full bg-white/80 p-2 shadow-md backdrop-blur-md transition hover:bg-pink-500 hover:text-white"
+                      aria-label="Add to wishlist"
+                    >
+                      <i className="ri-heart-line text-xl" />
+                    </button>
+                  </div>
+
+                  {/* Curved Info Panel */}
+                  <div className="relative z-10 -mt-10 rounded-t-3xl bg-white p-5 shadow-lg">
+                    <h3 className="text-lg font-semibold text-gray-900">{product.materialName}</h3>
+
+                    {/* code */}
+                    {product.materialCode}
+
+                    {/* Price & CTA */}
+                    <div className="mt-4 flex items-center justify-between">
+                      <button
+                        type="button"
+                        className="relative overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
+                        onClick={() => openEnquiry(product.materialName, product.materialCode /* or product.code */)}
                       >
-                        <div className="relative mb-3 aspect-[4/3] overflow-hidden rounded bg-gray-50">
-                          <Image
-                            src={p.image}
-                            alt={p.materialName || "Product"}
-                            fill
-                            className="object-contain p-2"
-                            sizes="(max-width:768px) 100vw, 33vw"
-                            unoptimized
-                          />
-                        </div>
-                        <div className="font-medium">{p.materialName}</div>
-                        {p.price && (
-                          <div className="mt-1 text-sm text-gray-600">
-                            ₹ {Number(p.price).toLocaleString("en-IN")}
-                          </div>
-                        )}
-                      </div>
-                    ))
-                  )}
-                </div> */}
-
-                
-          
-
-   <div>
-  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    {products.length === 0 ? (
-      <p className="text-gray-500">No products found.</p>
-    ) : (
-      products.map((product, idx) => (
-        <div
-          key={idx}
-          className="group relative rounded-sm overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-3 hover:shadow-2xl"
-        >
-          {/* Tilted Full Image */}
-          <div className="relative">
-            <img
-              src={product.image}
-              alt={product.materialName}
-              className="w-full h-72 object-cover transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-105"
-            />
-
-            {/* Floating Heart */}
-            <button className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-md rounded-full shadow-md hover:bg-pink-500 hover:text-white transition">
-              <i className="ri-heart-line text-xl"></i>
-            </button>
+                        <span className="relative z-10">Add Enquiry</span>
+                        <span className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
           </div>
-
-          {/* Curved Info Panel */}
-          <div className="bg-white rounded-t-3xl -mt-10 p-5 shadow-lg relative z-10">
-            <h3 className="text-lg font-semibold text-gray-900">
-              {product.materialName}
-            </h3>
-            <p className="text-gray-500 text-sm mt-1">Our clients adore this</p>
-
-            {/* Rating */}
-            <div className="flex items-center gap-1 mt-2">
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-half-fill text-yellow-400"></i>
-              <span className="text-gray-500 text-sm ml-2">(130 reviews)</span>
-            </div>
-
-            {/* Price & Enquiry Button */}
-            <div className="mt-4 flex justify-between items-center">
-              <span className="text-xl font-bold text-black">${product.price}</span>
-                <button
-                          className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
-                          onClick={() => setOpen(true)}
-                        >
-                          <span className="relative z-10">Add Enquiry</span>
-                          {/* <i className="ri-shopping-cart-2-line relative z-10"></i> */}
-                          {/* Shine animation */}
-                          <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
-                        </button>
-            </div>
-
-            {/* Modal */}
-            <EnquiryModal open={open} onClose={() => setOpen(false)} />
-          </div>
-        </div>
-      ))
-    )}
-  </div>
-</div>
-
-
-
-        
-
-          
-
-        
 
           {/* Pagination */}
           <div className="mt-12 flex items-center justify-center gap-2">
-            {/* Prev Button */}
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition hover:bg-gray-100">
-              <i className="ri-arrow-left-s-line"></i>
+            <button
+              type="button"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition hover:bg-gray-100"
+              aria-label="Previous page"
+            >
+              <i className="ri-arrow-left-s-line" />
             </button>
 
-            {/* Page Numbers */}
             {[1, 2, 3, 4, 5].map((page) => (
               <button
+                type="button"
                 key={page}
                 className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-medium transition-all duration-300 ${
                   page === 1
@@ -217,12 +182,23 @@ export default function MachineryShopPage({
               </button>
             ))}
 
-            {/* Next Button */}
-            <button className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition hover:bg-gray-100">
-              <i className="ri-arrow-right-s-line"></i>
+            <button
+              type="button"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition hover:bg-gray-100"
+              aria-label="Next page"
+            >
+              <i className="ri-arrow-right-s-line" />
             </button>
           </div>
         </section>
+
+        {/* Dialog lives once per page */}
+        <EnquiryDialog
+          open={open}
+          onOpenChange={setOpen}
+          productName={selected?.name}
+          productCode={selected?.code}
+        />
       </main>
     </div>
   );
