@@ -73,3 +73,50 @@ function escapeHtml(s: string) {
 function nl2br(s: string) {
   return s.replace(/\n/g, "<br/>");
 }
+
+
+// Contact Form starts
+
+export async function sendContactMail(payload: {
+  name: string;
+  email: string;
+  phone?: string;
+  message: string;
+  page_url?: string;
+}) {
+  const subject = `Website Contact: ${payload.name}`;
+
+  const text = `
+New contact message:
+
+Name: ${payload.name}
+Email: ${payload.email}
+Phone: ${payload.phone || "-"}
+
+Message:
+${payload.message}
+
+Page: ${payload.page_url || "-"}
+  `.trim();
+
+  const html = `
+  <div style="font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:#111">
+    <h2 style="margin:0 0 8px">New Contact Message</h2>
+    <p><b>Name:</b> ${escapeHtml(payload.name)}</p>
+    <p><b>Email:</b> ${escapeHtml(payload.email)}</p>
+    <p><b>Phone:</b> ${escapeHtml(payload.phone || "-")}</p>
+    <p><b>Message:</b><br/>${nl2br(escapeHtml(payload.message))}</p>
+    <hr />
+    <p><b>Page:</b> ${escapeHtml(payload.page_url || "-")}</p>
+  </div>
+  `;
+
+  return transporter.sendMail({
+    from,
+    to: process.env.MAIL_TO || from, // admin inbox
+    subject,
+    text,
+    html,
+    replyTo: payload.email,          // reply goes to the user
+  });
+}
