@@ -9,42 +9,27 @@ export default function Footer() {
   return (
     <>
       {/* ✅ Subscribe Area */}
-      <section className="bg-[#067afd] py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center gap-8 lg:flex-row">
-            {/* Logo */}
-            <div className="flex justify-center lg:w-2/12 lg:justify-start">
-              <Link href="/">
-                <Image src={logowhite} alt="Logo" className="w-40" priority />
-              </Link>
-            </div>
-
-            {/* Text */}
-            <div className="text-center lg:w-5/12 lg:text-left">
-              <span className="mb-2 block text-sm text-white">
-                30% Discount For Your First Order
-              </span>
-              <h3 className="text-xl font-semibold text-white">Subscribe To Our Newsletter</h3>
-              <p className="mt-2 text-white">
-                Subscribe to the newsletter for all the latest updates
+      <section className="bg-[#067afd] py-16">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+            {/* Left Content */}
+            <div className="text-center lg:w-7/12 lg:text-left">
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                Ready to Take Your Business to the Next Level?
+              </h2>
+              <p className="mt-4 text-lg text-white/90">
+                Get in touch with us today and explore how we can help you achieve your goals.
               </p>
             </div>
 
-            {/* Form */}
-            <div className="w-full lg:w-5/12">
-              <form className="relative w-full">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="h-[55px] w-full rounded-sm bg-white px-4 pr-[140px] text-gray-700 placeholder-gray-400 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="absolute top-1/2 right-1 h-[50px] -translate-y-1/2 rounded-sm bg-[#067afd] px-6 text-white transition hover:bg-blue-600"
-                >
-                  Subscribe
-                </button>
-              </form>
+            {/* CTA Button */}
+            <div className="flex justify-center lg:w-5/12 lg:justify-end">
+              <Link
+                href="/contact"
+                className="rounded-lg bg-white px-8 py-4 text-lg font-semibold text-[#067afd] shadow-md transition hover:scale-105 hover:bg-gray-100"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>

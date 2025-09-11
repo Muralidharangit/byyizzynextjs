@@ -23,7 +23,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "1",
     title: "Agriculture Garden & Landscaping",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FAgriculture.png?alt=media&token=ed324fda-ae0c-4ba2-b892-9320286b01b9",
     path: "Agriculture_Garden_Landscaping",
     categories: [
       "Harvester",
@@ -206,7 +206,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     // title: "Electrical / Air Coolers and Fans",
     title: "Abrasives, Adhesives & Sealants",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FAbrasivesc.png?alt=media&token=9925e0b1-e3bd-4968-9016-684f7c48305e",
     // path: "/aircoolersandfans",
     path: "/Abrasives_Adhesives_and_Sealants",
     // categories:["Aircoolers and Fans","Stabilizers","Cables and Wire"],
@@ -306,7 +306,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "3",
     title: "Automotive Supplies & Lubricants",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FAutomative.png?alt=media&token=896fab3f-ca6b-44a4-9393-dc8a3e8e311c",
     path: "/Automotive_Supplies_and_Lubricants",
     categories: ["Lubricants", "Engine Oils", "Brake Fluids", "Coolants", "All"],
     product: [
@@ -415,7 +415,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "4",
     title: "Bearings & Power Transmission",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FBearings.png?alt=media&token=2b8cf9c1-78d7-4559-933a-8315cd2a4d54",
     path: "/Bearings_and_Power_Transmission",
     categories: ["Bearings", "Belts", "Chains", "Couplings", "All"],
     product: [
@@ -525,7 +525,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "5",
     title: "Building & Construction Supplies",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FBuilding.png?alt=media&token=cc2b1c5b-3fc6-475b-90f2-94b0aa18f0b6",
     path: "/Building_and_Construction_Supplies",
     categories: ["Cement", "Bricks", "Steel", "Pipes", "All"],
     product: [
@@ -632,7 +632,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "6",
     title: "Cleaning Equipment",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FCleaning.png?alt=media&token=ca05bb98-9398-4f84-9b84-336d6d7aa15f",
     path: "/Cleaning_Equipment",
     categories: ["Vacuum Cleaners", "Floor Scrubbers", "Pressure Washers", "Mops", "Brooms", "All"],
     product: [
@@ -752,7 +752,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "7",
     title: "Electricals & Electronics",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FElectricals.png?alt=media&token=8cbe235f-b135-406c-98b2-e57c94a773d0",
     path: "/Electricals_and_Electronics",
     categories: ["Wires & Cables", "Switches", "Sockets", "Circuit Breakers", "Lighting", "All"],
     product: [
@@ -872,7 +872,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "8",
     title: "Fabrication & Customized Products",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FFabrication.png?alt=media&token=99131e98-21ed-450b-9b0b-ebaeed34ab97",
     path: "/Fabrication_Customized_Products",
     categories: [
       "Metal Fabrication",
@@ -949,7 +949,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "9",
     title: "Fasteners",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FFasteners.png?alt=media&token=b014d08c-ebd1-47c5-8797-cccd045b827d",
     path: "/Fasteners",
     categories: ["Bolts", "Nuts", "Screws", "Washers", "Anchors", "All"],
     product: [
@@ -1019,7 +1019,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "10",
     title: "Hardware, Cutting & Hand Tools",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FHardware.png?alt=media&token=8a514928-addd-4cf6-8644-7cb0b7baf685",
     path: "/Hardware_Cutting_Hand_Tools",
     categories: ["Hammers", "Pliers", "Cutting Tools", "Saws", "Wrenches", "All"],
     product: [
@@ -1089,7 +1089,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "11",
     title: "Hydraulics & Pneumatics",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FHydraulics.png?alt=media&token=5504d9c4-cba8-42c2-9dd3-72f32ec43767",
     path: "/Hydraulics_Pneumatics",
     categories: [
       "Hydraulic Cylinders",
@@ -1166,7 +1166,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "12",
     title: "IT Supplies",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FITSupplies.png?alt=media&token=37d6cd1f-304f-4054-a2a6-c846c3708cab",
     path: "/IT_Supplies",
     categories: ["Laptops", "Monitors", "Keyboards", "Printers", "Networking Devices", "All"],
     product: [
@@ -1237,7 +1237,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "13",
     title: "Lab Supplies",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2Flab.png?alt=media&token=161c533d-26d9-4cc0-9e14-8c2995966348",
     path: "/Lab_Supplies",
     categories: [
       "Glassware",
@@ -1314,7 +1314,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "14",
     title: "Luminaires, LEDs & Lights",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2Fled.png?alt=media&token=e2b9293a-38f5-49ce-9d55-32725f06b9e7",
     path: "/Luminaires_LEDs_Lights",
     categories: [
       "LED Bulbs",
@@ -1391,7 +1391,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "15",
     title: "Material Handling & Packaging",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPackaging.png?alt=media&token=d52af5c2-2df2-408d-89f9-96c65c9ea2d2",
     path: "/Material_Handling_Packaging",
     categories: ["Conveyor Belts", "Pallets", "Trolleys", "Stretch Wrap", "Packing Tape", "All"],
     product: [
@@ -1461,7 +1461,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "16",
     title: "Mild Steel",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FMildSteel.png?alt=media&token=6f4bae50-bdc6-41b5-97a3-d4d76daa957b",
     path: "/Mild_Steel",
     categories: [
       "Mild Steel Plates",
@@ -1538,7 +1538,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "17",
     title: "Motors & Pumps",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FMotors.png?alt=media&token=3fc11b41-edcc-4add-9cf5-3ef5e1ab3481",
     path: "/Motors_and_Pumps",
     categories: [
       "Induction Motors",
@@ -1615,7 +1615,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "18",
     title: "Non Ferrous Products",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FNonFerrousProducts.png?alt=media&token=06eccb48-4d87-4f89-8893-02318113e8b2",
     path: "/Non_Ferrous_Products",
     categories: [
       "Aluminium Sheets",
@@ -1693,7 +1693,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "19",
     title: "Office Stationery & Admin Supplies",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FOfficeStationery.png?alt=media&token=fe85a2d2-01e6-4c4d-a942-577a15441968",
     path: "/Office_Stationery_Admin_Supplies",
     categories: ["Pens", "Notebooks", "Paper Clips", "Folders", "Staplers", "All"],
     product: [
@@ -1753,7 +1753,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "20",
     title: "Paints, Powders & Coatings",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPaints.png?alt=media&token=3f5025fa-3a07-4ebe-80e1-df7ebe63d970",
     path: "/Paints_Powders_Coatings",
     categories: [
       "Acrylic Paints",
@@ -1820,7 +1820,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "21",
     title: "Plates, Sheets, Coils & Rounds",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPlates.png?alt=media&token=438b9164-ff7b-4001-8902-5bde091f712d",
     path: "/Plates_Sheets_Coils_Rounds",
     categories: [
       "Steel Plates",
@@ -1887,7 +1887,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "22",
     title: "Plumbing, Pipes & Fittings",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPlumbing.png?alt=media&token=6918b001-a061-491a-97b8-fbfd9b58c172",
     path: "/Plumbing_Pipes_Fittings",
     categories: [
       "PVC Pipes",
@@ -1954,7 +1954,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "23",
     title: "Power Tools",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FPowerTools.png?alt=media&token=7d675026-1ac0-401d-b23a-1b75acdb107b",
     path: "/Power_Tools",
     categories: ["Drills", "Angle Grinders", "Saws", "Impact Wrenches", "Sanders", "All"],
     product: [
@@ -2014,7 +2014,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "24",
     title: "Railway Spares & Equipment",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FRailway.png?alt=media&token=a7ca7172-4d5a-426a-ba66-a193a89c55c8",
     path: "/Railway_Spares_Equipment",
     categories: [
       "Brake Blocks",
@@ -2081,7 +2081,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "25",
     title: "Roofing Sheets",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FRoofing.png?alt=media&token=b8807994-81d7-4373-b8ea-46af66ca1d4a",
     path: "/Roofing_Sheets",
     categories: [
       "Corrugated Sheets",
@@ -2149,7 +2149,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "26",
     title: "Safety & PPE Supplies",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FSafety.png?alt=media&token=ae79946e-ab21-4413-ba1a-63decc9cbde6",
     path: "/Safety_PPE_Supplies",
     categories: [
       "Safety Helmets",
@@ -2217,7 +2217,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "27",
     title: "Security Equipment",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FSolar.png?alt=media&token=abfdc750-fdbe-47b2-8740-4f9cdc797f79",
     path: "/Security_Equipment",
     categories: [
       "CCTV Cameras",
@@ -2284,7 +2284,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "28",
     title: "Solar Products",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FSolar.png?alt=media&token=abfdc750-fdbe-47b2-8740-4f9cdc797f79",
     path: "/Solar_Products",
     categories: [
       "Solar Panels",
@@ -2351,7 +2351,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "29",
     title: "Stainless Steel Products",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FStainless.png?alt=media&token=c8a5796f-98f9-4f94-a543-9f57b95c98fd",
     path: "/Stainless_Steel_Products",
     categories: [
       "Stainless Steel Sheets",
@@ -2418,7 +2418,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "30",
     title: "Testing & Measuring Instruments",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FTesting.png?alt=media&token=4e5cab22-7f99-4cf9-8565-ec5fbb59cb53",
     path: "/Testing_Measuring_Instruments",
     categories: [
       "Multimeters",
@@ -2485,7 +2485,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "31",
     title: "Tooling & Cutting",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FTooling.png?alt=media&token=29491e42-e5d6-44f1-a631-5c34ce988dad",
     path: "/Tooling_Cutting",
     categories: ["Drill Bits", "Cutting Discs", "End Mills", "Taps & Dies", "Reamers", "All"],
     product: [
@@ -2545,7 +2545,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "32",
     title: "Welding & Accessories",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2Fwelder.png?alt=media&token=02c8f65a-8ec0-4c38-b998-73df823dd149",
     path: "/Welding_Accessories",
     categories: [
       "Welding Machines",
@@ -2612,7 +2612,7 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
     id: "33",
     title: "Wire Meshes & Perforated Sheets",
     images:
-      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FdoorsWindows.webp?alt=media&token=fe7c4004-dfdd-43bf-9b11-d148d4f10b50",
+      "https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FShop%20By%20Categories%20main%20images%2FWire.png?alt=media&token=141d561e-1740-4246-9e88-ec1d117198ec",
     path: "/Wire_Meshes_Perforated_Sheets",
     categories: [
       "Welded Wire Mesh",

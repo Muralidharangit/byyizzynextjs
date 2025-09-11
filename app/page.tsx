@@ -385,81 +385,78 @@ const slides = [
             {/* Sidebar Ends */}
 
             {/* Body Content */}
-            <main className="relative z-10 overflow-hidden rounded bg-white p-2 shadow xl:col-span-9 lg:col-span-12 md:col-span-12 ">
+            <main className="relative z-10 overflow-hidden rounded bg-white p-2 shadow md:col-span-12 lg:col-span-12 xl:col-span-9">
               <div className="slider bg-red">
                 {/* swiper slide main banner */}
                 <div className="">
-                   <section className="relative bg-gradient-to-r from-[#067afd] to-[#004aad] py-16  h-[500px]" >
-  <div className="container mx-auto px-6 lg:px-12">
-    <Swiper
-     modules={[Autoplay, Pagination, Navigation, EffectFade]}
-  spaceBetween={50}
-  slidesPerView={1}
-  autoplay={{ delay: 5000, disableOnInteraction: false }}
-  pagination={{ clickable: true }}
-  navigation
-  loop
-  effect="fade"
-  fadeEffect={{ crossFade: true }}
-  className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
-     
-    >
-      {slides.map((slide, index) => (
-        <SwiperSlide key={index}>
-          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-            {/* Left Content */}
-            <div className="animate-fadeIn space-y-6 text-white">
-              <h1 className="text-1xl leading-tight font-700 md:text-3xl">
-                {slide.title}
-              </h1>
-              <p className="text-md text-white-200 md:text-md">
-                {slide.description}
-              </p>
+                  <section className="relative h-[500px] bg-gradient-to-r from-[#067afd] to-[#004aad] py-16">
+                    <div className="container mx-auto px-6 lg:px-12">
+                      <Swiper
+                        modules={[Autoplay, Pagination, Navigation, EffectFade]}
+                        spaceBetween={50}
+                        slidesPerView={1}
+                        autoplay={{ delay: 5000, disableOnInteraction: false }}
+                        pagination={{ clickable: true }}
+                        navigation
+                        loop
+                        effect="fade"
+                        fadeEffect={{ crossFade: true }}
+                        className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
+                      >
+                        {slides.map((slide, index) => (
+                          <SwiperSlide key={index}>
+                            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+                              {/* Left Content */}
+                              <div className="animate-fadeIn space-y-6 text-white">
+                                <h1 className="text-1xl font-700 leading-tight md:text-3xl">
+                                  {slide.title}
+                                </h1>
+                                <p className="text-md text-white-200 md:text-md">
+                                  {slide.description}
+                                </p>
 
-              {/* Highlights */}
-              <ul className="list-disc list-inside text-white-200 space-y-1">
-                {slide.highlights?.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
+                                {/* Highlights */}
+                                <ul className="text-white-200 list-inside list-disc space-y-1">
+                                  {slide.highlights?.map((point, i) => (
+                                    <li key={i}>{point}</li>
+                                  ))}
+                                </ul>
 
-              {/* Buttons */}
-              <div className="flex gap-4 pt-4">
-                <a
-                  href={slide.link1.href}
-                  className={`rounded-lg px-6 py-3 font-semibold shadow-md transition ${
-                    slide.link1.primary
-                      ? "bg-white text-[#004aad] hover:bg-gray-200"
-                      : "border border-white text-white hover:bg-white hover:text-[#004aad]"
-                  }`}
-                >
-                  {slide.link1.text}
-                </a>
-                <a
-                  href={slide.link2.href}
-                  className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
-                >
-                  {slide.link2.text}
-                </a>
-              </div>
-            </div>
+                                {/* Buttons */}
+                                <div className="flex gap-4 pt-4">
+                                  <a
+                                    href={slide.link1.href}
+                                    className={`rounded-lg px-6 py-3 font-semibold shadow-md transition ${
+                                      slide.link1.primary
+                                        ? "bg-white text-[#004aad] hover:bg-gray-200"
+                                        : "border border-white text-white hover:bg-white hover:text-[#004aad]"
+                                    }`}
+                                  >
+                                    {slide.link1.text}
+                                  </a>
+                                  <a
+                                    href={slide.link2.href}
+                                    className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
+                                  >
+                                    {slide.link2.text}
+                                  </a>
+                                </div>
+                              </div>
 
-            {/* Right Image */}
-            <div className="animate-fadeIn flex justify-center lg:justify-end ">
-              <img
-                src={slide.img}
-                alt="Banner Illustration"
-                className="rounded-xl shadow-lg max-h-[400px] object-contain"
-              />
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-</section>
-
-
+                              {/* Right Image */}
+                              <div className="animate-fadeIn hidden justify-center lg:flex lg:justify-end">
+                                <img
+                                  src={slide.img}
+                                  alt="Banner Illustration"
+                                  className="max-h-[400px] rounded-xl object-contain shadow-lg"
+                                />
+                              </div>
+                            </div>
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>
+                  </section>
                 </div>
                 {/* end */}
 
@@ -518,7 +515,7 @@ const slides = [
                         breakpoints={{
                           480: { slidesPerView: 1, spaceBetween: 10 },
                           640: { slidesPerView: 2, spaceBetween: 12 },
-                          768: { slidesPerView: 3, spaceBetween: 16 },
+                          768: { slidesPerView: 2.5, spaceBetween: 16 },
                           1024: { slidesPerView: 3.5, spaceBetween: 20 },
                         }}
                         pagination={{ clickable: true }}
@@ -647,7 +644,8 @@ const slides = [
                         slidesPerView={1}
                         breakpoints={{
                           640: { slidesPerView: 2, spaceBetween: 12 },
-                          1024: { slidesPerView: 2, spaceBetween: 12 },
+                          768: { slidesPerView: 1.5, spaceBetween: 12 },
+                          1024: { slidesPerView: 2, spaceBetween: 12 }
                         }}
                         pagination={{ clickable: true }}
                         autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto scroll
@@ -756,13 +754,13 @@ const slides = [
                           nextEl: ".category-swiper-next",
                           prevEl: ".category-swiper-prev",
                         }}
-                        spaceBetween={20}
+                        spaceBetween={10}
                         slidesPerView={4}
                         grid={{ rows: 3, fill: "row" }}
                         breakpoints={{
                           320: { slidesPerView: 2, grid: { rows: 3 } },
-                          640: { slidesPerView: 3, grid: { rows: 3 } },
-                          1024: { slidesPerView: 3, grid: { rows: 3 } },
+                          640: { slidesPerView: 2.5, grid: { rows: 3 } },
+                          1024: { slidesPerView: 2.8, grid: { rows: 3 } },
                         }}
                         className="category-swiper pb-12"
                       >
@@ -921,14 +919,14 @@ const slides = [
                     </div>
                   </section>
 
-                  <div className="text-center py-5">
-                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Our <span className="text-[#067afd]">Brand</span>
-                          </h2>
-                          <p className="text-md text-gray-500">
-                            Discover the benefits that make Byyizzy stand out from the rest.
-                          </p>
-                        </div>
+                  <div className="py-5 text-center">
+                    <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                      Our <span className="text-[#067afd]">Brand</span>
+                    </h2>
+                    <p className="text-md text-gray-500">
+                      Discover the benefits that make Byyizzy stand out from the rest.
+                    </p>
+                  </div>
 
                   <DualMarqueeSwiper />
                 </div>
