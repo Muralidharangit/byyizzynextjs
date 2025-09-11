@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logoblue from "@/public/images/blue.png"; // adjust path
+import GlobalSearch from "./GlobalSearch";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -129,7 +130,7 @@ export default function Header() {
       {isMenuOpen && (
         <div className="space-y-4 border-t border-gray-200 bg-white px-4 py-4 lg:hidden">
           {/* Search (mobile/tablet only) */}
-          <form className="relative w-full">
+          {/* <form className="relative w-full">
             <input
               type="text"
               placeholder="Search Products..."
@@ -141,7 +142,10 @@ export default function Header() {
             >
               <i className="ri-search-line" /> Search
             </button>
-          </form>
+          </form> */}
+
+          {/* search */}
+         <GlobalSearch className="w-full" />
 
           {/* Nav links */}
           <ul className="flex flex-col gap-4 text-gray-700">
