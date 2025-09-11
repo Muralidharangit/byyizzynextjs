@@ -10,7 +10,7 @@ export default function Category() {
   return (
     <>
       {/* ✅ Desktop Aside (only visible above 1000px) */}
-      <aside className="relative z-50 hidden xl:block xl:col-span-3">
+      <aside className="relative z-50 hidden xl:col-span-3 xl:block">
         <div className="sticky top-[130px] rounded bg-white shadow">
           <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
             <ul className="text-gray-700">
@@ -36,9 +36,7 @@ export default function Category() {
                     {/* Desktop hover submenu */}
                     <div className="invisible absolute top-0 left-full z-50 hidden w-[600px] flex-wrap bg-white p-6 opacity-0 shadow-lg transition-all duration-300 ease-out group-hover:visible group-hover:opacity-100 xl:flex">
                       <div className="w-1/2 px-4">
-                        <h4 className="mb-3 text-sm font-semibold uppercase">
-                          Sub Categories
-                        </h4>
+                        <h4 className="mb-3 text-sm font-semibold uppercase">Sub Categories</h4>
                         <ul className="space-y-1">
                           {cat.categories.map((sub, idx2) => {
                             const subSlug = slugify(sub);
@@ -46,7 +44,7 @@ export default function Category() {
                               <li key={idx2}>
                                 <Link
                                   href={`/shop/${catSlug}?sub=${subSlug}`}
-                                  className="block hover:text-[#067afd] transition"
+                                  className="block transition hover:text-[#067afd]"
                                 >
                                   {sub}
                                 </Link>
@@ -65,7 +63,7 @@ export default function Category() {
       </aside>
 
       {/* ✅ Mobile Trigger (below 1000px) */}
-      <div className="xl:hidden px-4 py-2">
+      <div className="px-4 py-2 xl:hidden">
         <button
           onClick={() => setIsOpen(true)}
           className="flex items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white shadow"
@@ -79,13 +77,13 @@ export default function Category() {
         <div className="fixed inset-0 z-[999]">
           {/* Overlay */}
           <div
-            className="absolute inset-0 bg-black bg-opacity-50"
+            className="bg-opacity-50 absolute inset-0 bg-black"
             onClick={() => setIsOpen(false)}
           ></div>
 
           {/* Drawer */}
-          <div className="absolute left-0 top-0 h-full w-80 bg-white shadow-lg p-4 overflow-y-auto">
-            <div className="flex justify-between items-center mb-4">
+          <div className="absolute top-0 left-0 h-full w-80 overflow-y-auto bg-white p-4 shadow-lg">
+            <div className="mb-4 flex items-center justify-between">
               <h2 className="text-lg font-semibold">Categories</h2>
               <button onClick={() => setIsOpen(false)}>
                 <i className="ri-close-line text-2xl"></i>
@@ -99,9 +97,7 @@ export default function Category() {
                 return (
                   <li key={cat.id} className="border-b border-gray-200">
                     <button
-                      onClick={() =>
-                        setOpenCategory(openCategory === idx ? null : idx)
-                      }
+                      onClick={() => setOpenCategory(openCategory === idx ? null : idx)}
                       className="flex w-full items-center justify-between px-2 py-3 text-left"
                     >
                       <span className="flex items-center">
@@ -109,9 +105,7 @@ export default function Category() {
                       </span>
                       <i
                         className={`ri-arrow-down-s-line transition-transform ${
-                          openCategory === idx
-                            ? "rotate-180 text-[#067afd]"
-                            : ""
+                          openCategory === idx ? "rotate-180 text-[#067afd]" : ""
                         }`}
                       />
                     </button>
@@ -119,9 +113,7 @@ export default function Category() {
                     {/* Mobile accordion submenu */}
                     {openCategory === idx && (
                       <div className="bg-gray-50 px-4 py-2">
-                        <h4 className="mb-2 text-sm font-semibold uppercase">
-                          Sub Categories
-                        </h4>
+                        <h4 className="mb-2 text-sm font-semibold uppercase">Sub Categories</h4>
                         <ul className="space-y-1">
                           {cat.categories.map((sub, idx2) => {
                             const subSlug = slugify(sub);

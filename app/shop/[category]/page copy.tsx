@@ -121,7 +121,6 @@ export default function MachineryShopPage({
                   )}
                 </div> */}
 
-                
           <div>
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {products.length === 0 ? (
@@ -184,51 +183,51 @@ export default function MachineryShopPage({
             </div>
           </div>
 
-   <div>
-  <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    {products.length === 0 ? (
-      <p className="text-gray-500">No products found.</p>
-    ) : (
-      products.map((product, idx) => (
-        <div
-          key={idx}
-          className="group relative rounded-3xl overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-3 hover:shadow-2xl"
-        >
-          {/* Tilted Full Image */}
-          <div className="relative">
-            <img
-              src={product.image}
-              alt={product.materialName}
-              className="w-full h-72 object-cover transform transition-transform duration-500 group-hover:rotate-1 group-hover:scale-105"
-            />
+          <div>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {products.length === 0 ? (
+                <p className="text-gray-500">No products found.</p>
+              ) : (
+                products.map((product, idx) => (
+                  <div
+                    key={idx}
+                    className="group relative overflow-hidden rounded-3xl shadow-lg transition-transform duration-500 hover:-translate-y-3 hover:shadow-2xl"
+                  >
+                    {/* Tilted Full Image */}
+                    <div className="relative">
+                      <img
+                        src={product.image}
+                        alt={product.materialName}
+                        className="h-72 w-full transform object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
+                      />
 
-            {/* Floating Heart */}
-            <button className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-md rounded-full shadow-md hover:bg-pink-500 hover:text-white transition">
-              <i className="ri-heart-line text-xl"></i>
-            </button>
-          </div>
+                      {/* Floating Heart */}
+                      <button className="absolute top-3 right-3 rounded-full bg-white/80 p-2 shadow-md backdrop-blur-md transition hover:bg-pink-500 hover:text-white">
+                        <i className="ri-heart-line text-xl"></i>
+                      </button>
+                    </div>
 
-          {/* Curved Info Panel */}
-          <div className="bg-white rounded-t-3xl -mt-10 p-5 shadow-lg relative z-10">
-            <h3 className="text-lg font-semibold text-gray-900">
-              {product.materialName}
-            </h3>
-            <p className="text-gray-500 text-sm mt-1">Our clients adore this</p>
+                    {/* Curved Info Panel */}
+                    <div className="relative z-10 -mt-10 rounded-t-3xl bg-white p-5 shadow-lg">
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {product.materialName}
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-500">Our clients adore this</p>
 
-            {/* Rating */}
-            <div className="flex items-center gap-1 mt-2">
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-fill text-yellow-400"></i>
-              <i className="ri-star-half-fill text-yellow-400"></i>
-              <span className="text-gray-500 text-sm ml-2">(130 reviews)</span>
-            </div>
+                      {/* Rating */}
+                      <div className="mt-2 flex items-center gap-1">
+                        <i className="ri-star-fill text-yellow-400"></i>
+                        <i className="ri-star-fill text-yellow-400"></i>
+                        <i className="ri-star-fill text-yellow-400"></i>
+                        <i className="ri-star-fill text-yellow-400"></i>
+                        <i className="ri-star-half-fill text-yellow-400"></i>
+                        <span className="ml-2 text-sm text-gray-500">(130 reviews)</span>
+                      </div>
 
-            {/* Price & Enquiry Button */}
-            <div className="mt-4 flex justify-between items-center">
-              <span className="text-xl font-bold text-black">${product.price}</span>
-                <button
+                      {/* Price & Enquiry Button */}
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="text-xl font-bold text-black">${product.price}</span>
+                        <button
                           className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
                           onClick={() => setOpen(true)}
                         >
@@ -237,24 +236,16 @@ export default function MachineryShopPage({
                           {/* Shine animation */}
                           <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
                         </button>
+                      </div>
+
+                      {/* Modal */}
+                      <EnquiryModal open={open} onClose={() => setOpen(false)} />
+                    </div>
+                  </div>
+                ))
+              )}
             </div>
-
-            {/* Modal */}
-            <EnquiryModal open={open} onClose={() => setOpen(false)} />
           </div>
-        </div>
-      ))
-    )}
-  </div>
-</div>
-
-
-
-        
-
-          
-
-        
 
           {/* Pagination */}
           <div className="mt-12 flex items-center justify-center gap-2">

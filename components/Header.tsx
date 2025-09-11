@@ -34,10 +34,7 @@ export default function Header() {
             </li>
             <li className="pr-0">
               Call:{" "}
-              <a
-                href="tel:+112345678909"
-                className="font-semibold text-[#067afd]"
-              >
+              <a href="tel:+112345678909" className="font-semibold text-[#067afd]">
                 +11 2345678909
               </a>
             </li>
@@ -48,9 +45,7 @@ export default function Header() {
             <Link href="/my-account" className="hover:text-[#067afd]">
               My Account
             </Link>
-            <button className="text-gray-800 hover:text-[#067afd]">
-              Sign in
-            </button>
+            <button className="text-gray-800 hover:text-[#067afd]">Sign in</button>
           </div>
         </div>
       </div>
@@ -61,12 +56,7 @@ export default function Header() {
           {/* Logo */}
           <div className="col-span-1 lg:col-span-2">
             <Link href="/">
-              <Image
-                src={logoblue}
-                alt="Logo"
-                className="w-24 lg:w-40"
-                priority
-              />
+              <Image src={logoblue} alt="Logo" className="w-24 lg:w-40" priority />
             </Link>
           </div>
 
@@ -80,7 +70,7 @@ export default function Header() {
               />
               <button
                 type="submit"
-                className="absolute right-1 top-1/2 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+                className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
               >
                 <i className="ri-search-line" /> Search
               </button>
@@ -129,9 +119,7 @@ export default function Header() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-2xl text-gray-700 hover:text-[#067afd] lg:hidden"
             >
-              <i
-                className={isMenuOpen ? "ri-close-line" : "ri-menu-line"}
-              ></i>
+              <i className={isMenuOpen ? "ri-close-line" : "ri-menu-line"}></i>
             </button>
           </div>
         </div>
@@ -139,7 +127,7 @@ export default function Header() {
 
       {/* Mobile Dropdown Nav (< 992px) */}
       {isMenuOpen && (
-        <div className="border-t border-gray-200 bg-white px-4 py-4 lg:hidden space-y-4">
+        <div className="space-y-4 border-t border-gray-200 bg-white px-4 py-4 lg:hidden">
           {/* Search (mobile/tablet only) */}
           <form className="relative w-full">
             <input
@@ -149,7 +137,7 @@ export default function Header() {
             />
             <button
               type="submit"
-              className="absolute right-1 top-1/2 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+              className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
             >
               <i className="ri-search-line" /> Search
             </button>
@@ -168,7 +156,7 @@ export default function Header() {
               <Link href="/product">
                 <button
                   type="button"
-                  className="w-full flex items-center justify-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+                  className="flex w-full items-center justify-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
                 >
                   <i className="ri-user-line"></i> Enquiry
                 </button>
