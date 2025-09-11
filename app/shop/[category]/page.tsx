@@ -89,7 +89,7 @@ export default function MachineryShopPage() {
           </ul>
 
           {/* Filter Section */}
-          <div className="mt-8">
+          {/* <div className="mt-8">
             <h3 className="mb-3 font-semibold text-gray-700">Price Range</h3>
             <input
               type="range"
@@ -99,7 +99,7 @@ export default function MachineryShopPage() {
               className="w-full"
             />
             <p className="mt-2 text-sm text-gray-500">Up to $2500</p>
-          </div>
+          </div> */}
         </aside>
 
         {/* Products Section */}
@@ -121,7 +121,7 @@ export default function MachineryShopPage() {
                       alt={product.materialName || "Product"}
                       width={800}
                       height={600}
-                      className="h-72 w-full transform object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
+                      className="h-95 w-full transform object-cover transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1"
                     />
 
                     {/* Floating Heart */}
@@ -135,7 +135,7 @@ export default function MachineryShopPage() {
                   </div>
 
                   {/* Curved Info Panel */}
-                  <div className="relative z-10 -mt-10 rounded-t-3xl bg-white p-5 shadow-lg">
+                  <div className="relative z-10 -mt-10  bg-white p-5 shadow-lg">
                     <h3 className="text-lg font-semibold text-gray-900">{product.materialName}</h3>
 
                     {/* code */}
@@ -159,7 +159,7 @@ export default function MachineryShopPage() {
           </div>
 
           {/* Pagination */}
-          <div className="mt-12 flex items-center justify-center gap-2">
+          {/* <div className="mt-12 flex items-center justify-center gap-2">
             <button
               type="button"
               className="flex h-10 w-10 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition hover:bg-gray-100"
@@ -189,7 +189,7 @@ export default function MachineryShopPage() {
             >
               <i className="ri-arrow-right-s-line" />
             </button>
-          </div>
+          </div> */}
         </section>
 
         {/* Dialog lives once per page */}

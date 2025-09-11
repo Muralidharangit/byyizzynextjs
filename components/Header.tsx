@@ -89,12 +89,12 @@ export default function Header() {
                 </li>
               ))}
               <li>
-                <Link href="/product">
+                <Link href="/shop">
                   <button
                     type="button"
                     className="flex items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
                   >
-                    <i className="ri-user-line"></i> Enquiry
+                    All Categories
                   </button>
                 </Link>
               </li>

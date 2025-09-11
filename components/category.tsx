@@ -27,8 +27,20 @@ export default function Category() {
                       href={`/shop/${catSlug}?sub=all`}
                       className="flex items-center justify-between px-5 py-3 transition hover:bg-gray-100 hover:text-[#067afd]"
                     >
+                      {/* Icon */}
+
                       <span className="flex items-center">
-                        <i className="ri-flashlight-line mr-2" /> {cat.title}
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center overflow-hidden">
+                          <img
+                            src={cat.images}
+                            alt={cat.title}
+                            className="h-full w-50 object-contain"
+                          />
+                        </div>
+                        <span className="mx-2">{cat.title}</span>
+
+
+
                       </span>
                       <i className="ri-arrow-right-s-line text-gray-400" />
                     </Link>
