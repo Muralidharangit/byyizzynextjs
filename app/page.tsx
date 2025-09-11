@@ -18,25 +18,68 @@ export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const slides = [
+const slides = [
     {
-      title: "Build Smarter Websites with Modern UI",
+      title: "India's Growing Hardware & DIY Store Brand",
       description:
-        "Create engaging, responsive, and powerful web applications using the latest tools and technologies.",
-      img: "https://calderamfg.com/wp-content/uploads/2023/11/metal-parts.jpg",
+        "To integrate and create a chain of hardware stores under one roof of our brand, expertise, and technology.",
+      highlights: [
+        "Easy credit & EMI Facility to B2C Customers",
+        "Fastest Delivery of Industrial Products",
+        "Optimized Inventory Model",
+        "Improved Margins",
+        "More Business Volume",
+      ],
+      img: "https://i.pinimg.com/1200x/bc/7e/db/bc7edb885820ae38acd5c482d091d489.jpg",
       link1: { text: "Get Started", href: "#services", primary: true },
       link2: { text: "Learn More", href: "#learn" },
     },
     {
-      title: "Innovate Your Web Experience",
+      title: "Procurement as a Service (PaaS) & Valuable",
       description:
-        "Transform your digital presence with cutting-edge design and seamless performance.",
+        "An efficient & sustainable way of procurement that helps businesses optimize overall costs.",
+      highlights: [
+        "Overall Procurement Cost Optimization",
+        "On Demand Service",
+        "Leverage Global Expertise",
+        "Multiple Marketplaces",
+      ],
+       img: "https://i.pinimg.com/1200x/68/03/cc/6803cc864af89421247b85c25e475d38.jpg",
+      link1: { text: "Get Started", href: "#services", primary: true },
+      link2: { text: "Learn More", href: "#learn" },
+    },
+    {
+      title: "Best & Cost-effective Contract Lifecycle Management",
+      description:
+        "Simplify and streamline your sourcing-to-pay (S2P) process with modern platforms.",
+      highlights: [
+        "P2P / E-Sourcing / Auction Platforms",
+        "Optimize Your Ordering Costs",
+        "Entire Procurement Visibility",
+        "Flexible, Customizable & Easy-To-Use",
+        "Fast & Efficient Platform",
+      ],
+      img: "https://i.pinimg.com/1200x/2f/3b/c3/2f3bc3eace8996663c1961b4d05c38e6.jpg",
+      link1: { text: "Get Started", href: "#services", primary: true },
+      link2: { text: "Learn More", href: "#learn" },
+    },
+    {
+      title: "Transforming Industrial Supply Chain",
+      description:
+        "Standard and customized MRO spares, consumables, and hardware products with hyper-local stores and advanced technology.",
+      highlights: [
+        "Source Direct-from-Factory",
+        "Fastest Delivery",
+        "Best Prices & Trade Assurance",
+        "OTIF",
+        "Quality Assurance",
+      ],
       img: "https://calderamfg.com/wp-content/uploads/2023/11/metal-parts.jpg",
       link1: { text: "Get Started", href: "#services", primary: true },
       link2: { text: "Learn More", href: "#learn" },
     },
-    // Add more slides as needed
   ];
+
 
   const services = [
     {
@@ -335,74 +378,87 @@ export default function Home() {
     <>
       <div>
         <div className="container mx-auto px-4 py-6">
-          <div className="mt-[122px] grid h-full grid-cols-1 gap-6 md:grid-cols-12">
+          <div className="mt-[122px] grid h-full grid-cols-1 gap-6 lg:grid-cols-12">
             {/* Sidebar Starts*/}
             <Category />
             {/* Sidebar Ends */}
 
             {/* Body Content */}
-            <main className="relative z-10 overflow-hidden rounded bg-white p-2 shadow md:col-span-9">
+            <main className="relative z-10 overflow-hidden rounded bg-white p-2 shadow xl:col-span-9 lg:col-span-12 md:col-span-12 ">
               <div className="slider bg-red">
                 {/* swiper slide main banner */}
                 <div className="">
-                  <section className="relative bg-gradient-to-r from-[#067afd] to-[#004aad] py-16">
-                    <div className="container mx-auto px-6 lg:px-12">
-                      <Swiper
-                        modules={[Autoplay, Pagination, Navigation, EffectFade]}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        autoplay={{ delay: 5000, disableOnInteraction: false }}
-                        pagination={{ clickable: true }}
-                        navigation
-                        loop
-                        effect="fade"
-                        fadeEffect={{ crossFade: true }}
-                      >
-                        {slides.map((slide, index) => (
-                          <SwiperSlide key={index}>
-                            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-                              {/* Left Content */}
-                              <div className="animate-fadeIn space-y-6 text-white">
-                                <h1 className="text-4xl leading-tight font-bold md:text-4xl">
-                                  {slide.title}
-                                </h1>
-                                <p className="text-lg text-gray-200 md:text-xl">
-                                  {slide.description}
-                                </p>
-                                <div className="flex gap-4">
-                                  <a
-                                    href={slide.link1.href}
-                                    className={`rounded-lg px-6 py-3 font-semibold shadow-md transition ${
-                                      slide.link1.primary
-                                        ? "bg-white text-[#004aad] hover:bg-gray-200"
-                                        : "border border-white text-white hover:bg-white hover:text-[#004aad]"
-                                    }`}
-                                  >
-                                    {slide.link1.text}
-                                  </a>
-                                  <a
-                                    href={slide.link2.href}
-                                    className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
-                                  >
-                                    {slide.link2.text}
-                                  </a>
-                                </div>
-                              </div>
+                   <section className="relative bg-gradient-to-r from-[#067afd] to-[#004aad] py-16  h-[500px]" >
+  <div className="container mx-auto px-6 lg:px-12">
+    <Swiper
+     modules={[Autoplay, Pagination, Navigation, EffectFade]}
+  spaceBetween={50}
+  slidesPerView={1}
+  autoplay={{ delay: 5000, disableOnInteraction: false }}
+  pagination={{ clickable: true }}
+  navigation
+  loop
+  effect="fade"
+  fadeEffect={{ crossFade: true }}
+  className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
+     
+    >
+      {slides.map((slide, index) => (
+        <SwiperSlide key={index}>
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
+            {/* Left Content */}
+            <div className="animate-fadeIn space-y-6 text-white">
+              <h1 className="text-1xl leading-tight font-700 md:text-3xl">
+                {slide.title}
+              </h1>
+              <p className="text-md text-gray-200 md:text-md">
+                {slide.description}
+              </p>
 
-                              {/* Right Image */}
-                              <div className="animate-fadeIn flex justify-center delay-300 lg:justify-end">
-                                <img
-                                  src={slide.img}
-                                  alt="Banner Illustration"
-                                  className="rounded-xl shadow-lg"
-                                />
-                              </div>
-                            </div>
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-                  </section>
+              {/* Highlights */}
+              <ul className="list-disc list-inside text-gray-200 space-y-1">
+                {slide.highlights?.map((point, i) => (
+                  <li key={i}>{point}</li>
+                ))}
+              </ul>
+
+              {/* Buttons */}
+              <div className="flex gap-4 pt-4">
+                <a
+                  href={slide.link1.href}
+                  className={`rounded-lg px-6 py-3 font-semibold shadow-md transition ${
+                    slide.link1.primary
+                      ? "bg-white text-[#004aad] hover:bg-gray-200"
+                      : "border border-white text-white hover:bg-white hover:text-[#004aad]"
+                  }`}
+                >
+                  {slide.link1.text}
+                </a>
+                <a
+                  href={slide.link2.href}
+                  className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
+                >
+                  {slide.link2.text}
+                </a>
+              </div>
+            </div>
+
+            {/* Right Image */}
+            <div className="animate-fadeIn flex justify-center lg:justify-end ">
+              <img
+                src={slide.img}
+                alt="Banner Illustration"
+                className="rounded-xl shadow-lg max-h-[400px] object-contain"
+              />
+            </div>
+          </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+</section>
+
+
                 </div>
                 {/* end */}
 
