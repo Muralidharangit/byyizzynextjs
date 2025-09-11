@@ -1,120 +1,56 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
-import { SHOP_BY_CATEGORIES, getSubcats } from "@/data/shopBycatlog";
+import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 
-type Suggestion =
-  | {
-      type: "category";
-      catTitle: string;
-      catPath: string;
-      label: string;
-      url: string;
-      groupKey: string;
-    }
-  | {
-      type: "product";
-      catTitle: string;
-      catPath: string;
-      productName: string;
-      productCode?: string;
-      productCategory?: string;
-      label: string;
-      secondary?: string;
-      url: string;
-      groupKey: string;
-    };
-
-const normalize = (s: string) => s.toLowerCase();
-const trimSlashes = (s: string) => s.replace(/^\/+|\/+$/g, "");
-const pathSeg = (s: string) => encodeURIComponent(trimSlashes(s).toLowerCase());
-const subParam = (s?: string) =>
-  encodeURIComponent(trimSlashes((s ?? "all")).toLowerCase());
+type CatItem = {
+  id: string;
+  title: string;
+  slug: string;
+  image?: string;
+};
 
 export default function GlobalSearch({ className = "" }: { className?: string }) {
   const router = useRouter();
   const [q, setQ] = useState("");
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(0);
-  const inputRef = useRef<HTMLInputElement>(null);
+
   const wrapRef = useRef<HTMLDivElement>(null);
-  const listboxId = "gs-suggestions";
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  // Build flat suggestions
-  const suggestions: Suggestion[] = useMemo(() => {
-    const query = normalize(q.trim());
-    if (!query) return [];
+  // --- Build the list once ---
+  const cats: CatItem[] = useMemo(
+    () =>
+      SHOP_BY_CATEGORIES.map((c) => ({
+        id: c.id,
+        title: c.title,
+        slug: slugify(c.title),
+        image: (c as any).images,
+      })),
+    []
+  );
 
-    const out: Suggestion[] = [];
-
-    for (const cat of SHOP_BY_CATEGORIES) {
-      const groupKey = cat.title;
-
-      // category hit
-      if (normalize(cat.title).includes(query) || normalize(cat.path).includes(query)) {
-        out.push({
-          type: "category",
-          catTitle: cat.title,
-          catPath: cat.path,
-          label: `Go to ${cat.title}`,
-          url: `/shop/${pathSeg(cat.path)}?sub=all`, // ✅ uses pathSeg
-          groupKey,
-        });
-      }
-
-      // product hits (limit per category)
-      let added = 0;
-      for (const p of cat.product) {
-        const hay = `${p.materialName}`;
-        if (!normalize(hay).includes(query)) continue;
-
-        // find subcat slug from helper
-        let subSlug: string | undefined;
-        try {
-          const subs = getSubcats(cat.path) as Array<{ slug: string; name?: string }>;
-          const match =
-            subs?.find(
-              (s) =>
-                normalize(s.name ?? "") === normalize(p.category ?? "") ||
-                normalize(s.slug) === normalize(p.category ?? "")
-            ) ??
-            subs?.find((s) => (s.name ?? "").toLowerCase().includes((p.category ?? "").toLowerCase()));
-          subSlug = match?.slug;
-        } catch {
-          /* noop */
-        }
-
-        out.push({
-          type: "product",
-          catTitle: cat.title,
-          catPath: cat.path,
-          productName: p.materialName,
-          productCode: p.materialCode,
-          productCategory: p.category,
-          label: p.materialName,
-          secondary: [p.materialCode, p.category].filter(Boolean).join(" • "),
-          url: `/shop/${pathSeg(cat.path)}?sub=${subParam(subSlug)}`, // ✅ uses pathSeg + subParam
-          groupKey,
-        });
-
-        if (++added >= 5) break;
-      }
+  // --- Filtered suggestions ---
+  const suggestions: CatItem[] = useMemo(() => {
+    const query = q.trim().toLowerCase();
+    if (!query) {
+      // initial top 10 when empty
+      return [...cats].sort((a, b) => a.title.localeCompare(b.title)).slice(0, 10);
     }
-    return out.slice(0, 30);
-  }, [q]);
+    const starts = cats.filter((c) => c.title.toLowerCase().startsWith(query));
+    const includes = cats.filter(
+      (c) => !starts.includes(c) && c.title.toLowerCase().includes(query)
+    );
+    return [...starts, ...includes].slice(0, 10);
+  }, [q, cats]);
 
-  // Group by category title
-  const grouped = useMemo(() => {
-    const map = new Map<string, Suggestion[]>();
-    for (const s of suggestions) {
-      if (!map.has(s.groupKey)) map.set(s.groupKey, []);
-      map.get(s.groupKey)!.push(s);
-    }
-    return Array.from(map.entries());
-  }, [suggestions]);
+  // reset active on list change
+  useEffect(() => setActive(0), [suggestions.length]);
 
-  // close on outside click
+  // close when clicking outside
   useEffect(() => {
     const onClickOutside = (e: MouseEvent) => {
       if (!wrapRef.current) return;
@@ -124,7 +60,36 @@ export default function GlobalSearch({ className = "" }: { className?: string })
     return () => document.removeEventListener("mousedown", onClickOutside);
   }, []);
 
-  useEffect(() => setActive(0), [suggestions.length]);
+  // --- Positioning for the portal dropdown (fixed to input rect) ---
+  const [dropdownStyle, setDropdownStyle] = useState<React.CSSProperties>({});
+  useEffect(() => {
+    function updatePosition() {
+      const el = inputRef.current;
+      if (!el) return;
+      const r = el.getBoundingClientRect();
+      setDropdownStyle({
+        position: "fixed",
+        top: r.bottom + 4, // 4px gap
+        left: r.left,
+        width: r.width,
+        zIndex: 9999,
+      });
+    }
+    if (open) {
+      updatePosition();
+      window.addEventListener("scroll", updatePosition, true);
+      window.addEventListener("resize", updatePosition);
+    }
+    return () => {
+      window.removeEventListener("scroll", updatePosition, true);
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, [open, q]);
+
+  function goTo(cat: CatItem) {
+    router.push(`/shop/${cat.slug}?sub=all`);
+    setOpen(false);
+  }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (!open && (e.key === "ArrowDown" || e.key === "ArrowUp")) {
@@ -141,105 +106,90 @@ export default function GlobalSearch({ className = "" }: { className?: string })
       setActive((i) => Math.max(i - 1, 0));
     } else if (e.key === "Enter") {
       e.preventDefault();
-      if (suggestions[active]) go(suggestions[active].url);
+      const pick = suggestions[active] ?? suggestions[0];
+      if (pick) goTo(pick);
     } else if (e.key === "Escape") {
       setOpen(false);
     }
   }
 
-  function go(url: string) {
-    router.push(url);
-    setOpen(false);
-  }
-
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (suggestions.length > 0) {
-      go(suggestions[active] ? suggestions[active].url : suggestions[0].url);
-    } else {
-      // optional: router.push(`/search?q=${encodeURIComponent(q)}`);
-    }
+    if (suggestions.length) goTo(suggestions[active] ?? suggestions[0]);
   }
 
-return (
-  <div className={`relative ${className}`} ref={wrapRef}>
-    <form className="relative mx-auto w-full" onSubmit={handleSubmit}>
-      <input
-        ref={inputRef}
-        type="text"
-        value={q}
-        onChange={(e) => {
-          setQ(e.target.value);
-          setOpen(true);
-        }}
-        onFocus={() => setOpen(Boolean(q.trim()))}
-        onKeyDown={handleKeyDown}
-        placeholder="Search Products..."
-        className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
-        aria-autocomplete="list"
-        aria-expanded={open}
-        aria-controls={listboxId}
-        role="combobox"
-      />
-      <button
-        type="submit"
-        className="absolute right-1 top-1/2 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
-      >
-        <i className="ri-search-line" /> Search
-      </button>
-    </form>
+  return (
+    <div className={`relative ${className}`} ref={wrapRef}>
+      <form className="relative mx-auto w-full max-w-md" onSubmit={handleSubmit}>
+        <input
+          ref={inputRef}
+          type="text"
+          value={q}
+          onChange={(e) => {
+            setQ(e.target.value);
+            setOpen(true);
+          }}
+          onFocus={() => setOpen(true)}
+          onKeyDown={handleKeyDown}
+          placeholder="Search Products..."
+          className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
+          aria-autocomplete="list"
+          aria-expanded={open}
+          role="combobox"
+        />
+        <button
+          type="submit"
+          className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+        >
+          <i className="ri-search-line" /> Search
+        </button>
+      </form>
 
-    {open && q.trim() && (
-      <div
-        className="absolute z-[9999] mt-2 max-h-96 w-full overflow-auto rounded-xl border border-gray-200 bg-white shadow-xl"
-        role="listbox"
-        id={listboxId}
-        onMouseDownCapture={(e) => e.stopPropagation()} // 👈 important
-      >
-        {suggestions.length === 0 ? (
-          <div className="p-4 text-sm text-gray-500">No results</div>
-        ) : (
-          <ul className="divide-y">
-            {grouped.map(([groupTitle, items]) => (
-              <li key={groupTitle} className="p-0">
-                <div className="sticky top-0 z-10 bg-gray-50 px-3 py-2 text-xs font-semibold text-gray-600 lowercase">
-                  {groupTitle}
-                </div>
-                {items.map((s) => {
-                  const flatIndex = suggestions.findIndex((x) => x === s);
-                  const isActive = flatIndex === active;
+      {/* Portal dropdown */}
+      {open &&
+        createPortal(
+          <div
+            style={dropdownStyle}
+            className="max-h-96 overflow-auto rounded-xl border border-gray-200 bg-white shadow-xl"
+            onMouseDownCapture={(e) => e.stopPropagation()} // keep input focus while clicking
+          >
+            {suggestions.length === 0 ? (
+              <div className="p-4 text-sm text-gray-500">No results</div>
+            ) : (
+              <ul className="divide-y">
+                {suggestions.map((cat, i) => {
+                  const isActive = i === active;
                   return (
-                    <button
-                      key={`${s.type}-${s.url}`}
-                      type="button"
-                      onMouseDown={(e) => e.preventDefault()}
-                      onClick={() => go(s.url)}
-                      className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-sm hover:bg-gray-100 ${
-                        isActive ? "bg-gray-100" : ""
-                      }`}
-                      role="option"
-                      aria-selected={isActive}
-                    >
-                      <div className="min-w-0">
-                        <div className="truncate font-medium">{s.label}</div>
-                        {"secondary" in s && s.secondary ? (
-                          <div className="truncate text-xs text-gray-500">{s.secondary}</div>
-                        ) : null}
-                      </div>
-                      {/* <div className="shrink-0 text-xs text-gray-400">
-                        {s.type === "category"
-                          ? "Category"
-                          : s.productCategory || "Product"}
-                      </div> */}
-                    </button>
+                    <li key={cat.id}>
+                      <button
+                        type="button"
+                        onMouseDown={(e) => e.preventDefault()}
+                        onClick={() => goTo(cat)}
+                        className={`flex w-full items-center gap-3 px-3 py-2 text-left hover:bg-gray-100 ${
+                          isActive ? "bg-gray-100" : ""
+                        }`}
+                        role="option"
+                        aria-selected={isActive}
+                      >
+                        {cat.image ? (
+                          <img
+                            src={cat.image}
+                            alt=""
+                            className="h-8 w-8 shrink-0 rounded object-contain"
+                          />
+                        ) : (
+                          <div className="h-8 w-8 shrink-0 rounded bg-gray-100" />
+                        )}
+                        <span className="truncate text-sm font-medium">{cat.title}</span>
+                      </button>
+                    </li>
                   );
                 })}
-              </li>
-            ))}
-          </ul>
+              </ul>
+            )}
+          </div>,
+          document.body
         )}
-      </div>
-    )}
-  </div>
-);
+    </div>
+  );
 }

@@ -18,7 +18,18 @@ import Category from "@/components/category";
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
+// const filteredProducts = SHOP_BY_CATEGORIES.flatMap((category) =>
+//   category.product.filter((product) => String(product.popularity).startsWith("4"))
+// );
+const filteredProducts = SHOP_BY_CATEGORIES.flatMap((category) =>
+  category.product
+    .filter((product) => String(product.popularity).startsWith("4"))
+    .map((product) => ({
+      ...product,
+      categoryTitle: category.title, // add the category title here
+      
+    }))
+);
 const slides = [
     {
       title: "India's Growing Hardware & DIY Store Brand",
@@ -358,23 +369,6 @@ const slides = [
     },
   ];
 
-  // useEffect(() => {
-  //   // active state for custom nav
-  //   const prevBtn = document.querySelector(".prev");
-  //   const nextBtn = document.querySelector(".next");
-
-  //   function setActive(activeBtn, otherBtn) {
-  //     activeBtn.classList.add("active");
-  //     otherBtn.classList.remove("active");
-  //   }
-
-  //   if (prevBtn && nextBtn) {
-  //     prevBtn.addEventListener("click", () => setActive(prevBtn, nextBtn));
-  //     nextBtn.addEventListener("click", () => setActive(nextBtn, prevBtn));
-  //     setActive(nextBtn, prevBtn); // default
-  //   }
-  // }, []);
-
   return (
     <>
       <div>
@@ -529,78 +523,61 @@ const slides = [
                           nextEl: nextRef.current,
                         }}
                       >
-                        {[
-                          {
-                            name: "Excavator",
-                            price: 3200,
-                            img: "https://cdn.decornation.in/wp-content/uploads/2020/02/home-furniture-traditional-designer-sitting-coffee-table.png",
-                          },
-                          {
-                            name: "Tractor",
-                            price: 2500,
-                            img: "https://cdn.decornation.in/wp-content/uploads/2020/02/home-furniture-traditional-designer-sitting-coffee-table.png",
-                          },
-                          {
-                            name: "Drilling Machine",
-                            price: 1800,
-                            img: "https://cdn.decornation.in/wp-content/uploads/2020/02/home-furniture-traditional-designer-sitting-coffee-table.png",
-                          },
-                          {
-                            name: "Bulldozer",
-                            price: 4200,
-                            img: "https://cdn.decornation.in/wp-content/uploads/2020/02/home-furniture-traditional-designer-sitting-coffee-table.png",
-                          },
-                          {
-                            name: "Power Generator",
-                            price: 1500,
-                            img: "https://cdn.decornation.in/wp-content/uploads/2020/02/home-furniture-traditional-designer-sitting-coffee-table.png",
-                          },
-                          {
-                            name: "Forklift",
-                            price: 2800,
-                            img: "https://cdn.decornation.in/wp-content/uploads/2020/02/home-furniture-traditional-designer-sitting-coffee-table.png",
-                          },
-                        ].map((product, i) => (
-                          <SwiperSlide key={i}>
-                            <div className="flex h-full w-full justify-center">
-                              <div className="group w-full max-w-xs overflow-hidden rounded-sm border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-0 hover:shadow-2xl">
-                                {/* Product Image */}
-                                <div className="relative h-52 w-full overflow-hidden">
-                                  <img
-                                    src={product.img}
-                                    alt={product.name}
-                                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                  />
-                                  {/* Overlay effect */}
-                                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                                </div>
+                       {filteredProducts.map((product, i) => {
+  // ✅ generate slug from categoryTitle
+  const catSlug = slugify(product.categoryTitle);
+  const catNameSlug = slugify(product.category);
 
-                                {/* Product Info */}
-                                <div className="flex flex-col justify-between p-5">
-                                  <div>
-                                    <h3 className="text-lg font-semibold text-gray-900">
-                                      {product.name}
-                                    </h3>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      High quality machinery
-                                    </p>
-                                  </div>
+  return (
+    <SwiperSlide key={i}>
+      <div className="flex h-full w-full justify-center">
+        <Link href={`/shop/${catSlug}?sub=${catNameSlug}`} className="">
+          <div className="group w-full max-w-xs overflow-hidden rounded-sm border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-0 hover:shadow-2xl">
+            
+            {/* Product Image */}
+            <div className="relative h-52 w-full overflow-hidden">
+              <Image
+                src={product.image}
+                alt={product.materialName}
+                width={400}
+                height={400}
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              {/* Overlay effect */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
+            </div>
 
-                                  {/* Price & Enquiry Button */}
-                                  <div className="mt-4 flex items-center justify-between">
-                                    <span className="text-xl font-bold text-black">
-                                      ${product.price}
-                                    </span>
-                                    <button className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg">
-                                      <span className="relative z-10">Enquiry</span>
-                                      <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </SwiperSlide>
-                        ))}
+            {/* Product Info */}
+            <div className="flex flex-col justify-between p-5">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {product.materialName}
+                </h3>
+                <p className="mt-1 text-sm text-gray-500">
+                  {product.categoryTitle}
+                </p>
+                <p className="mt-1 text-sm text-gray-500">
+                  High quality machinery
+                </p>
+              </div>
+
+              {/* Price & Enquiry Button */}
+              <div className="mt-4 flex items-center justify-between">
+                <button className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg">
+                  <span className="relative z-10">Enquiry</span>
+                  <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
+    </SwiperSlide>
+  );
+})}
+
+
+
                       </Swiper>
                     </div>
                   </section>
@@ -764,25 +741,39 @@ const slides = [
                         }}
                         className="category-swiper pb-12"
                       >
-                        {categories.map((category) => (
-                          <SwiperSlide key={category.id}>
-                            <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
-                              {/* Icon */}
-                              <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden">
-                                <img
-                                  src={category.image}
-                                  alt={category.title}
-                                  className="h-full w-full object-contain"
-                                />
-                              </div>
+                       {SHOP_BY_CATEGORIES.map((category) => {
+  const catSlug = slugify(category.title); // ✅ move inside function block
+  return (
+    
+      <SwiperSlide key={category.id}>
+          <Link
+      key={category.id}
+      href={`/shop/${catSlug}?sub=all`}
+      className=""
+    >
+        <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
+        
+          {/* Icon */}
+          <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden">
+            <img
+              src={category.images}
+              alt={category.title}
+              className="h-full w-full object-contain"
+            />
+          </div>
 
-                              {/* Text */}
-                              <h6 className="line-clamp-2 text-sm font-semibold text-gray-700">
-                                {category.title}
-                              </h6>
-                            </div>
-                          </SwiperSlide>
-                        ))}
+          {/* Text */}
+          <h6 className="line-clamp-2 text-sm font-semibold text-gray-700">
+            {category.title}
+          </h6>
+          
+        </div>
+        </Link>
+      </SwiperSlide>
+    
+  );
+})}
+
                       </Swiper>
 
                       {/* Custom Navigation Arrows */}
