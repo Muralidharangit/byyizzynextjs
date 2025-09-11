@@ -122,7 +122,67 @@ export default function MachineryShopPage({
                 </div> */}
 
                 
-          
+          <div>
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {products.length === 0 ? (
+                <p className="text-gray-500">No products found.</p>
+              ) : (
+                products.map((product, idx) => (
+                  <div className="group overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                    {/* Product Image */}
+                    <div className="relative h-52 w-full overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.materialName || "Product"}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Overlay effect */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
+                    </div>
+
+                    {/* Product Info */}
+                    <div className="flex flex-col justify-between p-5">
+                      <div>
+                        <h3 className="text-lg font-semibold text-gray-900">
+                          {product.materialName}
+                        </h3>
+                        <p className="mt-1 text-sm text-gray-500">High quality machinery</p>
+                      </div>
+
+                      {/* Price & Add Button */}
+                      <div className="mt-4 flex items-center justify-between">
+                        <span className="text-xl font-bold text-black">${product.price}</span>
+
+                        <div className="p-6">
+                          {/* Button that triggers popup */}
+                          {/* <button
+                          onClick={() => setOpen(true)}
+                          className="px-6 py-3 rounded-lg text-white font-medium 
+                   bg-gradient-to-r from-[#067afd] to-[#004aad] hover:opacity-90 transition"
+                        >
+                          Get Quote
+                        </button> */}
+
+                          {/* Reusable Popup */}
+                          <EnquiryModal open={open} onClose={() => setOpen(false)} />
+                        </div>
+
+                        <button
+                          className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
+                          onClick={() => setOpen(true)}
+                        >
+                          <span className="relative z-10">Add Enquiry</span>
+                          {/* <i className="ri-shopping-cart-2-line relative z-10"></i> */}
+                          {/* Shine animation */}
+                          <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+          </div>
 
    <div>
   <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -132,7 +192,7 @@ export default function MachineryShopPage({
       products.map((product, idx) => (
         <div
           key={idx}
-          className="group relative rounded-sm overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-3 hover:shadow-2xl"
+          className="group relative rounded-3xl overflow-hidden shadow-lg transition-transform duration-500 hover:-translate-y-3 hover:shadow-2xl"
         >
           {/* Tilted Full Image */}
           <div className="relative">
