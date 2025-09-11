@@ -40,3 +40,103 @@ body {
   color: #9c9c9c;
   overflow-x: hidden;
 }
+
+/* ====== Marquee keyframes ====== */
+/* Smooth marquee keyframes */
+@keyframes marquee-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  } /* we render 2 copies -> -50% is one full loop */
+}
+@keyframes marquee-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Masks the edges for a clean "window" */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Apply animation to the Swiper wrapper */
+.marquee-left .swiper-wrapper {
+  animation: marquee-left var(--duration, 20s) linear infinite;
+}
+.marquee-right .swiper-wrapper {
+  animation: marquee-right var(--duration, 20s) linear infinite;
+}
+
+/* Seamless marquee: animate the Swiper wrapper itself */
+@keyframes ticker-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  } /* two copies => -50% loops once */
+}
+@keyframes ticker-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Edge fade (optional) */
+.ticker-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Apply animations to Swiper's internal wrapper */
+.ticker-left .swiper-wrapper {
+  animation: ticker-left var(--duration, 20s) linear infinite;
+}
+.ticker-right .swiper-wrapper {
+  animation: ticker-right var(--duration, 20s) linear infinite;
+}
+
+/* Respect user prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-left .swiper-wrapper,
+  .ticker-right .swiper-wrapper {
+    animation: none !important;
+  }
+}
+.ticker .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
