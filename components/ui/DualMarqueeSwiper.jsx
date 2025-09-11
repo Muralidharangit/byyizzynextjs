@@ -612,7 +612,10 @@ const logos_img2 = [
  */
 function Row({ items, reverse = false, speedMs = 2000 }) {
   return (
-    <div
+
+    <div>
+      
+ <div
       className={`marquee-mask ${
         reverse ? "marquee-left" : "marquee-right"
       } ticker w-full max-w-[100vw] overflow-hidden`}
@@ -655,6 +658,8 @@ function Row({ items, reverse = false, speedMs = 2000 }) {
         ))}
       </Swiper>
     </div>
+    </div>
+   
   );
 }
 

@@ -41,7 +41,11 @@ export default function SaaSService() {
 
         {/* Content */}
         <div className="space-y-6 lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-[#067afd]">Partner Management</h2>
+
+        <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                            Partner  <span className="text-[#067afd]">Management</span>
+                          </h2>
+          
           <ul className="space-y-4">
             {[
               "Seamless Registration and Onboarding: Easy access to new suppliers from your corporate website with workflow based approval.",
@@ -75,8 +79,10 @@ export default function SaaSService() {
 
         {/* Right Content */}
         <div className="space-y-6 lg:w-1/2">
-          <h2 className="text-3xl font-semibold text-[#067afd]">Source-to-Pay</h2>
-
+         
+          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                           Source to <span className="text-[#067afd]">Pay</span>
+                          </h2>
           {/* Steps */}
           {[
             {
@@ -131,7 +137,10 @@ export default function SaaSService() {
             {/* Right Content */}
             <div>
               {/* Heading */}
-              <h3 className="mb-3 text-3xl font-bold text-[#067afd]">Procure to Pay</h3>
+              <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                           Procure to <span className="text-[#067afd]">Pay</span>
+                          </h2>
+            
               <p className="mb-8 text-gray-600">
                 A streamlined process from identifying needs to ensuring supplier payments —
                 enhancing transparency and efficiency across procurement.
@@ -181,7 +190,10 @@ export default function SaaSService() {
 
               {/* Benefits */}
               <div>
-                <h4 className="mb-4 text-xl font-semibold text-gray-800">Major Benefits</h4>
+                {/* <h4 className="mb-4 text-xl font-semibold text-gray-800"> </h4> */}
+                <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                          Major<span className="text-[#067afd]">Benefits</span>
+                          </h2>
                 <ul className="space-y-3">
                   {[
                     "Automated procure-to-pay solution",
@@ -207,8 +219,10 @@ export default function SaaSService() {
         {/* Left Content */}
         <div className="space-y-6 lg:w-1/2">
           {/* Heading */}
-          <h2 className="text-3xl font-semibold text-[#067afd]">Payment Automation</h2>
-
+          {/* <h2 className="text-3xl font-semibold text-[#067afd]"> </h2> */}
+          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                          Payment<span className="text-[#067afd]">Automation</span>
+                          </h2>
           {/* Features */}
           {[
             "Get an unbeatable invoice match rate – even when the PO was generated in another system or figures don’t line up perfectly",
@@ -225,7 +239,10 @@ export default function SaaSService() {
 
           {/* Major Benefits */}
           <div className="mt-6">
-            <h3 className="mb-3 text-xl font-medium text-[#067afd]">Major Benefits</h3>
+            {/* <h3 className="mb-3 text-xl font-medium text-[#067afd]">Major Benefits</h3> */}
+             <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                          Major<span className="text-[#067afd]">Benefits</span>
+                          </h2>
             {[
               "Automated matching for PO-based spend",
               "Automated matching for non-PO-based spend",
@@ -339,104 +356,7 @@ export default function SaaSService() {
       </section>
 
       {/* Contact Form */}
-      <section className="bg-white py-20">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
-          {/* Contact Info */}
-          <div className="space-y-8 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-10 text-white shadow-lg lg:col-span-4">
-            <div>
-              <h3 className="text-3xl font-bold">Get in Touch</h3>
-              <p className="mt-3 leading-relaxed text-blue-100">
-                We’re here to answer your questions and explore opportunities to grow together.
-              </p>
-            </div>
-            {/* Email */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                <Mail size={22} />
-              </div>
-              <div>
-                <p className="text-sm text-blue-200">Email us at</p>
-                <p className="font-semibold">Byizzy@gmail.com</p>
-              </div>
-            </div>
-
-            {/* Office Locations */}
-            {/* India Office */}
-            <div>
-              <p className="text-lg font-semibold">India</p>
-              <div className="mt-3 flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                  <MapPin size={22} />
-                </div>
-                <div>
-                  <p className="text-sm text-blue-200">Head Office</p>
-                  <p className="font-semibold">123 Business Street, City</p>
-                </div>
-              </div>
-            </div>
-            {/* Singapore Office */}
-            <div>
-              <p className="text-lg font-semibold">Singapore</p>
-              <div className="mt-3 flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                  <MapPin size={22} />
-                </div>
-                <div>
-                  <p className="text-sm text-blue-200">Branch Office</p>
-                  <p className="font-semibold">456 Market Road, Singapore</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="rounded-2xl bg-gray-50 p-10 shadow-lg lg:col-span-8">
-            <h3 className="mb-8 text-3xl font-bold text-gray-800">Send a Message</h3>
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                />
-                <input
-                  type="text"
-                  placeholder="Phone Number"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                />
-              </div>
-
-              <textarea
-                placeholder="Your Message"
-                rows="6"
-                className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                required
-              ></textarea>
-
-              <button
-                type="submit"
-                className="w-full rounded-lg bg-[#067afd] px-8 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-blue-700 md:w-auto"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 }

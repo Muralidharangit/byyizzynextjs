@@ -12,6 +12,7 @@ import "swiper/css/effect-fade";
 import { useEffect, useRef, useState } from "react";
 import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 import Link from "next/link";
+import DualMarqueeSwiper from "@/components/ui/DualMarqueeSwiper";
 
 import Category from "@/components/category";
 export default function Home() {
@@ -411,12 +412,12 @@ const slides = [
               <h1 className="text-1xl leading-tight font-700 md:text-3xl">
                 {slide.title}
               </h1>
-              <p className="text-md text-gray-200 md:text-md">
+              <p className="text-md text-white-200 md:text-md">
                 {slide.description}
               </p>
 
               {/* Highlights */}
-              <ul className="list-disc list-inside text-gray-200 space-y-1">
+              <ul className="list-disc list-inside text-white-200 space-y-1">
                 {slide.highlights?.map((point, i) => (
                   <li key={i}>{point}</li>
                 ))}
@@ -614,7 +615,7 @@ const slides = [
                       <div className="mb-10 flex items-center justify-between">
                         <div>
                           <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Our Services
+                            Our <span className="text-[#067afd]"> Services </span>
                           </h2>
                           <p className="text-md text-gray-500">
                             Hover on a card to reveal the theme gradient and highlight the service.
@@ -725,7 +726,7 @@ const slides = [
                       <div className="mb-10 flex items-center justify-between">
                         <div>
                           <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Our Categories
+                            Our <span className="text-[#067afd]">Categories</span>
                           </h2>
                           <p className="text-md text-gray-500">
                             Hover on a card to reveal the theme gradient and highlight the service.
@@ -919,6 +920,17 @@ const slides = [
                       </div>
                     </div>
                   </section>
+
+                  <div className="text-center py-5">
+                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                            Our <span className="text-[#067afd]">Brand</span>
+                          </h2>
+                          <p className="text-md text-gray-500">
+                            Discover the benefits that make Byyizzy stand out from the rest.
+                          </p>
+                        </div>
+
+                  <DualMarqueeSwiper />
                 </div>
               </div>
             </main>

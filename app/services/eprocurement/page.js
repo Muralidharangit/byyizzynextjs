@@ -45,7 +45,7 @@ export default function Eprocurement() {
             {/* Left Content */}
             <div className="space-y-6">
               <div>
-                <h3 className="mb-2 text-3xl font-bold text-gray-900">E-Sourcing Platform</h3>
+                <h3 className="mb-2 text-3xl font-bold text-gray-900">E-Sourcing <span className="text-[#067afd]"> Platform</span></h3>
                 <p className="text-lg font-semibold text-[#067afd]">Source to Pay Process</p>
               </div>
 
@@ -65,11 +65,7 @@ export default function Eprocurement() {
                 ))}
               </div>
 
-              <p className="text-lg leading-relaxed text-gray-600">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor
-                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                accusam et justo duo dolores et ea rebum.
-              </p>
+             
             </div>
 
             {/* Right Image */}
@@ -83,135 +79,52 @@ export default function Eprocurement() {
           </div>
         </section>
 
-        {/* Service Cards */}
-        <section className="mb-1 via-white to-blue-50 py-0">
-          <div className="container mx-auto px-5 lg:px-5">
-            <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-              {[1, 2, 3].map((i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
-                >
-                  {/* Icon in a circle */}
-                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl text-[#067afd]">
-                    {/* <i className="ti-settings"></i> */}
-                    <Settings className="h-8 w-8 text-[#067afd]" />
-                  </div>
-
-                  {/* Title */}
-                  <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
-                    Efficient Sourcing
-                  </h5>
-
-                  {/* Description */}
-                  <p className="text-center leading-relaxed text-gray-600">
-                    There are many variations of have to make your process smooth and reliable.
-                  </p>
+       {/* Section 6: Service Cards */}
+      <section className="mb-1 py-5">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {[
+              {
+                title: "Efficient Sourcing",
+                desc: "Streamline your supplier discovery process",
+                icon: <Cog className="h-8 w-8" />,
+              },
+              {
+                title: "Automated Workflows",
+                desc: "Reduce manual efforts with automation",
+                icon: <Workflow className="h-8 w-8" />,
+              },
+              {
+                title: "Analytics Dashboard",
+                desc: "Visualize your spend and supplier performance",
+                icon: <BarChart3 className="h-8 w-8" />,
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
+              >
+                {/* Icon */}
+                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
+                  {item.icon}
                 </div>
-              ))}
-            </div>
+
+                {/* Title */}
+                <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
+                  {item.title}
+                </h5>
+
+                {/* Description */}
+                <p className="text-center leading-relaxed text-gray-600">{item.desc}</p>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact Form */}
-        <section className="bg-white px-6 py-20 lg:px-5">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
-            {/* Contact Info */}
-            <div className="space-y-8 rounded-2xl bg-gradient-to-br from-blue-600 to-blue-800 p-10 text-white shadow-lg lg:col-span-4">
-              <div>
-                <h3 className="text-3xl font-bold">Get in Touch</h3>
-                <p className="mt-3 leading-relaxed text-blue-100">
-                  We’re here to answer your questions and explore opportunities to grow together.
-                </p>
-              </div>
-              {/* Email */}
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                  <Mail size={22} />
-                </div>
-                <div>
-                  <p className="text-sm text-blue-200">Email us at</p>
-                  <p className="font-semibold">Byizzy@gmail.com</p>
-                </div>
-              </div>
+      {/* Contact Form */}
 
-              {/* Office Locations */}
-              {/* India Office */}
-              <div>
-                <p className="text-lg font-semibold">India</p>
-                <div className="mt-3 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                    <MapPin size={22} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200">Head Office</p>
-                    <p className="font-semibold">123 Business Street, City</p>
-                  </div>
-                </div>
-              </div>
-              {/* Singapore Office */}
-              <div>
-                <p className="text-lg font-semibold">Singapore</p>
-                <div className="mt-3 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                    <MapPin size={22} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200">Branch Office</p>
-                    <p className="font-semibold">456 Market Road, Singapore</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="rounded-2xl bg-gray-50 p-10 shadow-lg lg:col-span-8">
-              <h3 className="mb-8 text-3xl font-bold text-gray-800">Send a Message</h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                </div>
-
-                <textarea
-                  placeholder="Your Message"
-                  rows="6"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                ></textarea>
-
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-[#067afd] px-8 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-blue-700 md:w-auto"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+  
       </div>
     </div>
   );

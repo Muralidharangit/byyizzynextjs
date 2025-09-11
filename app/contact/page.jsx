@@ -91,7 +91,7 @@ export default function ContactPage() {
           <div className="mt-12 flex flex-wrap gap-8">
             {/* Contact Form */}
             <div className="min-w-[320px] flex-1 rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:shadow-2xl">
-              <h2 className="mb-2 text-2xl font-semibold text-gray-800">Get In Touch</h2>
+              <h2 className="mb-2 text-2xl font-semibold text-gray-800">Get In <span className="text-[#067afd]">Touch</span> </h2>
               <p className="mb-6 text-gray-600">
                 We’d love to hear from you. Fill out the form and we’ll get back to you shortly.
               </p>

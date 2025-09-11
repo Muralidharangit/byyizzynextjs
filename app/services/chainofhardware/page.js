@@ -52,7 +52,7 @@ export default function ChainHardware() {
                 </span>
 
                 <h3 className="mt-3 text-3xl leading-snug font-bold text-black">
-                  Chain of Hardware Stores
+                  Chain of <span className="text-[#067afd]">Hardware Stores</span>
                 </h3>
 
                 <p className="text-lg font-semibold text-[#067afd]">
@@ -129,105 +129,7 @@ export default function ChainHardware() {
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section className="bg-white px-6 py-20 lg:px-10">
-          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
-            {/* Contact Info */}
-            <div className="space-y-8 rounded-2xl bg-gradient-to-br from-[#067afd] to-[#004aad] p-10 text-white shadow-lg lg:col-span-4">
-              <div>
-                <h3 className="text-3xl font-bold">Get in Touch</h3>
-                <p className="mt-3 leading-relaxed text-blue-100">
-                  We’re here to answer your questions and explore opportunities to grow together.
-                </p>
-              </div>
-              {/* Email */}
-              <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                  <Mail size={22} />
-                </div>
-                <div>
-                  <p className="text-sm text-blue-200">Email us at</p>
-                  <p className="font-semibold">Byizzy@gmail.com</p>
-                </div>
-              </div>
-
-              {/* Office Locations */}
-              {/* India Office */}
-              <div>
-                <p className="text-lg font-semibold">India</p>
-                <div className="mt-3 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                    <MapPin size={22} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200">Head Office</p>
-                    <p className="font-semibold">123 Business Street, City</p>
-                  </div>
-                </div>
-              </div>
-              {/* Singapore Office */}
-              <div>
-                <p className="text-lg font-semibold">Singapore</p>
-                <div className="mt-3 flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 text-white">
-                    <MapPin size={22} />
-                  </div>
-                  <div>
-                    <p className="text-sm text-blue-200">Branch Office</p>
-                    <p className="font-semibold">456 Market Road, Singapore</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Contact Form */}
-            <div className="rounded-2xl bg-gray-50 p-10 shadow-lg lg:col-span-8">
-              <h3 className="mb-8 text-3xl font-bold text-gray-800">Send a Message</h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                  <input
-                    type="email"
-                    placeholder="Email"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                  <input
-                    type="text"
-                    placeholder="Phone Number"
-                    className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                    required
-                  />
-                </div>
-
-                <textarea
-                  placeholder="Your Message"
-                  rows="6"
-                  className="w-full rounded-lg border border-gray-300 px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-                  required
-                ></textarea>
-
-                <button
-                  type="submit"
-                  className="w-full rounded-lg bg-[#067afd] px-8 py-3 text-lg font-semibold text-white transition duration-300 hover:bg-blue-700 md:w-auto"
-                >
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-        </section>
+    
       </div>
     </div>
   );
