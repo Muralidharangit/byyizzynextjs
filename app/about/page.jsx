@@ -35,36 +35,65 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="font-sans text-gray-900">
+    <div className="min-h-screen bg-gray-100 text-gray-900">
+      {/* Start Page Title Area */}
+      <div className="mt-[110px] w-full bg-white py-5">
+        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
+          <ol className="flex flex-wrap items-center space-x-2">
+            <li>
+              <Link href="#" className="font-medium hover:text-black">
+                Byyizzy
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="#" className="font-medium hover:text-black">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="font-semibold text-[#067afd]">About</li>
+          </ol>
+        </nav>
+      </div>
+      {/* End Page Title Area */}
+
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-50 to-blue-100">
-        <div className="relative h-64 md:h-96 overflow-hidden">
+      <div className="relative bg-gradient-to-r from-blue-50 to-blue-100">
+        <div className="relative h-64 overflow-hidden md:h-96">
+          {/* blurred image */}
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
             alt="About Banner"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover blur-xs filter"
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">
-              About  Us
-            </h1>
+
+          {/* dark overlay to dim the image a bit */}
+          <div className="absolute inset-0 bg-black/25" />
+
+          {/* centered highlighted text box */}
+          <div className="absolute inset-0 flex items-center justify-center px-4">
+            <div className="bg-[] rounded-lg px-6 py-3 text-center" style={{}}>
+              <h1 className="text-3xl font-bold text-white drop-shadow sm:text-4xl md:text-5xl">
+                About Us
+              </h1>
+            </div>
           </div>
         </div>
-      </section>
-
+      </div>
       {/* Overview Section */}
-      <section className="py-16 bg-white">
+      <div className="bg-white py-16">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Images */}
-            <div className="grid sm:grid-cols-2 gap-6 relative">
+            <div className="relative grid gap-6 sm:grid-cols-2">
               <img
-                className="rounded-xl shadow-lg transform hover:scale-105 transition duration-500"
+                className="transform rounded-xl shadow-lg transition duration-500 hover:scale-105"
                 src="https://pagedone.io/asset/uploads/1717741205.png"
                 alt="About Image 1"
               />
               <img
-                className="rounded-xl shadow-lg transform hover:scale-105 transition duration-500 mt-12 sm:mt-0"
+                className="mt-12 transform rounded-xl shadow-lg transition duration-500 hover:scale-105 sm:mt-0"
                 src="https://pagedone.io/asset/uploads/1717741215.png"
                 alt="About Image 2"
               />
@@ -72,17 +101,17 @@ export default function AboutPage() {
 
             {/* Content */}
             <div className="flex flex-col gap-8">
-              <h2 className="text-4xl font-bold lg:text-left text-center">
+              <h2 className="text-center text-4xl font-bold lg:text-left">
                 Empowering Each <span className="text-[#067afd]">Other to Succeed </span>
               </h2>
-              <p className="text-gray-600 text-center lg:text-left">
-                Every project we have undertaken has been a collaborative effort, where every
-                person involved has left their mark. Together, we have not only constructed
-                buildings but also built enduring connections that define our success story.
+              <p className="text-center text-gray-600 lg:text-left">
+                Every project we have undertaken has been a collaborative effort, where every person
+                involved has left their mark. Together, we have not only constructed buildings but
+                also built enduring connections that define our success story.
               </p>
 
               {/* Stats */}
-              <div className="flex justify-center lg:justify-start gap-10 mt-6">
+              <div className="mt-6 flex justify-center gap-10 lg:justify-start">
                 <div className="text-center lg:text-left">
                   <h3 className="text-4xl font-bold">33+</h3>
                   <p className="text-gray-500">Years of Experience</p>
@@ -97,38 +126,38 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              <button className="self-center lg:self-start px-6 py-3 bg-[#067afd] text-white rounded-lg shadow-lg hover:bg-indigo-700 transition-all duration-500">
+              <button className="self-center rounded-lg bg-[#067afd] px-6 py-3 text-white shadow-lg transition-all duration-500 hover:bg-indigo-700 lg:self-start">
                 Read More
               </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Features Section */}
-      <section className="py-16 bg-[#f8f8f9]">
+      <section className="bg-[#edf6ff] py-16">
         <div className="container mx-auto px-6 lg:px-12">
-          <div className="text-center py-5">
- <h2 className="text-3xl font-bold text-center mb-2">
-            Why Choose <span className="text-[#067afd]">Byyizzy</span>
-          </h2>
+          <div className="py-5 text-center">
+            <h2 className="mb-2 text-center text-3xl font-bold">
+              Why Choose <span className="text-[#067afd]">Byyizzy</span>
+            </h2>
             <p className="text-md text-gray-500">
-                            Discover the benefits that make Byyizzy stand out from the rest.
-                          </p>
+              Discover the benefits that make Byyizzy stand out from the rest.
+            </p>
           </div>
-         
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {sections.map((section, idx) => (
               <div
                 key={idx}
-                className="flex flex-col items-center text-center p-6 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-white"
+                className="flex flex-col items-center rounded-3xl bg-white p-6 text-center shadow-lg transition-all duration-500 hover:shadow-2xl"
               >
                 <div
-                  className={`w-16 h-16 mb-4 flex items-center justify-center rounded-full ${section.color} shadow-md`}
+                  className={`mb-4 flex h-16 w-16 items-center justify-center rounded-full ${section.color} shadow-md`}
                 >
                   {section.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{section.title}</h3>
+                <h3 className="mb-2 text-xl font-semibold">{section.title}</h3>
                 <p className="text-gray-600">{section.text}</p>
               </div>
             ))}
@@ -137,17 +166,21 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16">
-        <div className="container mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-8">
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
-            <h2 className="text-2xl font-bold mb-4">Our <span className="text-[#067afd]">Mission</span> </h2>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto grid gap-8 px-6 md:grid-cols-2 lg:px-12">
+          <div className="rounded-2xl bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+            <h2 className="mb-4 text-2xl font-bold">
+              Our <span className="text-[#067afd]">Mission</span>{" "}
+            </h2>
             <p className="text-gray-700">
-              Our mission is to provide Izzy with a seamless and transparent shopping experience
-              in the complex & fragmented Industrial and Hardware products sector.
+              Our mission is to provide Izzy with a seamless and transparent shopping experience in
+              the complex & fragmented Industrial and Hardware products sector.
             </p>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-500">
-            <h2 className="text-2xl font-bold mb-4">Our <span className="text-[#067afd]"> Vision</span></h2>
+          <div className="rounded-2xl bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+            <h2 className="mb-4 text-2xl font-bold">
+              Our <span className="text-[#067afd]"> Vision</span>
+            </h2>
             <p className="text-gray-700">
               Our vision is to bring revolutionary change in the Industrial and Hardware supply
               chain to create more value, enhance profitability, and ensure sustainable operations
@@ -156,6 +189,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

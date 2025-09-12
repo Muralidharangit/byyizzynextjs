@@ -11,8 +11,8 @@ export default function Category() {
     <>
       {/* ✅ Desktop Aside (only visible above 1000px) */}
       <aside className="relative z-50 hidden xl:col-span-3 xl:block">
-        <div className="sticky top-[130px] rounded bg-white shadow">
-          <div className="rounded-lg border border-gray-200 bg-white shadow-sm">
+        <div className="sticky top-[130px] rounded bg-[#edf6ff] shadow">
+          <div className="rounded-lg border border-gray-200 bg-[#edf6ff] shadow-sm">
             <ul className="text-gray-700">
               {SHOP_BY_CATEGORIES.map((cat, idx) => {
                 const catSlug = slugify(cat.title);
@@ -38,9 +38,6 @@ export default function Category() {
                           />
                         </div>
                         <span className="mx-2">{cat.title}</span>
-
-
-
                       </span>
                       <i className="ri-arrow-right-s-line text-gray-400" />
                     </Link>

@@ -1,21 +1,22 @@
 import { Settings, Mail, MapPin } from "lucide-react"; // install lucide-react
+import Link from "next/link";
 
 export default function EprocurementPage() {
   return (
-    <div>
+    <div className="bg-[#edf6ff]">
       <div classname="bg-white py-5 w-full mt-[110px]">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Byyizzy
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li className="font-semibold text-[#067afd]">Services</li>
@@ -42,7 +43,9 @@ export default function EprocurementPage() {
           {/* Right Content */}
           <div className="space-y-6">
             <div>
-              <h3 className="mb-2 text-3xl font-bold text-gray-900">E2E <span className="text-[#067afd]">Procurement</span></h3>
+              <h3 className="mb-2 text-3xl font-bold text-gray-900">
+                E2E <span className="text-[#067afd]">Procurement</span>
+              </h3>
               <p className="text-lg font-semibold text-[#067afd]">Procure to Pay</p>
             </div>
 
@@ -73,8 +76,6 @@ export default function EprocurementPage() {
             />
           </div>
         </section>
-
-       
       </div>
     </div>
   );

@@ -1,22 +1,23 @@
 import { Check, Settings, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export default function ProcurementAsAService() {
   return (
-    <div>
+    <div className="bg-[#edf6ff]">
       {/* Breadcrumb */}
-      <div className="bg-white py-5 w-full mt-[110px]">
+      <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Byyizzy
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li className="font-semibold text-[#067afd]">Services</li>
@@ -43,7 +44,7 @@ export default function ProcurementAsAService() {
         <section id="about">
           <div className="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
             {/* Right Content shows first on mobile, second on desktop */}
-            <div className="space-y-8 order-1 lg:order-2">
+            <div className="order-1 space-y-8 lg:order-2">
               <div className="text-center">
                 <img
                   src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fpass.jpeg?alt=media&token=70709f7d-427e-4e2f-9131-3c774b008836"
@@ -56,14 +57,11 @@ export default function ProcurementAsAService() {
               <div>
                 <h3 className="mb-2 text-2xl font-bold text-gray-900">
                   Medium Enterprises{" "}
-                  <span className="text-[#067afd]">
-                    (Below 500 Crs Turnover/Annum)
-                  </span>
+                  <span className="text-[#067afd]">(Below 500 Crs Turnover/Annum)</span>
                 </h3>
                 <p className="mt-2 text-gray-600">
-                  Medium enterprises face challenges due to limited resources,
-                  non-competitive pricing, and lack of access to affordable
-                  e-sourcing tools.
+                  Medium enterprises face challenges due to limited resources, non-competitive
+                  pricing, and lack of access to affordable e-sourcing tools.
                 </p>
                 <ul className="mt-4 space-y-3">
                   {[
@@ -84,9 +82,7 @@ export default function ProcurementAsAService() {
               <div>
                 <h3 className="mb-2 text-2xl font-bold text-gray-900">
                   Small Enterprises{" "}
-                  <span className="text-[#067afd]">
-                    (Below 50 Crs Turnover/Annum)
-                  </span>
+                  <span className="text-[#067afd]">(Below 50 Crs Turnover/Annum)</span>
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {[
@@ -105,17 +101,14 @@ export default function ProcurementAsAService() {
             </div>
 
             {/* Left Content shows second on mobile, first on desktop */}
-            <div className="space-y-8 order-2 lg:order-1">
+            <div className="order-2 space-y-8 lg:order-1">
               <h3 className="text-3xl font-bold tracking-tight text-gray-900">
-                Procurement as a{" "}
-                <span className="text-[#067afd]">Service (PaaS)</span>
+                Procurement as a <span className="text-[#067afd]">Service (PaaS)</span>
               </h3>
 
               <h3 className="mb-2 text-2xl font-bold text-gray-900">
                 Large Enterprises{" "}
-                <span className="text-[#067afd]">
-                  (Efficient sourcing with inhouse resources)
-                </span>
+                <span className="text-[#067afd]">(Efficient sourcing with inhouse resources)</span>
               </h3>
 
               {/* Large Enterprises Points */}
@@ -165,52 +158,50 @@ export default function ProcurementAsAService() {
           </div>
         </section>
 
-       {/* Section 6: Service Cards */}
-      <section className="mb-1 py-5">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              {
-                title: "Efficient Sourcing",
-                desc: "Streamline your supplier discovery process",
-                icon: <Cog className="h-8 w-8" />,
-              },
-              {
-                title: "Automated Workflows",
-                desc: "Reduce manual efforts with automation",
-                icon: <Workflow className="h-8 w-8" />,
-              },
-              {
-                title: "Analytics Dashboard",
-                desc: "Visualize your spend and supplier performance",
-                icon: <BarChart3 className="h-8 w-8" />,
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
-              >
-                {/* Icon */}
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
-                  {item.icon}
+        {/* Section 6: Service Cards */}
+        <section className="mb-1 py-5">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {[
+                {
+                  title: "Efficient Sourcing",
+                  desc: "Streamline your supplier discovery process",
+                  icon: <Cog className="h-8 w-8" />,
+                },
+                {
+                  title: "Automated Workflows",
+                  desc: "Reduce manual efforts with automation",
+                  icon: <Workflow className="h-8 w-8" />,
+                },
+                {
+                  title: "Analytics Dashboard",
+                  desc: "Visualize your spend and supplier performance",
+                  icon: <BarChart3 className="h-8 w-8" />,
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
+                >
+                  {/* Icon */}
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
+                    {item.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
+                    {item.title}
+                  </h5>
+
+                  {/* Description */}
+                  <p className="text-center leading-relaxed text-gray-600">{item.desc}</p>
                 </div>
-
-                {/* Title */}
-                <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
-                  {item.title}
-                </h5>
-
-                {/* Description */}
-                <p className="text-center leading-relaxed text-gray-600">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact Form */}
-
-     
+        {/* Contact Form */}
       </div>
     </div>
   );

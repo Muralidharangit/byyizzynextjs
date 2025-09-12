@@ -33,19 +33,23 @@ export default function ServicesPage() {
   return (
     <div className="mt-[120px] min-h-screen bg-gray-100 text-gray-900">
       {/* Start Page Title Area */}
-      <div classname="bg-white py-5 w-full mt-[110px]">
+      
+      {/* End Page Title Area */}
+
+      {/* Start Page Title Area */}
+      <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Byyizzy
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li className="font-semibold text-[#067afd]">Services</li>
@@ -54,6 +58,7 @@ export default function ServicesPage() {
       </div>
       {/* End Page Title Area */}
 
+    
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
@@ -77,9 +82,9 @@ export default function ServicesPage() {
             {/* Section Header */}
             <div className="mb-10 flex items-center justify-between">
               <div>
-                 <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Our <span className="text-[#067afd]">Services</span>
-                          </h2>
+                <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                  Our <span className="text-[#067afd]">Services</span>
+                </h2>
                 {/* <h2 className="mb-2 text-3xl font-bold text-[#067afd] md:text-3xl">Our Services</h2> */}
                 <p className="text-md text-gray-500">
                   Hover on a card to reveal the theme gradient and highlight the service.

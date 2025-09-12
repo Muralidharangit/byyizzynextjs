@@ -1,6 +1,7 @@
 import { Mail, MapPin } from "lucide-react";
 import { Check } from "lucide-react";
 import { Settings } from "lucide-react";
+import Link from "next/link";
 
 export default function ChainHardware() {
   return (
@@ -10,18 +11,18 @@ export default function ChainHardware() {
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Byyizzy
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Services</li>
+            <li className="font-semibold text-[#067afd]">Hardware</li>
           </ol>
         </nav>
       </div>
