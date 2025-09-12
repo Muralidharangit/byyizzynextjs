@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
+
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import logowhite from "@/public/images/white.png";
-import logoblue from "@/public/images/blue.png";
-import Image from "next/image";
-
 import Header from "@/components/Header";
 import Footer from "@/components/footer";
+import SplashLoader from "@/components/GlobalRouteLoader";
 
 const rubik = Rubik({
   subsets: ["latin"],
@@ -20,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+      <html lang="en">
       <head>
         <link
           href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
@@ -29,9 +26,9 @@ export default function RootLayout({
       </head>
       <body>
         <Header />
-
-        {children}
-
+        <SplashLoader>
+          {children}
+        </SplashLoader>
         <Footer />
       </body>
     </html>
