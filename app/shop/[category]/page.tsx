@@ -39,7 +39,7 @@ export default function MachineryShopPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="min-h-screen bg-[#edf6ff]  text-gray-900">
       {/* Breadcrumbs */}
       <div className="w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
@@ -135,7 +135,7 @@ export default function MachineryShopPage() {
                   </div>
 
                   {/* Curved Info Panel */}
-                  <div className="relative z-10 -mt-10  bg-white p-5 shadow-lg">
+                  <div className="relative z-10 -mt-10 bg-white p-5 shadow-lg">
                     <h3 className="text-lg font-semibold text-gray-900">{product.materialName}</h3>
 
                     {/* code */}
@@ -146,7 +146,12 @@ export default function MachineryShopPage() {
                       <button
                         type="button"
                         className="relative overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg"
-                        onClick={() => openEnquiry(product.materialName, product.materialCode /* or product.code */)}
+                        onClick={() =>
+                          openEnquiry(
+                            product.materialName,
+                            product.materialCode /* or product.code */
+                          )
+                        }
                       >
                         <span className="relative z-10">Add Enquiry</span>
                         <span className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]" />

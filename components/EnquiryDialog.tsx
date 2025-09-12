@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { log } from "console";
+import Link from "next/link";
 
 type EnquiryDialogProps = {
   open: boolean;
@@ -29,7 +30,7 @@ export default function EnquiryDialog({
   productCode = "",
 }: EnquiryDialogProps) {
   const formRef = React.useRef<HTMLFormElement>(null);
-const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
   // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   //   e.preventDefault();
   //   const fd = new FormData(e.currentTarget);
@@ -56,41 +57,41 @@ const [loading, setLoading] = React.useState(false);
   // }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  if (loading) return;
-  setLoading(true);
+    e.preventDefault();
+    if (loading) return;
+    setLoading(true);
 
-  const fd = new FormData(e.currentTarget);
+    const fd = new FormData(e.currentTarget);
 
-  // Basic client-side validation: agree must be checked
-  const agreed = fd.get("agree") === "on";
-  if (!agreed) {
-    alert("Please agree to the terms & policy.");
-    setLoading(false);
-    return;
-  }
-
-  // Helpful context for the admin email
-  fd.append("page_url", window.location.href);
-
-  try {
-    const res = await fetch("/api/enquiry", { method: "POST", body: fd });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok || !data?.ok) {
-      throw new Error(data?.error || "Failed to submit enquiry");
+    // Basic client-side validation: agree must be checked
+    const agreed = fd.get("agree") === "on";
+    if (!agreed) {
+      alert("Please agree to the terms & policy.");
+      setLoading(false);
+      return;
     }
 
-    console.log(data,"=========================");
-    
-    alert("Enquiry submitted!");
-    onOpenChange(false);
-    formRef.current?.reset();
-  } catch (err: any) {
-    alert(err?.message || "Something went wrong. Please try again.");
-  } finally {
-    setLoading(false);
+    // Helpful context for the admin email
+    fd.append("page_url", window.location.href);
+
+    try {
+      const res = await fetch("/api/enquiry", { method: "POST", body: fd });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.ok) {
+        throw new Error(data?.error || "Failed to submit enquiry");
+      }
+
+      console.log(data, "=========================");
+
+      alert("Enquiry submitted!");
+      onOpenChange(false);
+      formRef.current?.reset();
+    } catch (err: any) {
+      alert(err?.message || "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
-}
 
   const defaultMessage = productName
     ? `Hi, I’m interested in ${productName}. Please share a quote.`
@@ -109,22 +110,12 @@ const [loading, setLoading] = React.useState(false);
           <div className="grid gap-2">
             <input type="text" name="hp" tabIndex={-1} autoComplete="off" className="hidden" />
             <Label htmlFor="material_code">Material Code</Label>
-            <Input
-              id="material_code"
-              name="material_code"
-              defaultValue={productCode}
-              readOnly
-            />
+            <Input id="material_code" name="material_code" defaultValue={productCode} readOnly />
           </div>
 
           <div className="grid gap-2">
             <Label htmlFor="material_name">Material Name</Label>
-            <Input
-              id="material_name"
-              name="material_name"
-              defaultValue={productName}
-              readOnly
-            />
+            <Input id="material_name" name="material_name" defaultValue={productName} readOnly />
           </div>
 
           {/* User fields */}
@@ -135,13 +126,7 @@ const [loading, setLoading] = React.useState(false);
 
           <div className="grid gap-2">
             <Label htmlFor="email">Your Email</Label>
-            <Input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-              required
-            />
+            <Input id="email" name="email" type="email" placeholder="you@example.com" required />
           </div>
 
           <div className="grid gap-2">
@@ -171,24 +156,33 @@ const [loading, setLoading] = React.useState(false);
 
           {/* Agree checkbox */}
           <div className="flex items-start gap-2">
-            <input
-              id="agree"
-              name="agree"
-              type="checkbox"
-              className="mt-1 h-4 w-4"
-              required
-            />
+            <input id="agree" name="agree" type="checkbox" className="mt-1 h-4 w-4" required />
             <Label htmlFor="agree" className="text-sm">
-              I agree to the <a href="/terms" className="underline">terms</a> and{" "}
-              <a href="/privacy" className="underline">privacy policy</a>.
+              I agree to the{" "}
+              <Link href="/terms" className="underline">
+                terms
+              </Link>{" "}
+              and{" "}
+              <Link href="/privacy" className="underline">
+                privacy policy
+              </Link>
+              .
             </Label>
           </div>
 
           <DialogFooter>
-            <Button type="button" variant="secondary"  onClick={() => onOpenChange(false)} className="bg-[#f94444] text-gray-100">
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => onOpenChange(false)}
+              className="bg-[#f94444] text-gray-100"
+            >
               Close
             </Button>
-            <Button type="submit" className="bg-[#067afd] text-gray-100" disabled={loading}> {loading ? "Submitting..." : "Submit"}</Button>
+            <Button type="submit" className="bg-[#067afd] text-gray-100" disabled={loading}>
+              {" "}
+              {loading ? "Submitting..." : "Submit"}
+            </Button>
           </DialogFooter>
         </form>
       </DialogContent>

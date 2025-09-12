@@ -19,34 +19,34 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 z-[100] w-full bg-white shadow-md">
       {/* Top Header */}
-      <div className="bg-[#f8f8f9] py-3">
+      <div className="bg-[#067afd] py-3">
         <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 lg:flex-row lg:gap-0">
           {/* Left */}
-          <ul className="flex flex-wrap justify-center gap-4 text-center text-sm text-gray-600 lg:justify-start">
+          <ul className="text-white-600 flex flex-wrap justify-center gap-4 text-center text-sm lg:justify-start">
             <li className="border-r border-gray-300 pr-4 last:border-r-0">
-              <Link href="/store-location" className="hover:text-[#067afd]">
+              <Link href="/store-location" className="text-white hover:text-[#067afd]">
                 Store Location
               </Link>
             </li>
             <li className="border-r border-gray-300 pr-4 last:border-r-0">
-              <Link href="/order-tracking" className="hover:text-[#067afd]">
+              <Link href="/order-tracking" className="text-white hover:text-[#067afd]">
                 Order Tracking
               </Link>
             </li>
-            <li className="pr-0">
+            <li className="pr-0 text-white">
               Call:{" "}
-              <a href="tel:+112345678909" className="font-semibold text-[#067afd]">
+              <Link href="tel:+112345678909" className=" text-[#067afd] text-white">
                 +11 2345678909
-              </a>
+              </Link>
             </li>
           </ul>
 
           {/* Right */}
           <div className="mt-2 flex items-center gap-4 text-sm lg:mt-0">
-            <Link href="/my-account" className="hover:text-[#067afd]">
+            <Link href="/my-account" className="text-white hover:text-[#067afd]">
               My Account
             </Link>
-            <button className="text-gray-800 hover:text-[#067afd]">Sign in</button>
+            <button className="text-gray-800 text-white hover:text-[#067afd]">Sign in</button>
           </div>
         </div>
       </div>
@@ -145,7 +145,7 @@ export default function Header() {
           </form> */}
 
           {/* search */}
-         <GlobalSearch className="w-full" />
+          <GlobalSearch className="w-full" />
 
           {/* Nav links */}
           <ul className="flex flex-col gap-4 text-gray-700">

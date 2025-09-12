@@ -612,59 +612,56 @@ const logos_img2 = [
  */
 function Row({ items, reverse = false, speedMs = 2000 }) {
   return (
-
     <div>
-      
- <div
-      className={`marquee-mask ${
-        reverse ? "marquee-left" : "marquee-right"
-      } ticker w-full max-w-[100vw] overflow-hidden`}
-    >
-      <Swiper
-        key={reverse ? "ticker-rev" : "ticker-fwd"}
-        modules={[Autoplay]}
-        className="w-full select-none"
-        slidesPerView="auto"
-        spaceBetween={10}
-        loop
-        loopAdditionalSlides={Math.max(24, items.length * 2)}
-        allowTouchMove={false}
-        speed={speedMs}
-        autoplay={{
-          delay: 1,
-          reverseDirection: reverse,
-          disableOnInteraction: false,
-          pauseOnMouseEnter: false,
-          waitForTransition: false,
-        }}
-        onAutoplayStop={(s) => s.autoplay.start()}
-        observer
-        observeParents
-        updateOnWindowResize
+      <div
+        className={`marquee-mask ${
+          reverse ? "marquee-left" : "marquee-right"
+        } ticker w-full max-w-[100vw] overflow-hidden`}
       >
-        {items.map((logo, idx) => (
-          <SwiperSlide key={idx} className="!w-auto">
-            <div className="rounded-xl bg-white px-6 py-3 shadow border flex items-center">
-              <Image
-                unoptimized
-                src={logo.src}
-                alt={logo.alt}
-                width={logo.w ?? 200}
-                height={logo.h ?? 100}
-                className="h-10 w-auto object-contain"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          key={reverse ? "ticker-rev" : "ticker-fwd"}
+          modules={[Autoplay]}
+          className="w-full bg-[#edf6ff] select-none"
+          slidesPerView="auto"
+          spaceBetween={7}
+          loop
+          loopAdditionalSlides={Math.max(24, items.length * 2)}
+          allowTouchMove={false}
+          speed={speedMs}
+          autoplay={{
+            delay: 1,
+            reverseDirection: reverse,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: false,
+            waitForTransition: false,
+          }}
+          onAutoplayStop={(s) => s.autoplay.start()}
+          observer
+          observeParents
+          updateOnWindowResize
+        >
+          {items.map((logo, idx) => (
+            <SwiperSlide key={idx} className="!w-auto">
+              <div className="flex items-center rounded-xl border bg-white px-6 py-3 shadow">
+                <Image
+                  unoptimized
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.w ?? 200}
+                  height={logo.h ?? 100}
+                  className="h-13 w-auto object-contain"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
-    </div>
-   
   );
 }
 
 export default function DualMarqueeSwiper() {
-  const SPEED = 2000;
+  const SPEED = 1000;
   return (
     <div className="space-y-6">
       {/* TOP: left → right */}

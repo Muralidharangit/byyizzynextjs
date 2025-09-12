@@ -6,8 +6,31 @@ export const metadata = { title: "Products" };
 
 export default function ProductsIndex() {
   return (
-    <div>
-      <section className="relative bg-gradient-to-r from-blue-50 to-blue-100">
+    <div className="bg-[#edf6ff]">
+      {/* Start Page Title Area */}
+      <div className="mt-[110px] w-full bg-[#edf6ff] py-5">
+        <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
+          <ol className="flex flex-wrap items-center space-x-2">
+            <li>
+              <Link href="#" className="font-medium hover:text-black">
+                Byyizzy
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="#" className="font-medium hover:text-black">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="font-semibold text-[#067afd]">About</li>
+          </ol>
+        </nav>
+      </div>
+      {/* End Page Title Area */}
+
+      {/* Hero Section */}
+      <div className="relative bg-gradient-to-r from-blue-50 to-blue-100">
         <div className="relative h-64 overflow-hidden md:h-96">
           <img
             src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
@@ -20,11 +43,11 @@ export default function ProductsIndex() {
             </h1>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Overview Section */}
 
-      <main className="mx-auto max-w-7xl p-6">
+      <div className="mx-auto max-w-7xl bg-[#edf6ff] p-6">
         <h1 className="mb-4 text-2xl font-semibold">
           Product <span className="text-[#067afd]">Categories</span>{" "}
         </h1>
@@ -53,7 +76,7 @@ export default function ProductsIndex() {
             );
           })}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

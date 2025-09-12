@@ -1,24 +1,25 @@
 import React from "react";
 import ContactForm from "@/components/ContactForm";
+import Link from "next/link";
 export default function ContactPage() {
 
   
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-900">
+    <div className="min-h-screen bg-[#edf6ff] text-gray-900">
       {/* Start Page Title Area */}
-      <div className="bg-white py-5 w-full mt-[110px]">
+      <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Byyizzy
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li className="font-semibold text-[#067afd]">Contact</li>
@@ -51,12 +52,8 @@ export default function ContactPage() {
                 <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
-                <span className="mb-1 block text-lg font-semibold text-gray-800">
-                  Address
-                </span>
-                <p className="text-sm text-gray-500">
-                  123 Street, Old Trafford, London, UK
-                </p>
+                <span className="mb-1 block text-lg font-semibold text-gray-800">Address</span>
+                <p className="text-sm text-gray-500">123 Street, Old Trafford, London, UK</p>
               </div>
             </div>
 
@@ -70,12 +67,12 @@ export default function ContactPage() {
                 <span className="mb-1 block text-lg font-semibold text-gray-800">
                   Email Address
                 </span>
-                <a
+                <Link
                   href="mailto:info@yourmail.com"
                   className="text-sm text-gray-500 transition-colors hover:text-[#067afd]"
                 >
                   info@yourmail.com
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -86,9 +83,7 @@ export default function ContactPage() {
                 <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
-                <span className="mb-1 block text-lg font-semibold text-gray-800">
-                  Phone
-                </span>
+                <span className="mb-1 block text-lg font-semibold text-gray-800">Phone</span>
                 <p className="text-sm text-gray-500">+ 457 789 789 65</p>
               </div>
             </div>
@@ -102,8 +97,7 @@ export default function ContactPage() {
                 Get In <span className="text-[#067afd]">Touch</span>{" "}
               </h2>
               <p className="mb-6 text-gray-600">
-                We’d love to hear from you. Fill out the form and we’ll get back
-                to you shortly.
+                We’d love to hear from you. Fill out the form and we’ll get back to you shortly.
               </p>
               <ContactForm />
             </div>

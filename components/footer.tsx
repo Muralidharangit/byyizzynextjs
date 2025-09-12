@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       {/* ✅ Subscribe Area */}
-      <section className="bg-[#067afd] py-16">
+      <section className="border-b border-gray-400 bg-[#067afd] py-16">
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
             {/* Left Content */}
@@ -36,13 +36,13 @@ export default function Footer() {
       </section>
 
       {/* ✅ Footer Area */}
-      <footer className="bg-white pt-12 pb-6">
+      <footer className="bg-[#067afd] pt-12 pb-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Info */}
             <div>
-              <Image src={logoblue} alt="Logo" className="mb-2 w-40" priority />
-              <p className="text-sm text-[#9c9c9c]">
+              <Image src={logowhite} alt="Logo" className="mb-2 w-40" priority />
+              <p className="text-sm text-[#fff]">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto amet quae
                 nesciunt quod molestiae.
               </p>
@@ -50,8 +50,8 @@ export default function Footer() {
 
             {/* Information */}
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Information</h3>
-              <ul className="space-y-2 text-sm text-[#9c9c9c]">
+              <h3 className="mb-4 text-lg font-semibold text-white">Information</h3>
+              <ul className="space-y-2 text-sm text-[#fff]">
                 <li>
                   <Link href="/about" className="hover:text-[#067afd]">
                     About
@@ -87,8 +87,8 @@ export default function Footer() {
 
             {/* Customer Service */}
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Customer Service</h3>
-              <ul className="space-y-2 text-sm text-[#9c9c9c]">
+              <h3 className="mb-4 text-lg font-semibold text-white">Customer Service</h3>
+              <ul className="space-y-2 text-sm text-[#fff]">
                 <li>
                   <Link href="/faq" className="hover:text-[#067afd]">
                     Help Center
@@ -124,23 +124,23 @@ export default function Footer() {
 
             {/* Quick Info */}
             <div>
-              <h3 className="mb-4 text-lg font-semibold">Quick Information</h3>
-              <ul className="space-y-3 text-sm text-[#9c9c9c]">
+              <h3 className="mb-4 text-lg font-semibold text-white">Quick Information</h3>
+              <ul className="space-y-3 text-sm text-[#fff]">
                 <li className="flex items-start gap-2">
                   <i className="ri-map-pin-line text-[#067afd]" />
                   2491 Reel Avenue Albuquerque, NM
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-phone-line text-[#067afd]" />
-                  <a href="tel:+1-(514)-321-4566" className="hover:text-[#067afd]">
+                  <Link href="tel:+1-(514)-321-4566" className="hover:text-[#067afd]">
                     +1 (514) 321-4566
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-mail-send-line text-[#067afd]" />
-                  <a href="mailto:[email protected]" className="hover:text-[#067afd]">
+                  <Link href="mailto:[email protected]" className="hover:text-[#067afd]">
                     [email protected]
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-time-line text-[#067afd]" />
@@ -150,20 +150,36 @@ export default function Footer() {
 
               {/* Socials */}
               <div className="mt-4">
-                <span className="text-black-800 mb-2 block">Stay connected:</span>
+                <span className="text-black-800 mb-2 block text-white">Stay connected:</span>
                 <div className="flex gap-3 text-lg">
-                  <a href="https://facebook.com" target="_blank" className="hover:text-[#067afd]">
+                  <Link
+                    href="https://facebook.com"
+                    target="_blank"
+                    className="text-white hover:text-[#067afd]"
+                  >
                     <i className="ri-facebook-fill" />
-                  </a>
-                  <a href="https://twitter.com" target="_blank" className="hover:text-[#067afd]">
+                  </Link>
+                  <Link
+                    href="https://twitter.com"
+                    target="_blank"
+                    className="text-white hover:text-[#067afd]"
+                  >
                     <i className="ri-twitter-fill" />
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" className="hover:text-[#067afd]">
+                  </Link>
+                  <Link
+                    href="https://linkedin.com"
+                    target="_blank"
+                    className="text-white hover:text-[#067afd]"
+                  >
                     <i className="ri-linkedin-fill" />
-                  </a>
-                  <a href="https://instagram.com" target="_blank" className="hover:text-[#067afd]">
+                  </Link>
+                  <Link
+                    href="https://instagram.com"
+                    target="_blank"
+                    className="text-white hover:text-[#067afd]"
+                  >
                     <i className="ri-instagram-fill" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -172,12 +188,12 @@ export default function Footer() {
       </footer>
 
       {/* ✅ Copy Right */}
-      <div className="border-t border-gray-300 py-4 text-center text-sm text-[#9c9c9c]">
+      <div className="border-t border-gray-300 bg-[#edf6ff] py-4 text-center text-sm text-[#9c9c9c]">
         <p>
           © {new Date().getFullYear()} Murali is Proudly Owned by{" "}
-          <a href="#" target="_blank" className="text-[#067afd] hover:underline">
+          <Link href="#" target="_blank" className="text-[#067afd] hover:underline">
             Syscorptheme
-          </a>
+          </Link>
         </p>
       </div>
     </>

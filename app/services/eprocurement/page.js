@@ -1,21 +1,22 @@
-import { CheckCircle, Settings, Mail, MapPin } from "lucide-react";
+import { CheckCircle, Settings, Mail, MapPin, Cog, Workflow, BarChart3 } from "lucide-react";
+import Link from "next/link";
 
 export default function Eprocurement() {
   return (
-    <div>
+    <div className="bg-[#edf6ff]">
       <div classname="bg-white py-5 w-full mt-[110px]">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Byyizzy
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <a href="#" className="font-medium hover:text-black">
+              <Link href="#" className="font-medium hover:text-black">
                 Home
-              </a>
+              </Link>
             </li>
             <li>/</li>
             <li className="font-semibold text-[#067afd]">Services</li>
@@ -45,7 +46,9 @@ export default function Eprocurement() {
             {/* Left Content */}
             <div className="space-y-6">
               <div>
-                <h3 className="mb-2 text-3xl font-bold text-gray-900">E-Sourcing <span className="text-[#067afd]"> Platform</span></h3>
+                <h3 className="mb-2 text-3xl font-bold text-gray-900">
+                  E-Sourcing <span className="text-[#067afd]"> Platform</span>
+                </h3>
                 <p className="text-lg font-semibold text-[#067afd]">Source to Pay Process</p>
               </div>
 
@@ -64,8 +67,6 @@ export default function Eprocurement() {
                   </div>
                 ))}
               </div>
-
-             
             </div>
 
             {/* Right Image */}
@@ -79,52 +80,50 @@ export default function Eprocurement() {
           </div>
         </section>
 
-       {/* Section 6: Service Cards */}
-      <section className="mb-1 py-5">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {[
-              {
-                title: "Efficient Sourcing",
-                desc: "Streamline your supplier discovery process",
-                icon: <Cog className="h-8 w-8" />,
-              },
-              {
-                title: "Automated Workflows",
-                desc: "Reduce manual efforts with automation",
-                icon: <Workflow className="h-8 w-8" />,
-              },
-              {
-                title: "Analytics Dashboard",
-                desc: "Visualize your spend and supplier performance",
-                icon: <BarChart3 className="h-8 w-8" />,
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
-              >
-                {/* Icon */}
-                <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
-                  {item.icon}
+        {/* Section 6: Service Cards */}
+        <section className="mb-1 py-5">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {[
+                {
+                  title: "Efficient Sourcing",
+                  desc: "Streamline your supplier discovery process",
+                  icon: <Cog className="h-8 w-8" />,
+                },
+                {
+                  title: "Automated Workflows",
+                  desc: "Reduce manual efforts with automation",
+                  icon: <Workflow className="h-8 w-8" />,
+                },
+                {
+                  title: "Analytics Dashboard",
+                  desc: "Visualize your spend and supplier performance",
+                  icon: <BarChart3 className="h-8 w-8" />,
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
+                >
+                  {/* Icon */}
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
+                    {item.icon}
+                  </div>
+
+                  {/* Title */}
+                  <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
+                    {item.title}
+                  </h5>
+
+                  {/* Description */}
+                  <p className="text-center leading-relaxed text-gray-600">{item.desc}</p>
                 </div>
-
-                {/* Title */}
-                <h5 className="mb-3 text-center text-xl font-semibold text-gray-800">
-                  {item.title}
-                </h5>
-
-                {/* Description */}
-                <p className="text-center leading-relaxed text-gray-600">{item.desc}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Contact Form */}
-
-  
+        {/* Contact Form */}
       </div>
     </div>
   );
