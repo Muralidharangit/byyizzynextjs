@@ -18,6 +18,8 @@ export type ShopCategory = {
   product: Product[];
 };
 
+// uuu
+
 export const SHOP_BY_CATEGORIES: ShopCategory[] = [
   {
     id: "1",
