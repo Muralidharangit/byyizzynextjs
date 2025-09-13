@@ -18,6 +18,8 @@ export type ShopCategory = {
   product: Product[];
 };
 
+// uuu
+
 export const SHOP_BY_CATEGORIES: ShopCategory[] = [
   {
     id: "1",
@@ -2712,4 +2714,3 @@ export function filterProductsBy(slug: string, sub?: string) {
 
   return main.product.filter((p) => slugify(p.category || "") === subSlug);
 }
-// mmmmm
