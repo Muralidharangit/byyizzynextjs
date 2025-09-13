@@ -1,5 +1,5 @@
 "use client";
-
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logoblue from "@/public/images/blue.png"; // adjust path
@@ -41,7 +41,14 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Info */}
             <div>
-              <Image src={logowhite} alt="Logo" className="mb-2 w-40" priority />
+              <Image
+                src={logowhite}
+                alt="Logo"
+                className="mb-2 w-40"
+                width={165} // adjust for display
+                height={44}
+                priority
+              />
               <p className="text-sm text-[#fff]">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto amet quae
                 nesciunt quod molestiae.

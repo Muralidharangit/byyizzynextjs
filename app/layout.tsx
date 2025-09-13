@@ -21,24 +21,28 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={rubik.className}>
+    <html lang="en">
       <head>
         {/* Preconnect + preload only */}
-        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          rel="preload"
-          as="style"
-          href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+          rel="stylesheet"
         />
+
+        
+
+        
       </head>
-      <body className={rubik.className} suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true}>
         {/* Injects Remixicon CSS client-side */}
         <RemixiconLoader />
 
         <Header />
         {/* <SplashLoader> */}
-          {children}
-          {/* </SplashLoader> */}
+        {children}
+        {/* </SplashLoader> */}
         <Footer />
       </body>
     </html>

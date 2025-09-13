@@ -24,19 +24,18 @@ interface HeroBannerProps {
 
 export default function HeroBanner({ slides }: HeroBannerProps) {
   return (
-    <section className="primary-color relative h-[500px] py-4 flex items-center">
-      <div className="container mx-auto px-6 lg:px-12 ">
+    <section className="primary-color relative flex h-[500px] items-center py-4">
+      <div className="container mx-auto px-6 lg:px-12">
         <Swiper
           modules={[Autoplay, Pagination, Navigation, EffectFade]}
           spaceBetween={50}
           slidesPerView={1}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
-          navigation
+          navigation={false} // disable arrows
           loop
           effect="fade"
           fadeEffect={{ crossFade: true }}
-          className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
         >
           {slides.map((slide, index) => (
             <SwiperSlide key={index}>
@@ -76,14 +75,16 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
 
                 {/* Right Image */}
                 <div className="animate-fadeIn hidden justify-center lg:flex lg:justify-end">
-                  <div className="relative h-[450px] w-full flex items-center">
+                  <div className="relative flex h-[450px] w-full items-center">
                     <Image
                       src={slide.img}
                       alt="Banner Illustration"
-                      width={1200} // numeric pixel width
-                      height={450} // numeric pixel height
+                      width={1200}
+                      height={450}
                       className="rounded-xl object-cover"
                       priority
+                      fetchPriority="high" // Hint browser to load this image first
+                      decoding="auto" // Let browser choose optimal decoding
                     />
                   </div>
                 </div>
