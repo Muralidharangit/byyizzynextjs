@@ -52,7 +52,7 @@ export default function ServicesPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Services</li>
+            <li className="font-semibold text-[#1c90f2]">Services</li>
           </ol>
         </nav>
       </div>
@@ -73,7 +73,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-12">
-        {/* <h1 className="text-4xl font-bold text-center mb-10 text-[#067afd]">
+        {/* <h1 className="text-4xl font-bold text-center mb-10 text-[#1c90f2]">
           Our Services
         </h1> */}
 
@@ -83,9 +83,9 @@ export default function ServicesPage() {
             <div className="mb-10 flex items-center justify-between">
               <div>
                 <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                  Our <span className="text-[#067afd]">Services</span>
+                  Our <span className="text-[#1c90f2]">Services</span>
                 </h2>
-                {/* <h2 className="mb-2 text-3xl font-bold text-[#067afd] md:text-3xl">Our Services</h2> */}
+                {/* <h2 className="mb-2 text-3xl font-bold text-[#1c90f2] md:text-3xl">Our Services</h2> */}
                 <p className="text-md text-gray-500">
                   Hover on a card to reveal the theme gradient and highlight the service.
                 </p>

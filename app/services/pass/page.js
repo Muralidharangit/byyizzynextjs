@@ -1,4 +1,4 @@
-import { Check, Settings, Mail, MapPin } from "lucide-react";
+import { Check, Settings, Mail, MapPin, Cog, Workflow, BarChart3 } from "lucide-react";
 import Link from "next/link";
 
 export default function ProcurementAsAService() {
@@ -20,7 +20,7 @@ export default function ProcurementAsAService() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Services</li>
+            <li className="font-semibold text-[#1c90f2]">Services</li>
           </ol>
         </nav>
       </div>
@@ -28,10 +28,11 @@ export default function ProcurementAsAService() {
       {/* Banner */}
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover blur-xs filter"
         />
+
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             E2E Procurement
@@ -57,7 +58,7 @@ export default function ProcurementAsAService() {
               <div>
                 <h3 className="mb-2 text-2xl font-bold text-gray-900">
                   Medium Enterprises{" "}
-                  <span className="text-[#067afd]">(Below 500 Crs Turnover/Annum)</span>
+                  <span className="text-[#1c90f2]">(Below 500 Crs Turnover/Annum)</span>
                 </h3>
                 <p className="mt-2 text-gray-600">
                   Medium enterprises face challenges due to limited resources, non-competitive
@@ -82,7 +83,7 @@ export default function ProcurementAsAService() {
               <div>
                 <h3 className="mb-2 text-2xl font-bold text-gray-900">
                   Small Enterprises{" "}
-                  <span className="text-[#067afd]">(Below 50 Crs Turnover/Annum)</span>
+                  <span className="text-[#1c90f2]">(Below 50 Crs Turnover/Annum)</span>
                 </h3>
                 <ul className="mt-4 space-y-3">
                   {[
@@ -103,12 +104,12 @@ export default function ProcurementAsAService() {
             {/* Left Content shows second on mobile, first on desktop */}
             <div className="order-2 space-y-8 lg:order-1">
               <h3 className="text-3xl font-bold tracking-tight text-gray-900">
-                Procurement as a <span className="text-[#067afd]">Service (PaaS)</span>
+                Procurement as a <span className="text-[#1c90f2]">Service (PaaS)</span>
               </h3>
 
               <h3 className="mb-2 text-2xl font-bold text-gray-900">
                 Large Enterprises{" "}
-                <span className="text-[#067afd]">(Efficient sourcing with inhouse resources)</span>
+                <span className="text-[#1c90f2]">(Efficient sourcing with inhouse resources)</span>
               </h3>
 
               {/* Large Enterprises Points */}
@@ -128,7 +129,7 @@ export default function ProcurementAsAService() {
 
               <div>
                 <h3 className="mb-2 text-2xl font-bold text-gray-900">
-                  Major <span className="text-[#067afd]">Benefits:</span>
+                  Major <span className="text-[#1c90f2]">Benefits:</span>
                 </h3>
                 <ul className="mt-2 space-y-3">
                   {[
@@ -176,7 +177,8 @@ export default function ProcurementAsAService() {
                 {
                   title: "Analytics Dashboard",
                   desc: "Visualize your spend and supplier performance",
-                  icon: <BarChart3 className="h-8 w-8" />,
+                  icon: <BarChart3
+                   className="h-8 w-8" />,
                 },
               ].map((item, i) => (
                 <div
@@ -184,7 +186,7 @@ export default function ProcurementAsAService() {
                   className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                 >
                   {/* Icon */}
-                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#1c90f2]">
                     {item.icon}
                   </div>
 

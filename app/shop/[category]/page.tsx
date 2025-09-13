@@ -56,7 +56,7 @@ export default function MachineryShopPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">{cat.title ?? "Machinery"}</li>
+            <li className="font-semibold text-[#1c90f2]">{cat.title ?? "Machinery"}</li>
           </ol>
         </nav>
       </div>
@@ -77,7 +77,7 @@ export default function MachineryShopPage() {
                   <Link
                     href={href}
                     className={`flex items-center justify-between px-2 py-3 transition ${
-                      active ? "font-semibold text-[#067afd]" : "text-gray-700 hover:bg-gray-100"
+                      active ? "font-semibold text-[#1c90f2]" : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
                     <span>{t.name}</span>

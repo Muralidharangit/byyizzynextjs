@@ -19,7 +19,7 @@ export default function Eprocurement() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Services</li>
+            <li className="font-semibold text-[#1c90f2]">Services</li>
           </ol>
         </nav>
       </div>
@@ -27,10 +27,11 @@ export default function Eprocurement() {
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover blur-xs filter"
         />
+
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             E-Sourcing Platform
@@ -47,9 +48,9 @@ export default function Eprocurement() {
             <div className="space-y-6">
               <div>
                 <h3 className="mb-2 text-3xl font-bold text-gray-900">
-                  E-Sourcing <span className="text-[#067afd]"> Platform</span>
+                  E-Sourcing <span className="text-[#1c90f2]"> Platform</span>
                 </h3>
-                <p className="text-lg font-semibold text-[#067afd]">Source to Pay Process</p>
+                <p className="text-lg font-semibold text-[#1c90f2]">Source to Pay Process</p>
               </div>
 
               {/* Points */}
@@ -106,7 +107,7 @@ export default function Eprocurement() {
                   className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                 >
                   {/* Icon */}
-                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#1c90f2]">
                     {item.icon}
                   </div>
 

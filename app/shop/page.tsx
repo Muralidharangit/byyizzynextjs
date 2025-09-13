@@ -23,7 +23,7 @@ export default function ProductsIndex() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">About</li>
+            <li className="font-semibold text-[#1c90f2]">About</li>
           </ol>
         </nav>
       </div>
@@ -49,7 +49,7 @@ export default function ProductsIndex() {
 
       <div className="mx-auto max-w-7xl bg-[#edf6ff] p-6">
         <h1 className="mb-4 text-2xl font-semibold">
-          Product <span className="text-[#067afd]">Categories</span>{" "}
+          Product <span className="text-[#1c90f2]">Categories</span>{" "}
         </h1>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">

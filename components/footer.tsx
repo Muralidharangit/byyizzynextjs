@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       {/* ✅ Subscribe Area */}
-      <section className="border-b border-gray-400 bg-[#067afd] py-16">
+      <section className="border-b border-gray-400 bg-[#1c90f2] py-16">
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
             {/* Left Content */}
@@ -36,7 +36,7 @@ export default function Footer() {
       </section>
 
       {/* ✅ Footer Area */}
-      <footer className="bg-[#067afd] pt-12 pb-6">
+      <footer className="bg-[#1c90f2] pt-12 pb-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Info */}

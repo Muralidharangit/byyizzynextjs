@@ -22,7 +22,7 @@ export default function ChainHardware() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Hardware</li>
+            <li className="font-semibold text-[#1c90f2]">Hardware</li>
           </ol>
         </nav>
       </div>
@@ -30,10 +30,11 @@ export default function ChainHardware() {
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover blur-xs filter"
         />
+
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Chain of Hardware
@@ -48,15 +49,15 @@ export default function ChainHardware() {
             <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
               {/* Left Content */}
               <div className="space-y-6">
-                <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-[#067afd]">
+                <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-[#1c90f2]">
                   About Us
                 </span>
 
                 <h3 className="mt-3 text-3xl leading-snug font-bold text-black">
-                  Chain of <span className="text-[#067afd]">Hardware Stores</span>
+                  Chain of <span className="text-[#1c90f2]">Hardware Stores</span>
                 </h3>
 
-                <p className="text-lg font-semibold text-[#067afd]">
+                <p className="text-lg font-semibold text-[#1c90f2]">
                   Management of Hardware Stores &amp; Tools
                 </p>
 
@@ -114,7 +115,7 @@ export default function ChainHardware() {
                   {/* Icon in a circle */}
                   <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-3xl text-blue-600">
                     {/* <i className="ti-settings"></i> */}
-                    <Settings className="h-8 w-8 text-[#067afd]" />
+                    <Settings className="h-8 w-8 text-[#1c90f2]" />
                   </div>
 
                   {/* Title */}
@@ -129,8 +130,6 @@ export default function ChainHardware() {
             </div>
           </div>
         </section>
-
-    
       </div>
     </div>
   );
