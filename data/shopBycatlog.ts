@@ -2712,4 +2712,3 @@ export function filterProductsBy(slug: string, sub?: string) {
 
   return main.product.filter((p) => slugify(p.category || "") === subSlug);
 }
-// mmmmm
