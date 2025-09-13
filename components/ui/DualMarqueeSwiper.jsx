@@ -7,8 +7,6 @@ import "swiper/css";
 import logos from "@/data/logos.json";
 import logo2 from "@/data/logo2.json";
 
-
-
 /** @typedef {{src:string, alt:string, w?:number|null, h?:number|null}} Logo */
 
 /**

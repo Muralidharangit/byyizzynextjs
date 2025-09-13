@@ -168,7 +168,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 bg-white">
+      <section className="bg-white py-16">
         <div className="container mx-auto grid gap-8 px-6 md:grid-cols-2 lg:px-12">
           <div className="rounded-2xl bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
             <h2 className="mb-4 text-2xl font-bold">

@@ -1,15 +1,12 @@
 // app/all/home/page.jsx
 import Mainbanner from "./Mainbanner";
-import Ourbrand from "./Ourbrand";
+import Ourbrand from "../../components/Ourbrand";
 
-import Whychoose from "./Whychoose";
-import Serv1 from "./serv1";
-import Ser2 from "./ser2";
-import Ourservice from "./Ourservice";
-import ShopbyCat from "./ShopbyCat";
-
-
-
+import Whychoose from "../../components/Whychoose";
+import Serv1 from "../../components/serv1";
+import Ser2 from "../../components/serv2";
+import Ourservice from "../../components/Ourservice";
+import ShopbyCat from "../../components/ShopbyCat";
 
 export default function HomePage() {
   return (

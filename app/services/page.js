@@ -33,7 +33,7 @@ export default function ServicesPage() {
   return (
     <div className="mt-[120px] min-h-screen bg-gray-100 text-gray-900">
       {/* Start Page Title Area */}
-      
+
       {/* End Page Title Area */}
 
       {/* Start Page Title Area */}
@@ -58,7 +58,6 @@ export default function ServicesPage() {
       </div>
       {/* End Page Title Area */}
 
-    
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"

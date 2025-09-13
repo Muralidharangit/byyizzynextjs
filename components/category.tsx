@@ -67,7 +67,7 @@ export default function Category() {
               })}
 
               {/* Show All Categories button */}
-              <li className="border-b border-gray-100 last:border-b-0 ">
+              <li className="border-b border-gray-100 last:border-b-0">
                 <Link
                   href="/shop"
                   className="flex items-center justify-center px-5 py-3 font-semibold text-[#067afd] transition hover:bg-gray-100"

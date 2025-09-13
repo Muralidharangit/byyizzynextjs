@@ -4,7 +4,7 @@ const nextConfig = {
     domains: [
       "firebasestorage.googleapis.com",
       "i.pinimg.com",
-      "tnswp.com",                // ✅ add this
+      "tnswp.com", // ✅ add this
       // "www.tnswp.com",          // add if you ever use www
       // "cdn.tnswp.com",          // add if images load via a CDN subdomain
     ],

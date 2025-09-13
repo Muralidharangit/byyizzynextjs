@@ -36,7 +36,8 @@ export default function ServicesCarousel({ services }: { services: Service[] }) 
                   isActive ? "services_active" : "bg-gray"
                 }`}
               >
-                <div className={`flex h-20 w-20 items-center justify-center rounded-lg transition-all duration-500 ${
+                <div
+                  className={`flex h-20 w-20 items-center justify-center rounded-lg transition-all duration-500 ${
                     isActive ? "bg-white" : "bg-blue-100"
                   }`}
                 >
@@ -50,7 +51,8 @@ export default function ServicesCarousel({ services }: { services: Service[] }) 
                   />
                 </div>
 
-                <h4 className={`mt-5 mb-2 text-lg font-semibold transition-colors duration-500 ${
+                <h4
+                  className={`mt-5 mb-2 text-lg font-semibold transition-colors duration-500 ${
                     isActive ? "text-white" : "text-gray-900"
                   }`}
                 >
@@ -58,7 +60,9 @@ export default function ServicesCarousel({ services }: { services: Service[] }) 
                 </h4>
 
                 <div className="mt-4 flex items-center text-sm font-medium transition-colors duration-300">
-                  <span className={`${isActive ? "text-white hover:text-gray-200" : "text-blue-600 hover:text-blue-800"}`}>
+                  <span
+                    className={`${isActive ? "text-white hover:text-gray-200" : "text-blue-600 hover:text-blue-800"}`}
+                  >
                     Read More <i className="ri-arrow-right-line text-lg" />
                   </span>
                 </div>

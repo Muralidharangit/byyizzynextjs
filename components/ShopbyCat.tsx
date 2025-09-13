@@ -3,29 +3,18 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { SHOP_BY_CATEGORIES } from "@/data/categories"; // import your categories data
-
+// import your categories data
+import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 
 export default function ShopbyCat() {
-  const [mounted, setMounted] = useState(false);
+  // const [mounted, setMounted] = useState(false);
 
-  // Prevent SSR mismatch
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // // Prevent SSR mismatch
+  // useEffect(() => {
+  //   setMounted(true);
+  // }, []);
 
-  if (!mounted) return null;
-
-  // Optional: Filter popular products
-  const filteredProducts = SHOP_BY_CATEGORIES.flatMap(
-    (category) =>
-      category.product
-        ?.filter((product) => String(product.popularity).startsWith("4"))
-        .map((product) => ({
-          ...product,
-          categoryTitle: category.title,
-        })) || []
-  );
+  // if (!mounted) return null;
 
   return (
     <div>
@@ -53,7 +42,11 @@ export default function ShopbyCat() {
           {/* Categories Grid */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-3">
             {SHOP_BY_CATEGORIES.slice(0, 15).map((category) => {
-              const catSlug = slugify(category.title, { lower: true });
+              const catSlug = category.title
+                .toLowerCase()
+                .trim()
+                .replace(/[^a-z0-9]+/gi, "-")
+                .replace(/^-+|-+$/g, "");
               return (
                 <Link
                   key={category.id}

@@ -58,7 +58,7 @@ Page: ${payload.page_url || "-"}
   `;
 
   await transporter.sendMail({
-    from,//sangeeswty
+    from, //sangeeswty
     to, //sangeedev
     subject,
     text,
@@ -73,7 +73,6 @@ function escapeHtml(s: string) {
 function nl2br(s: string) {
   return s.replace(/\n/g, "<br/>");
 }
-
 
 // Contact Form starts
 
@@ -117,6 +116,6 @@ Page: ${payload.page_url || "-"}
     subject,
     text,
     html,
-    replyTo: payload.email,          // reply goes to the user
+    replyTo: payload.email, // reply goes to the user
   });
 }

@@ -63,20 +63,8 @@ body {
 
 /* Masks the edges for a clean "window" */
 .marquee-mask {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 /* Apply animation to the Swiper wrapper */
@@ -107,20 +95,8 @@ body {
 
 /* Edge fade (optional) */
 .ticker-mask {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 /* Apply animations to Swiper's internal wrapper */
@@ -148,29 +124,29 @@ button.ring-offset-background.focus\:ring-ring.data-\[state\=open\]\:bg-accent.d
   border-radius: 3px;
   color: white;
 }
-svg.lucide.lucide-x{
-      stroke-width: 4px;
+svg.lucide.lucide-x {
+  stroke-width: 4px;
 }
 
 section.relative.h-\[500px\].bg-gradient-to-r.from-\[\#067afd\].to-\[\#004aad\].py-16 {
-    background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
+  background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 }
-.services_active{
-   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
+.services_active {
+  background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 }
-.red{
+.red {
   background-color: red;
 }
 
-.primary-color{
-   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
-}
-
-section.relative.h-\[500px\].py-16.primary-color{
+.primary-color {
   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 }
 
-button.flex.h-10.w-10.items-center.justify-center.rounded-full.bg-\[\#1c90f2\].text-white.shadow-md.transition.hover\:opacity-90{
+section.relative.h-\[500px\].py-16.primary-color {
+  background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
+}
+
+button.flex.h-10.w-10.items-center.justify-center.rounded-full.bg-\[\#1c90f2\].text-white.shadow-md.transition.hover\:opacity-90 {
   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 }
 
@@ -178,15 +154,14 @@ button.flex.h-10.w-10.items-center.justify-center.rounded-full.bg-\[\#1c90f2\].t
   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 } */
 
-
 /* .container.mx-auto.grid.grid-cols-1.items-center.gap-10.px-6.py-16.md\:px-12.lg\:grid-cols-2{
   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 } */
 
-.swiper-button-next{
-  display:none;
+.swiper-button-next {
+  display: none;
 }
 
-.swiper-button-prev{
-  display:none;
+.swiper-button-prev {
+  display: none;
 }

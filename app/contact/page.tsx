@@ -3,8 +3,6 @@ import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import Image from "next/image";
 export default function ContactPage() {
-
-  
   return (
     <div className="min-h-screen bg-[#edf6ff] text-gray-900">
       {/* Start Page Title Area cvg */}

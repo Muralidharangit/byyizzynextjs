@@ -10,8 +10,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 export default function Ourservice() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
   const [navigationReady, setNavigationReady] = useState(false);
 
   useEffect(() => {
@@ -72,22 +70,6 @@ export default function Ourservice() {
                 Hover on a card to reveal the theme gradient and highlight the service.
               </p>
             </div>
-
-            {/* Navigation Arrows */}
-            {/* <div className="order-1 hidden space-x-3 lg:order-2 lg:flex">
-              <button
-                ref={prevRef}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
-              >
-                <i className="ri-arrow-left-s-line text-xl"></i>
-              </button>
-              <button
-                ref={nextRef}
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1c90f2] text-white shadow-md transition hover:opacity-90"
-              >
-                <i className="ri-arrow-right-s-line text-xl"></i>
-              </button>
-            </div> */}
           </div>
 
           {/* Swiper */}
@@ -104,10 +86,10 @@ export default function Ourservice() {
                 }}
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
-                navigation={{
-                  prevEl: prevRef.current,
-                  nextEl: nextRef.current,
-                }}
+                // navigation={{
+                //   prevEl: prevRef.current,
+                //   nextEl: nextRef.current,
+                // }}
               >
                 {services.map((service, index) => (
                   <SwiperSlide key={index}>
@@ -115,7 +97,7 @@ export default function Ourservice() {
                       <Link href={service.href}>
                         <div
                           className={`group relative cursor-pointer overflow-hidden rounded-xl p-6 shadow-lg transition-transform duration-300 ${
-                            isActive ? "bg-gradient-to-r from-blue-500 to-blue-700" : "bg-gray-50"
+                            isActive ? "services_active" : "bg-gray-50"
                           }`}
                         >
                           <div
