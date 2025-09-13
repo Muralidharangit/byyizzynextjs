@@ -13,8 +13,14 @@ import { useEffect, useRef, useState } from "react";
 import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 import Link from "next/link";
 import DualMarqueeSwiper from "@/components/ui/DualMarqueeSwiper";
+import bn1 from "@/public/images/Banner/1.webp";
+import bn2 from "@/public/images/Banner/2.webp";
+import bn3 from "@/public/images/Banner/3.webp";
+import bn4 from "@/public/images/Banner/4.webp";
 
 import Category from "@/components/category";
+import HeroBanner from "@/components/HeroBanner";
+import { slides } from "@/data/slides";
 export default function Home() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -34,67 +40,6 @@ export default function Home() {
         categoryTitle: category.title, // add the category title here
       }))
   );
-  const slides = [
-    {
-      title: "India's Growing Hardware & DIY Store Brand",
-      description:
-        "To integrate and create a chain of hardware stores under one roof of our brand, expertise, and technology.",
-      highlights: [
-        "Easy credit & EMI Facility to B2C Customers",
-        "Fastest Delivery of Industrial Products",
-        "Optimized Inventory Model",
-        "Improved Margins",
-        "More Business Volume",
-      ],
-      img: "https://i.pinimg.com/1200x/bc/7e/db/bc7edb885820ae38acd5c482d091d489.jpg",
-      link1: { text: "Get Started", href: "#services", primary: true },
-      link2: { text: "Learn More", href: "#learn" },
-    },
-    {
-      title: "Procurement as a Service (PaaS) & Valuable",
-      description:
-        "An efficient & sustainable way of procurement that helps businesses optimize overall costs.",
-      highlights: [
-        "Overall Procurement Cost Optimization",
-        "On Demand Service",
-        "Leverage Global Expertise",
-        "Multiple Marketplaces",
-      ],
-      img: "https://i.pinimg.com/1200x/68/03/cc/6803cc864af89421247b85c25e475d38.jpg",
-      link1: { text: "Get Started", href: "#services", primary: true },
-      link2: { text: "Learn More", href: "#learn" },
-    },
-    {
-      title: "Best & Cost-effective Contract Lifecycle Management",
-      description:
-        "Simplify and streamline your sourcing-to-pay (S2P) process with modern platforms.",
-      highlights: [
-        "P2P / E-Sourcing / Auction Platforms",
-        "Optimize Your Ordering Costs",
-        "Entire Procurement Visibility",
-        "Flexible, Customizable & Easy-To-Use",
-        "Fast & Efficient Platform",
-      ],
-      img: "https://i.pinimg.com/1200x/2f/3b/c3/2f3bc3eace8996663c1961b4d05c38e6.jpg",
-      link1: { text: "Get Started", href: "#services", primary: true },
-      link2: { text: "Learn More", href: "#learn" },
-    },
-    {
-      title: "Transforming Industrial Supply Chain",
-      description:
-        "Standard and customized MRO spares, consumables, and hardware products with hyper-local stores and advanced technology.",
-      highlights: [
-        "Source Direct-from-Factory",
-        "Fastest Delivery",
-        "Best Prices & Trade Assurance",
-        "OTIF",
-        "Quality Assurance",
-      ],
-      img: "https://calderamfg.com/wp-content/uploads/2023/11/metal-parts.jpg",
-      link1: { text: "Get Started", href: "#services", primary: true },
-      link2: { text: "Learn More", href: "#learn" },
-    },
-  ];
 
   const services = [
     {
@@ -385,79 +330,10 @@ export default function Home() {
             <main className="relative z-10 overflow-hidden rounded bg-white p-2 shadow md:col-span-12 lg:col-span-12 xl:col-span-9">
               <div className="slider bg-red">
                 {/* swiper slide main banner */}
-                <div className="">
-                  <section className="relative h-[500px] bg-gradient-to-r from-[#067afd] to-[#004aad] py-16">
-                    <div className="container mx-auto px-6 lg:px-12">
-                      <Swiper
-                        modules={[Autoplay, Pagination, Navigation, EffectFade]}
-                        spaceBetween={50}
-                        slidesPerView={1}
-                        autoplay={{ delay: 5000, disableOnInteraction: false }}
-                        pagination={{ clickable: true }}
-                        navigation
-                        loop
-                        effect="fade"
-                        fadeEffect={{ crossFade: true }}
-                        className="[&_.swiper-button-next]:hidden [&_.swiper-button-prev]:hidden"
-                      >
-                        {slides.map((slide, index) => (
-                          <SwiperSlide key={index}>
-                            <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
-                              {/* Left Content */}
-                              <div className="animate-fadeIn space-y-6 text-white">
-                                <h1 className="text-1xl font-700 leading-tight md:text-3xl">
-                                  {slide.title}
-                                </h1>
-                                <p className="text-md text-white-200 md:text-md">
-                                  {slide.description}
-                                </p>
-
-                                {/* Highlights */}
-                                <ul className="text-white-200 list-inside list-disc space-y-1">
-                                  {slide.highlights?.map((point, i) => (
-                                    <li key={i}>{point}</li>
-                                  ))}
-                                </ul>
-
-                                {/* Buttons */}
-                                <div className="flex gap-4 pt-4">
-                                  <Link
-                                    href={slide.link1.href}
-                                    className={`rounded-lg px-6 py-3 font-semibold shadow-md transition ${
-                                      slide.link1.primary
-                                        ? "bg-white text-[#004aad] hover:bg-gray-200"
-                                        : "border border-white text-white hover:bg-white hover:text-[#004aad]"
-                                    }`}
-                                  >
-                                    {slide.link1.text}
-                                  </Link>
-                                  <Link
-                                    href={slide.link2.href}
-                                    className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
-                                  >
-                                    {slide.link2.text}
-                                  </Link>
-                                </div>
-                              </div>
-
-                              {/* Right Image */}
-                              <div className="animate-fadeIn hidden justify-center lg:flex lg:justify-end">
-                                <img
-                                  src={slide.img}
-                                  alt="Banner Illustration"
-                                  className="max-h-[400px] rounded-xl object-contain shadow-lg"
-                                />
-                              </div>
-                            </div>
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
-                    </div>
-                  </section>
-                </div>
+                <HeroBanner slides={slides} />
                 {/* end */}
 
-                {/* tilt */}
+                {/* tilte */}
                 <div className="flex items-center justify-center">
                   <div className="container grid w-full grid-cols-12">
                     <h2 className="col-span-12 mb-2 px-5 pt-[30px] text-center text-4xl font-bold text-gray-900 md:text-3xl lg:col-span-8 lg:col-start-3">
@@ -472,16 +348,14 @@ export default function Home() {
                 </div>
 
                 <div>
-                  {/* new added */}
-
                   {/* Our Services Section */}
-                  <section className="py-16">
-                    <div className="container mx-auto px-4">
+                  <section className="py-4">
+                    <div className="container mx-auto px-4 h-full flex items-center">
                       {/* Section Header with Navigation Arrows */}
                       <div className="mb-10 flex items-center justify-between">
                         <div>
                           <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Our <span className="text-[#067afd]"> Services </span>
+                            Our <span className="text-[#017efc]"> Services </span>
                           </h2>
                           <p className="text-md text-gray-500">
                             Hover on a card to reveal the theme gradient and highlight the service.
@@ -489,7 +363,7 @@ export default function Home() {
                         </div>
 
                         {/* Custom Arrows */}
-                        <div className="flex space-x-3">
+                        {/* <div className="flex space-x-3">
                           <button
                             ref={prevRef}
                             className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
@@ -498,11 +372,11 @@ export default function Home() {
                           </button>
                           <button
                             ref={nextRef}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad] text-white shadow-md transition hover:opacity-90"
+                            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1c90f2] text-white shadow-md transition hover:opacity-90"
                           >
                             <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
-                        </div>
+                        </div> */}
                       </div>
 
                       {/* Swiper */}
@@ -534,20 +408,20 @@ export default function Home() {
                               <Link href={service.href}>
                                 <div
                                   className={`group relative cursor-pointer overflow-hidden rounded-xl p-6 shadow-lg transition-transform duration-300 ${
-                                    isActive
-                                      ? "bg-gradient-to-r from-[#067afd] to-[#004aad] text-white"
-                                      : "bg-white"
+                                    isActive ? "services_active" : "bg-gray"
                                   }`}
                                 >
                                   {/* Shape */}
-                                  <div className="service-shape absolute right-[-45px] flex items-end">
-                                    <img
-                                      decoding="async"
-                                      src="https://wordpress.onertheme.com/gratech/wp-content/uploads/2024/04/service-item-shape.png"
+                                  {/* <div className="service-shape absolute relative right-[-45px] flex h-[200px] w-[200px] items-end">
+                                    <Image
+                                      src="/images/icons/r.webp"
                                       alt="service item shape"
-                                      className="w-[75%]"
+                                      width={150}
+                                      height={150}
+                                      className="object-contain"
+                                      decoding="async"
                                     />
-                                  </div>
+                                  </div> */}
 
                                   {/* Icon */}
                                   <div
@@ -555,7 +429,14 @@ export default function Home() {
                                       isActive ? "bg-white" : "bg-blue-100"
                                     }`}
                                   >
-                                    <img src={service.icon} className="h-12 w-12" alt="icon" />
+                                    <Image
+                                      src={service.icon}
+                                      alt="icon"
+                                      width={64} // 👈 match h-12
+                                      height={64} // 👈 match w-12
+                                      className="h-12 w-12"
+                                      loading="lazy" // ✅ lazy load images
+                                    />
                                   </div>
 
                                   {/* Title */}
@@ -589,121 +470,13 @@ export default function Home() {
                     </div>
                   </section>
 
-                  <section className="bg-[#edf6ff] py-16">
-                    <div className="container mx-auto px-4">
-                      {/* Section Header with Navigation Arrows */}
-                      <div className="mb-10 flex items-center justify-between">
-                        <div>
-                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Trending Products
-                          </h2>
-                          <p className="text-md text-gray-500">
-                            Discover the most popular machinery and equipment available now.
-                          </p>
-                        </div>
-
-                        {/* Custom Arrows */}
-                        <div className="flex space-x-3">
-                          <button
-                            ref={prevRef}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
-                          >
-                            <i className="ri-arrow-left-s-line text-xl"></i>
-                          </button>
-                          <button
-                            ref={nextRef}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad] text-white shadow-md transition hover:opacity-90"
-                          >
-                            <i className="ri-arrow-right-s-line text-xl"></i>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Swiper */}
-                      <Swiper
-                        className="pb-12"
-                        modules={[Navigation, Pagination, A11y, Autoplay]}
-                        spaceBetween={10}
-                        slidesPerView={1}
-                        breakpoints={{
-                          480: { slidesPerView: 1, spaceBetween: 10 },
-                          640: { slidesPerView: 2, spaceBetween: 10 },
-                          768: { slidesPerView: 2.5, spaceBetween: 10 },
-                          1024: { slidesPerView: 3.5, spaceBetween: 10 },
-                        }}
-                        pagination={{ clickable: true }}
-                        autoplay={{ delay: 3000, disableOnInteraction: false }}
-                        onBeforeInit={(swiper) => {
-                          swiper.params.navigation.prevEl = prevRef.current;
-                          swiper.params.navigation.nextEl = nextRef.current;
-                        }}
-                        navigation={{
-                          prevEl: prevRef.current,
-                          nextEl: nextRef.current,
-                        }}
-                      >
-                        {filteredProducts.map((product, i) => {
-                          // ✅ generate slug from categoryTitle
-                          const catSlug = slugify(product.categoryTitle);
-                          const catNameSlug = slugify(product.category);
-
-                          return (
-                            <SwiperSlide key={i}>
-                              <div className="flex h-full w-full justify-center">
-                                <Link href={`/shop/${catSlug}?sub=${catNameSlug}`} className="">
-                                  <div className="group w-full max-w-xs overflow-hidden rounded-sm border border-gray-200 bg-white shadow-md transition-all duration-500 hover:-translate-y-0 hover:shadow-2xl">
-                                    {/* Product Image */}
-                                    <div className="relative h-75 w-full overflow-hidden">
-                                      <Image
-                                        src={product.image}
-                                        alt={product.materialName}
-                                        width={400}
-                                        height={400}
-                                        className="h-full w-75 object-cover transition-transform duration-500 group-hover:scale-110"
-                                      />
-                                      {/* Overlay effect */}
-                                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition duration-500 group-hover:opacity-100"></div>
-                                    </div>
-
-                                    {/* Product Info */}
-                                    <div className="flex flex-col justify-between p-5">
-                                      <div>
-                                        <h3 className="text-lg font-semibold text-gray-900">
-                                          {product.materialName}
-                                        </h3>
-                                        <p className="mt-1 text-sm text-gray-500">
-                                          {product.categoryTitle}
-                                        </p>
-                                        <p className="mt-1 text-sm text-gray-500">
-                                          High quality machinery
-                                        </p>
-                                      </div>
-
-                                      {/* Price & Enquiry Button */}
-                                      <div className="mt-4 flex items-center justify-between">
-                                        <button className="relative flex items-center gap-2 overflow-hidden rounded bg-[#067afd] px-5 py-2 text-sm font-medium text-white shadow-md transition-all duration-300 hover:bg-blue-700 hover:shadow-lg">
-                                          <span className="relative z-10">Enquiry</span>
-                                          <span className="absolute inset-0 translate-x-[-150%] bg-gradient-to-r from-transparent via-white/30 to-transparent transition duration-700 group-hover:translate-x-[150%]"></span>
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </Link>
-                              </div>
-                            </SwiperSlide>
-                          );
-                        })}
-                      </Swiper>
-                    </div>
-                  </section>
-
                   {/*  Shop By CategoriesSection */}
                   <section>
                     <div className="relative mx-auto w-full max-w-7xl bg-[#f8f8f9] p-6 font-sans">
                       <div className="mb-10 flex items-center justify-between">
                         <div>
                           <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Our <span className="text-[#067afd]">Categories</span>
+                            Shop By <span className="text-[#017efc]">Categories</span>
                           </h2>
                           <p className="text-md text-gray-500">
                             Hover on a card to reveal the theme gradient and highlight the service.
@@ -712,189 +485,45 @@ export default function Home() {
 
                         {/* Custom Arrows with Remix Icons */}
                         <div className="flex space-x-3">
-                          <button
-                            ref={prevRef}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
-                          >
-                            <i className="ri-arrow-left-s-line text-xl"></i>
-                          </button>
-                          <button
-                            ref={nextRef}
-                            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad] text-white shadow-md transition hover:opacity-90"
-                          >
-                            <i className="ri-arrow-right-s-line text-xl"></i>
+                          <button className="flex items-center rounded-lg bg-[#1c90f2] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
+                            All Categories <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
                         </div>
                       </div>
-                      {/* Swiper Slider with Custom Class */}
-                      <Swiper
-                        modules={[Navigation, Grid]}
-                        navigation={{
-                          nextEl: ".category-swiper-next",
-                          prevEl: ".category-swiper-prev",
-                        }}
-                        spaceBetween={10}
-                        slidesPerView={4}
-                        grid={{ rows: 3, fill: "row" }}
-                        breakpoints={{
-                          320: { slidesPerView: 2, grid: { rows: 3 } },
-                          640: { slidesPerView: 2.5, grid: { rows: 3 } },
-                          1024: { slidesPerView: 2.8, grid: { rows: 3 } },
-                        }}
-                        className="category-swiper pb-12"
-                      >
-                        {SHOP_BY_CATEGORIES.map((category) => {
-                          const catSlug = slugify(category.title); // ✅ move inside function block
-                          return (
-                            <SwiperSlide key={category.id}>
-                              <Link
-                                key={category.id}
-                                href={`/shop/${catSlug}?sub=all`}
-                                className=""
-                              >
-                                <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
-                                  {/* Icon */}
-                                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden">
-                                    <img
-                                      src={category.images}
-                                      alt={category.title}
-                                      className="h-full w-full object-contain"
-                                    />
-                                  </div>
 
-                                  {/* Text */}
-                                  <h6 className="line-clamp-2 text-sm font-semibold text-gray-700">
-                                    {category.title}
-                                  </h6>
+                      <div className="flex flex-wrap gap-6">
+                        {SHOP_BY_CATEGORIES.map((category) => {
+                          const catSlug = slugify(category.title);
+                          return (
+                            <Link
+                              key={category.id}
+                              href={`/shop/${catSlug}?sub=all`}
+                              className="w-full sm:w-[48%] lg:w-[31.5%]" // ✅ responsive width for 4 cards in row
+                            >
+                              <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                                {/* Icon */}
+                                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden">
+                                  <Image
+                                    src={category.images}
+                                    alt={category.title}
+                                    width={64}
+                                    height={64}
+                                    className="h-full w-full object-contain"
+                                    loading="lazy" // ✅ lazy load images
+                                  />
                                 </div>
-                              </Link>
-                            </SwiperSlide>
+
+                                {/* Text */}
+                                <h6 className="line-clamp-2 text-sm font-semibold text-gray-700">
+                                  {category.title}
+                                </h6>
+                              </div>
+                            </Link>
                           );
                         })}
-                      </Swiper>
-
-                      {/* Custom Navigation Arrows */}
-                      {/* <div className="category-swiper-prev rounded-full flex items-center justify-center">
-                        &#10094;
-                         */}
-
-                      {/* Left arrow symbol */}
-                      {/* </div>
-                      <div className="category-swiper-next rounded-full flex items-center justify-center"> */}
-                      {/* &#10095; */}
-
-                      {/* Right arrow symbol */}
-                      {/* </div> */}
-
-                      <style jsx global>{`
-                        .category-swiper-prev,
-                        .category-swiper-next {
-                          width: 35px;
-                          height: 35px;
-                          color: #fff !important;
-                          background-color: #1f2937 !important; /* Tailwind's gray-800 */
-                          cursor: pointer;
-                          border-radius: 50%;
-                          display: flex;
-                          align-items: center;
-                          justify-content: center;
-                          font-size: 18px; /* arrow size */
-                          z-index: 10;
-                        }
-
-                        .category-swiper-prev::after,
-                        .category-swiper-next::after {
-                          font-size: 14px;
-                          font-weight: bold;
-                        }
-
-                        .category-swiper-prev {
-                          position: absolute;
-                          top: 7%;
-                          left: 88%;
-                          transform: translateY(-50%);
-                          z-index: 10;
-                        }
-
-                        .category-swiper-next {
-                          position: absolute;
-                          top: 7%;
-                          right: 50px;
-                          transform: translateY(-50%);
-                          z-index: 10;
-                        }
-
-                        @media only screen and (max-width: 768px) {
-                          .category-swiper-prev {
-                            left: 80%;
-                          }
-                        }
-
-                        @media (max-width: 480px) {
-                          .category-swiper-prev {
-                            left: 70%;
-                          }
-                          .category-swiper-prev::after,
-                          .category-swiper-next::after {
-                            font-size: 12px;
-                          }
-                          .category-swiper-prev,
-                          .category-swiper-next {
-                            width: 28px;
-                            height: 28px;
-                          }
-                        }
-                      `}</style>
-                    </div>
-                  </section>
-
-                  <section className="bg-[#067afd]">
-                    <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-6 py-16 md:px-12 lg:grid-cols-2">
-                      {/* Left Content */}
-                      <div className="animate-fadeIn space-y-6 text-white">
-                        <h1 className="text-2xl leading-tight font-bold sm:text-3xl md:text-4xl lg:text-4xl">
-                          India's Growing Hardware & DIY Store Brand
-                        </h1>
-
-                        <p className="text-base text-white md:text-lg">
-                          To integrate and create a chain of hardware stores under one roof of our
-                          brand, expertise, and technology.
-                        </p>
-
-                        {/* Bullet Points */}
-                        <ul className="list-inside list-disc space-y-2 text-white">
-                          <li>Easy credit &amp; EMI Facility to B2C Customers</li>
-                          <li>Fastest Delivery of Industrial Products</li>
-                          <li>Optimized Inventory Model</li>
-                          <li>Improved Margins</li>
-                          <li>More Business Volume</li>
-                        </ul>
-
-                        {/* Buttons */}
-                        <div className="flex flex-col gap-4 pt-6 sm:flex-row">
-                          <Link
-                            href="#services"
-                            className="rounded-lg bg-white px-6 py-3 font-semibold text-[#004aad] shadow-md transition hover:bg-gray-200"
-                          >
-                            Get Started
-                          </Link>
-                          <Link
-                            href="#learn"
-                            className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
-                          >
-                            Learn More
-                          </Link>
-                        </div>
                       </div>
 
-                      {/* Right Image */}
-                      <div className="animate-fadeIn flex justify-center lg:justify-end">
-                        <img
-                          src="https://i.pinimg.com/1200x/bc/7e/db/bc7edb885820ae38acd5c482d091d489.jpg"
-                          alt="Banner Illustration"
-                          className="max-h-[400px] w-full max-w-md rounded-xl object-contain shadow-lg"
-                        />
-                      </div>
+                      {/* Swiper Slider with Custom Class */}
                     </div>
                   </section>
 
@@ -906,7 +535,7 @@ export default function Home() {
                         {/* Left: Title + Subtitle */}
                         <div>
                           <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                            Why Choose <span className="text-[#067afd]">Byyizzy?</span>
+                            Why Choose <span className="text-[#017efc]">Byyizzy?</span>
                           </h2>
                           <p className="text-md text-gray-500">
                             Discover the benefits that make Byyizzy stand out from the rest.
@@ -918,7 +547,7 @@ export default function Home() {
                           {/* Arrows */}
 
                           {/* Action Button */}
-                          <button className="flex items-center rounded-lg bg-gradient-to-r from-[#067afd] to-[#004aad] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
+                          <button className="flex items-center rounded-lg bg-[#1c90f2] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
                             Learn More <i className="ri-arrow-right-s-line text-xl"></i>
                           </button>
                         </div>
@@ -927,20 +556,21 @@ export default function Home() {
                         {whyByizzy.map((card, index) => (
                           <div
                             key={index}
-                            className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:border-[#067afd] hover:shadow-xl"
+                            className="group relative h-80 cursor-pointer overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-500 hover:border-[#017efc] hover:shadow-xl"
                           >
                             {/* Always visible content */}
                             <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-                              <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#067afd]/10 transition-transform duration-500 group-hover:scale-110">
+                              <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-[#1c90f2]/10 transition-transform duration-500 group-hover:scale-110">
                                 <Image
                                   src={card.img}
                                   alt={card.title}
                                   width={60}
                                   height={60}
                                   className="object-contain"
+                                  loading="lazy" // ✅ lazy load images
                                 />
                               </div>
-                              <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-[#067afd]">
+                              <h3 className="text-lg font-semibold text-gray-900 transition-colors group-hover:text-[#017efc]">
                                 {card.title}
                               </h3>
                             </div>
@@ -950,7 +580,7 @@ export default function Home() {
                               <p className="text-sm leading-relaxed text-gray-600 sm:text-base">
                                 {card.text}
                               </p>
-                              <div className="mt-5 h-1 w-14 rounded-full bg-gradient-to-r from-[#067afd] to-[#004aad]"></div>
+                              <div className="mt-5 h-1 w-14 rounded-full bg-gradient-to-r from-[#017efc] to-[#004aad]"></div>
                             </div>
                           </div>
                         ))}
@@ -958,18 +588,40 @@ export default function Home() {
                     </div>
                   </section>
 
-                  <section className="bg-[#067afd]">
+                  <section>
+                    <div className="py-4">
+                      <h2 className="mb-2 text-center text-3xl font-bold text-gray-900 md:text-2xl">
+                        How we Work
+                      </h2>
+                      <p className="text-md text-center text-gray-500">
+                        Discover the most popular machinery and equipment available now.
+                      </p>
+                    </div>
+
+                    <div className="md:flex-column flex flex-col gap-4">
+                      <video className="mb-3 w-full rounded-lg" autoPlay loop muted playsInline>
+                        <source
+                          src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2Fvideo%2FnewByyizzy_01.mp4?alt=media&token=e0bf7c55-41e5-4a44-bb52-6d47f165fbec"
+                          type="video/mp4"
+                        />
+                      </video>
+
+                      {/* <video className="w-full rounded-lg " autoPlay loop muted playsInline>
+                        <source
+                          src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2Fvideo%2FnewByyizzy_03.mp4?alt=media&token=a5cb2265-cc82-4a03-8801-3f92a130ecf0"
+                          type="video/mp4"
+                        />
+                      </video> */}
+                    </div>
+                  </section>
+
+                  <section className="bg-[#1c90f2]">
                     <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-6 py-16 md:px-12 lg:grid-cols-2">
                       {/* Left Content */}
                       <div className="animate-fadeIn space-y-6 text-white">
                         <h1 className="text-2xl leading-tight font-bold sm:text-3xl md:text-4xl lg:text-4xl">
-                          India's Growing Hardware & DIY Store Brand
+                          Our Services1
                         </h1>
-
-                        <p className="text-base text-white md:text-lg">
-                          To integrate and create a chain of hardware stores under one roof of our
-                          brand, expertise, and technology.
-                        </p>
 
                         {/* Bullet Points */}
                         <ul className="list-inside list-disc space-y-2 text-white">
@@ -998,19 +650,66 @@ export default function Home() {
                       </div>
 
                       {/* Right Image */}
-                      <div className="animate-fadeIn flex justify-center lg:justify-end">
-                        <img
+                      {/* <div className="animate-fadeIn flex justify-center lg:justify-end">
+                        <Image
                           src="https://i.pinimg.com/1200x/bc/7e/db/bc7edb885820ae38acd5c482d091d489.jpg"
                           alt="Banner Illustration"
+                          fill
                           className="max-h-[400px] w-full max-w-md rounded-xl object-contain shadow-lg"
                         />
+                      </div> */}
+                    </div>
+                  </section>
+
+                  <section className="bg-[#1c90f2]">
+                    <div className="container mx-auto grid grid-cols-1 items-center gap-10 px-6 py-16 md:px-12 lg:grid-cols-2">
+                      {/* Left Content */}
+                      <div className="animate-fadeIn space-y-6 text-white">
+                        <h1 className="text-2xl leading-tight font-bold sm:text-3xl md:text-4xl lg:text-4xl">
+                          Our Services1 content
+                        </h1>
+
+                        {/* Bullet Points */}
+                        <ul className="list-inside list-disc space-y-2 text-white">
+                          <li>Easy credit &amp; EMI Facility to B2C Customers</li>
+                          <li>Fastest Delivery of Industrial Products</li>
+                          <li>Optimized Inventory Model</li>
+                          <li>Improved Margins</li>
+                          <li>More Business Volume</li>
+                        </ul>
+
+                        {/* Buttons */}
+                        <div className="flex flex-col gap-4 pt-6 sm:flex-row">
+                          <Link
+                            href="#services"
+                            className="rounded-lg bg-white px-6 py-3 font-semibold text-[#004aad] shadow-md transition hover:bg-gray-200"
+                          >
+                            Get Started
+                          </Link>
+                          <Link
+                            href="#learn"
+                            className="rounded-lg border border-white px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#004aad]"
+                          >
+                            Learn More
+                          </Link>
+                        </div>
                       </div>
+
+                      {/* Right Image */}
+                      {/* <div className="animate-fadeIn flex justify-center lg:justify-end">
+                        <Image
+                          src="https://i.pinimg.com/1200x/bc/7e/db/bc7edb885820ae38acd5c482d091d489.jpg"
+                          alt="Banner Illustration"
+                          fill
+                          className="max-h-[400px] w-full max-w-md rounded-xl object-contain shadow-lg"
+                        />
+                      </div> */}
                     </div>
                   </section>
 
                   <div className="bg-[#edf6ff] py-5 text-center">
                     <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                      Our <span className="text-[#067afd]">Brand</span>
+                      Our <span className="text-[#017efc]">Brand</span>
                     </h2>
                     <p className="text-md text-gray-500">
                       Discover the benefits that make Byyizzy stand out from the rest.

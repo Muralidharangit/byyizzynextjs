@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function AboutPage() {
   const sections = [
     {
@@ -52,7 +54,7 @@ export default function AboutPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">About</li>
+            <li className="font-semibold text-[#1c90f2]">About</li>
           </ol>
         </nav>
       </div>
@@ -102,7 +104,7 @@ export default function AboutPage() {
             {/* Content */}
             <div className="flex flex-col gap-8">
               <h2 className="text-center text-4xl font-bold lg:text-left">
-                Empowering Each <span className="text-[#067afd]">Other to Succeed </span>
+                Empowering Each <span className="text-[#1c90f2]">Other to Succeed </span>
               </h2>
               <p className="text-center text-gray-600 lg:text-left">
                 Every project we have undertaken has been a collaborative effort, where every person
@@ -139,7 +141,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-6 lg:px-12">
           <div className="py-5 text-center">
             <h2 className="mb-2 text-center text-3xl font-bold">
-              Why Choose <span className="text-[#067afd]">Byyizzy</span>
+              Why Choose <span className="text-[#1c90f2]">Byyizzy</span>
             </h2>
             <p className="text-md text-gray-500">
               Discover the benefits that make Byyizzy stand out from the rest.
@@ -170,7 +172,7 @@ export default function AboutPage() {
         <div className="container mx-auto grid gap-8 px-6 md:grid-cols-2 lg:px-12">
           <div className="rounded-2xl bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
             <h2 className="mb-4 text-2xl font-bold">
-              Our <span className="text-[#067afd]">Mission</span>{" "}
+              Our <span className="text-[#1c90f2]">Mission</span>{" "}
             </h2>
             <p className="text-gray-700">
               Our mission is to provide Izzy with a seamless and transparent shopping experience in
@@ -179,7 +181,7 @@ export default function AboutPage() {
           </div>
           <div className="rounded-2xl bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
             <h2 className="mb-4 text-2xl font-bold">
-              Our <span className="text-[#067afd]"> Vision</span>
+              Our <span className="text-[#1c90f2]"> Vision</span>
             </h2>
             <p className="text-gray-700">
               Our vision is to bring revolutionary change in the Industrial and Hardware supply

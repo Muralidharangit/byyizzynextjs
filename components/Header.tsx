@@ -12,14 +12,14 @@ export default function Header() {
   const navLinks = [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/shop", label: "Product" },
+    // { href: "/shop", label: "Product" },
     { href: "/contact", label: "Contact" },
   ];
 
   return (
     <header className="fixed top-0 left-0 z-[100] w-full bg-white shadow-md">
       {/* Top Header */}
-      <div className="bg-[#067afd] py-3">
+      <div className="bg-[#1c90f2] py-3">
         <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 lg:flex-row lg:gap-0">
           {/* Left */}
           <ul className="text-white-600 flex flex-wrap justify-center gap-4 text-center text-sm lg:justify-start">
@@ -35,7 +35,7 @@ export default function Header() {
             </li>
             <li className="pr-0 text-white">
               Call:{" "}
-              <Link href="tel:+112345678909" className=" text-[#067afd] text-white">
+              <Link href="tel:+112345678909" className="text-[#067afd] text-white">
                 +11 2345678909
               </Link>
             </li>
@@ -71,7 +71,7 @@ export default function Header() {
               />
               <button
                 type="submit"
-                className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+                className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
               >
                 <i className="ri-search-line" /> Search
               </button>
@@ -93,7 +93,7 @@ export default function Header() {
                 <Link href="/shop">
                   <button
                     type="button"
-                    className="flex items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+                    className="flex items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
                   >
                     All Categories
                   </button>
@@ -109,7 +109,7 @@ export default function Header() {
             >
               <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#fff1e8] text-[#067afd]">
                 <i className="ri-shopping-cart-line text-lg" />
-                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#067afd] text-xs text-white">
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#1c90f2] text-xs text-white">
                   0
                 </span>
               </span>
@@ -138,7 +138,7 @@ export default function Header() {
             />
             <button
               type="submit"
-              className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+              className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
             >
               <i className="ri-search-line" /> Search
             </button>
@@ -160,7 +160,7 @@ export default function Header() {
               <Link href="/product">
                 <button
                   type="button"
-                  className="flex w-full items-center justify-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
+                  className="flex w-full items-center justify-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
                 >
                   <i className="ri-user-line"></i> Enquiry
                 </button>

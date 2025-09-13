@@ -22,7 +22,7 @@ export default function ContactPage() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">Contact</li>
+            <li className="font-semibold text-[#1c90f2]">Contact</li>
           </ol>
         </nav>
       </div>
@@ -30,10 +30,11 @@ export default function ContactPage() {
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover blur-xs filter"
         />
+
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Contact Us
@@ -48,7 +49,7 @@ export default function ContactPage() {
             {/* Address */}
             <div className="max-w-sm min-w-[280px] flex-1 rounded-xl border border-gray-200 bg-white p-8 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd] hover:shadow-xl">
               <div className="group relative mx-auto mb-4 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-200">
-                <i className="ri-map-pin-line text-2xl text-[#067afd] transition-colors duration-500 group-hover:text-white"></i>
+                <i className="ri-map-pin-line text-2xl text-[#1c90f2] transition-colors duration-500 group-hover:text-white"></i>
                 <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
@@ -60,7 +61,7 @@ export default function ContactPage() {
             {/* Email */}
             <div className="max-w-sm min-w-[280px] flex-1 rounded-xl border border-gray-200 bg-white p-8 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd] hover:shadow-xl">
               <div className="group relative mx-auto mb-4 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-200">
-                <i className="ri-mail-line text-2xl text-[#067afd] transition-colors duration-500 group-hover:text-white"></i>
+                <i className="ri-mail-line text-2xl text-[#1c90f2] transition-colors duration-500 group-hover:text-white"></i>
                 <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
@@ -69,7 +70,7 @@ export default function ContactPage() {
                 </span>
                 <Link
                   href="mailto:info@yourmail.com"
-                  className="text-sm text-gray-500 transition-colors hover:text-[#067afd]"
+                  className="text-sm text-gray-500 transition-colors hover:text-[#1c90f2]"
                 >
                   info@yourmail.com
                 </Link>
@@ -79,7 +80,7 @@ export default function ContactPage() {
             {/* Phone */}
             <div className="max-w-sm min-w-[280px] flex-1 rounded-xl border border-gray-200 bg-white p-8 text-center shadow-md transition-all duration-500 hover:-translate-y-2 hover:border-[#067afd] hover:shadow-xl">
               <div className="group relative mx-auto mb-4 flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-200">
-                <i className="ri-phone-line text-2xl text-[#067afd] transition-colors duration-500 group-hover:text-white"></i>
+                <i className="ri-phone-line text-2xl text-[#1c90f2] transition-colors duration-500 group-hover:text-white"></i>
                 <span className="absolute inset-0 -z-10 scale-0 rounded-full bg-[#067afd] transition-transform duration-500 group-hover:scale-100"></span>
               </div>
               <div>
@@ -94,7 +95,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="min-w-[320px] flex-1 rounded-xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:shadow-2xl">
               <h2 className="mb-2 text-2xl font-semibold text-gray-800">
-                Get In <span className="text-[#067afd]">Touch</span>{" "}
+                Get In <span className="text-[#1c90f2]">Touch</span>{" "}
               </h2>
               <p className="mb-6 text-gray-600">
                 We’d love to hear from you. Fill out the form and we’ll get back to you shortly.

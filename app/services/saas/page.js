@@ -33,7 +33,7 @@ export default function SaaSService() {
               </Link>
             </li>
             <li>/</li>
-            <li className="font-semibold text-[#067afd]">SASS</li>
+            <li className="font-semibold text-[#1c90f2]">SASS</li>
           </ol>
         </nav>
       </div>
@@ -41,10 +41,11 @@ export default function SaaSService() {
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
         <img
-          src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover blur-xs filter"
         />
+
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             sass
@@ -68,7 +69,7 @@ export default function SaaSService() {
           {/* Content */}
           <div className="space-y-6 lg:w-1/2">
             <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-              Partner <span className="text-[#067afd]">Management</span>
+              Partner <span className="text-[#1c90f2]">Management</span>
             </h2>
 
             <ul className="space-y-4">
@@ -105,7 +106,7 @@ export default function SaaSService() {
           {/* Right Content */}
           <div className="space-y-6 lg:w-1/2">
             <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-              Source to <span className="text-[#067afd]">Pay</span>
+              Source to <span className="text-[#1c90f2]">Pay</span>
             </h2>
             {/* Steps */}
             {[
@@ -162,7 +163,7 @@ export default function SaaSService() {
               <div>
                 {/* Heading */}
                 <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                  Procure to <span className="text-[#067afd]">Pay</span>
+                  Procure to <span className="text-[#1c90f2]">Pay</span>
                 </h2>
 
                 <p className="mb-8 text-gray-600">
@@ -216,7 +217,7 @@ export default function SaaSService() {
                 <div>
                   {/* <h4 className="mb-4 text-xl font-semibold text-gray-800"> </h4> */}
                   <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                    Major<span className="text-[#067afd]">Benefits</span>
+                    Major<span className="text-[#1c90f2]">Benefits</span>
                   </h2>
                   <ul className="space-y-3">
                     {[
@@ -243,9 +244,9 @@ export default function SaaSService() {
           {/* Left Content */}
           <div className="space-y-6 lg:w-1/2">
             {/* Heading */}
-            {/* <h2 className="text-3xl font-semibold text-[#067afd]"> </h2> */}
+            {/* <h2 className="text-3xl font-semibold text-[#1c90f2]"> </h2> */}
             <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-              Payment<span className="text-[#067afd]">Automation</span>
+              Payment<span className="text-[#1c90f2]">Automation</span>
             </h2>
             {/* Features */}
             {[
@@ -263,9 +264,9 @@ export default function SaaSService() {
 
             {/* Major Benefits */}
             <div className="mt-6">
-              {/* <h3 className="mb-3 text-xl font-medium text-[#067afd]">Major Benefits</h3> */}
+              {/* <h3 className="mb-3 text-xl font-medium text-[#1c90f2]">Major Benefits</h3> */}
               <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
-                Major<span className="text-[#067afd]">Benefits</span>
+                Major<span className="text-[#1c90f2]">Benefits</span>
               </h2>
               {[
                 "Automated matching for PO-based spend",
@@ -303,7 +304,7 @@ export default function SaaSService() {
           {/* Right Content */}
           <div className="space-y-6 lg:w-1/2">
             {/* Title */}
-            <h2 className="text-3xl font-semibold text-[#067afd]">Analytics</h2>
+            <h2 className="text-3xl font-semibold text-[#1c90f2]">Analytics</h2>
 
             {/* Features */}
             {[
@@ -320,7 +321,7 @@ export default function SaaSService() {
 
             {/* Major Benefits */}
             <div className="mt-6">
-              <h3 className="mb-3 text-xl font-medium text-[#067afd]">Major Benefits</h3>
+              <h3 className="mb-3 text-xl font-medium text-[#1c90f2]">Major Benefits</h3>
               {[
                 "Holistic Spend Analysis",
                 "KPIs and Benchmarking",
@@ -362,7 +363,7 @@ export default function SaaSService() {
                   className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
                 >
                   {/* Icon */}
-                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#067afd]">
+                  <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100 text-[#1c90f2]">
                     {item.icon}
                   </div>
 
