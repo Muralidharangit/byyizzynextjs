@@ -39,7 +39,7 @@ export default function MachineryShopPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#edf6ff]  text-gray-900">
+    <div className="min-h-screen bg-[#edf6ff] text-gray-900">
       {/* Breadcrumbs */}
       <div className="w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">

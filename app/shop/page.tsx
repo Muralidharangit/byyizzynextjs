@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 

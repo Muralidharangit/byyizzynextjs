@@ -3,11 +3,9 @@ import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
 import Image from "next/image";
 export default function ContactPage() {
-
-  
   return (
     <div className="min-h-screen bg-[#edf6ff] text-gray-900">
-      {/* Start Page Title Area */}
+      {/* Start Page Title Area cvg */}
       <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">

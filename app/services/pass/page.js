@@ -177,8 +177,7 @@ export default function ProcurementAsAService() {
                 {
                   title: "Analytics Dashboard",
                   desc: "Visualize your spend and supplier performance",
-                  icon: <BarChart3
-                   className="h-8 w-8" />,
+                  icon: <BarChart3 className="h-8 w-8" />,
                 },
               ].map((item, i) => (
                 <div

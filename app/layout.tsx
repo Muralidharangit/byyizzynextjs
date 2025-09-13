@@ -30,10 +30,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
           rel="stylesheet"
         />
-
-        
-
-        
       </head>
       <body suppressHydrationWarning={true}>
         {/* Injects Remixicon CSS client-side */}

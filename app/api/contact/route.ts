@@ -14,10 +14,10 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    const name     = String(form.get("name") || "");
-    const email    = String(form.get("email") || "");
-    const phone    = String(form.get("phone") || "");
-    const message  = String(form.get("message") || "");
+    const name = String(form.get("name") || "");
+    const email = String(form.get("email") || "");
+    const phone = String(form.get("phone") || "");
+    const message = String(form.get("message") || "");
     const page_url = String(form.get("page_url") || "");
 
     if (!name || !email || !message) {
