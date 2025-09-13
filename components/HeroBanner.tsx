@@ -24,8 +24,8 @@ interface HeroBannerProps {
 
 export default function HeroBanner({ slides }: HeroBannerProps) {
   return (
-    <section className="primary-color relative h-[500px] py-16">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section className="primary-color relative h-[500px] py-4 flex items-center">
+      <div className="container mx-auto px-6 lg:px-12 ">
         <Swiper
           modules={[Autoplay, Pagination, Navigation, EffectFade]}
           spaceBetween={50}
@@ -76,7 +76,7 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
 
                 {/* Right Image */}
                 <div className="animate-fadeIn hidden justify-center lg:flex lg:justify-end">
-                  <div className="relative h-[450px] w-full">
+                  <div className="relative h-[450px] w-full flex items-center">
                     <Image
                       src={slide.img}
                       alt="Banner Illustration"

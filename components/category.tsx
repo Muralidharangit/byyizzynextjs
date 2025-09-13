@@ -12,9 +12,9 @@ export default function Category() {
       {/* ✅ Desktop Aside (only visible above 1000px) */}
       <aside className="relative z-50 hidden xl:col-span-3 xl:block">
         <div className="sticky top-[130px] rounded shadow">
-          <div className="rounded-lg border border-gray-100  shadow-sm">
+          <div className="rounded-lg border border-gray-100 shadow-sm">
             <ul className="text-gray-700">
-              {SHOP_BY_CATEGORIES.map((cat, idx) => {
+              {SHOP_BY_CATEGORIES.slice(0, 15).map((cat, idx) => {
                 const catSlug = slugify(cat.title);
 
                 return (
@@ -28,7 +28,6 @@ export default function Category() {
                       className="flex items-center justify-between px-5 py-3 transition hover:bg-gray-100 hover:text-[#067afd]"
                     >
                       {/* Icon */}
-
                       <span className="flex items-center">
                         <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center overflow-hidden">
                           <img
@@ -66,20 +65,30 @@ export default function Category() {
                   </li>
                 );
               })}
+
+              {/* Show All Categories button */}
+              <li className="border-b border-gray-100 last:border-b-0 ">
+                <Link
+                  href="/shop"
+                  className="flex items-center justify-center px-5 py-3 font-semibold text-[#067afd] transition hover:bg-gray-100"
+                >
+                  All Categories
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
       </aside>
 
       {/* ✅ Mobile Trigger (below 1000px) */}
-      <div className="px-4 py-2 xl:hidden">
+      {/* <div className="px-4 py-2 xl:hidden">
         <button
           onClick={() => setIsOpen(true)}
           className="flex items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white shadow"
         >
           <i className="ri-menu-line"></i> Categories
         </button>
-      </div>
+      </div> */}
 
       {/* ✅ Mobile Offcanvas */}
       {isOpen && (
