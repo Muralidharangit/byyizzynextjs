@@ -1,6 +1,7 @@
 import React from "react";
 import ContactForm from "@/components/ContactForm";
 import Link from "next/link";
+import Image from "next/image";
 export default function ContactPage() {
 
   
@@ -29,9 +30,11 @@ export default function ContactPage() {
       {/* End Page Title Area */}
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
-        <img
+        <Image
           src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
+          width={100}
+          height={100}
           className="h-full w-full object-cover blur-xs filter"
         />
 
