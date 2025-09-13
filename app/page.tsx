@@ -334,12 +334,12 @@ export default function Home() {
                 {/* end */}
 
                 {/* tilte */}
-                <div className="flex items-center justify-center">
-                  <div className="container grid w-full grid-cols-12">
-                    <h2 className="col-span-12 mb-2 px-5 pt-[30px] text-center text-4xl font-bold text-gray-900 md:text-3xl lg:col-span-8 lg:col-start-3">
+                <div className="flex items-center justify-center px-4 py-8 md:py-12 lg:py-16">
+                  <div className="container mx-auto grid grid-cols-12 gap-4">
+                    <h2 className="col-span-12 px-4 text-center text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl lg:col-span-8 lg:col-start-3 lg:text-4xl">
                       Leading the Evolution of Industrial & Hardware Products Supply Chain
                     </h2>
-                    <p className="md:text-md col-span-12 w-full px-5 text-center leading-relaxed text-gray-600 lg:col-span-8 lg:col-start-3">
+                    <p className="sm:text-md col-span-12 mt-4 px-4 text-center text-gray-600 md:text-lg lg:col-span-10 lg:col-start-3 lg:mt-6">
                       Revolutionizing the fragmented Industrial & Hardware products market through
                       an integrated B2B & B2C ecosystem featuring hyperlocal Byyizzy-powered stores
                       and advanced technology.
@@ -350,10 +350,11 @@ export default function Home() {
                 <div>
                   {/* Our Services Section */}
                   <section className="py-4">
-                    <div className="container mx-auto px-4 h-full flex items-center">
-                      {/* Section Header with Navigation Arrows */}
-                      <div className="mb-10 flex items-center justify-between">
-                        <div>
+                    <div className="container mx-auto flex h-full flex-col items-start px-4 lg:flex-row lg:items-center">
+                      {/* Section Header */}
+                      <div className="mb-10 flex w-full flex-col items-start justify-between lg:w-auto lg:flex-row lg:items-center">
+                        {/* Header Text */}
+                        <div className="order-2 mb-6 w-full lg:order-1 lg:mb-0 lg:w-auto">
                           <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
                             Our <span className="text-[#017efc]"> Services </span>
                           </h2>
@@ -362,8 +363,8 @@ export default function Home() {
                           </p>
                         </div>
 
-                        {/* Custom Arrows */}
-                        {/* <div className="flex space-x-3">
+                        {/* Navigation Arrows (desktop only) */}
+                        {/* <div className="order-1 hidden space-x-3 lg:order-2 lg:flex">
                           <button
                             ref={prevRef}
                             className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-200 transition hover:bg-blue-600 hover:text-white"
@@ -380,141 +381,134 @@ export default function Home() {
                       </div>
 
                       {/* Swiper */}
-                      <Swiper
-                        className="h-[250px]"
-                        modules={[Navigation, Pagination, A11y, Autoplay]}
-                        spaceBetween={12}
-                        slidesPerView={1}
-                        initialSlide={0}
-                        breakpoints={{
-                          640: { slidesPerView: 2, spaceBetween: 12 },
-                          768: { slidesPerView: 1.5, spaceBetween: 12 },
-                          1024: { slidesPerView: 2, spaceBetween: 12 },
-                        }}
-                        pagination={{ clickable: true }}
-                        autoplay={{ delay: 3000, disableOnInteraction: false }}
-                        onBeforeInit={(swiper) => {
-                          swiper.params.navigation.prevEl = prevRef.current;
-                          swiper.params.navigation.nextEl = nextRef.current;
-                        }}
-                        navigation={{
-                          prevEl: prevRef.current,
-                          nextEl: nextRef.current,
-                        }}
-                      >
-                        {services.map((service) => (
-                          <SwiperSlide key={service.id}>
-                            {({ isActive }) => (
-                              <Link href={service.href}>
-                                <div
-                                  className={`group relative cursor-pointer overflow-hidden rounded-xl p-6 shadow-lg transition-transform duration-300 ${
-                                    isActive ? "services_active" : "bg-gray"
-                                  }`}
-                                >
-                                  {/* Shape */}
-                                  {/* <div className="service-shape absolute relative right-[-45px] flex h-[200px] w-[200px] items-end">
-                                    <Image
-                                      src="/images/icons/r.webp"
-                                      alt="service item shape"
-                                      width={150}
-                                      height={150}
-                                      className="object-contain"
-                                      decoding="async"
-                                    />
-                                  </div> */}
-
-                                  {/* Icon */}
+                      <div className="order-1 w-full lg:order-2">
+                        <Swiper
+                          className="h-[250px]"
+                          modules={[Navigation, Pagination, A11y, Autoplay]}
+                          spaceBetween={12}
+                          slidesPerView={1}
+                          initialSlide={0}
+                          breakpoints={{
+                            640: { slidesPerView: 1.5, spaceBetween: 12 },
+                            768: { slidesPerView: 1.5, spaceBetween: 12 },
+                            1024: { slidesPerView: 2, spaceBetween: 12 },
+                          }}
+                          pagination={{ clickable: true }}
+                          autoplay={{ delay: 3000, disableOnInteraction: false }}
+                          onBeforeInit={(swiper) => {
+                            swiper.params.navigation.prevEl = prevRef.current;
+                            swiper.params.navigation.nextEl = nextRef.current;
+                          }}
+                          navigation={{
+                            prevEl: prevRef.current,
+                            nextEl: nextRef.current,
+                          }}
+                        >
+                          {services.map((service) => (
+                            <SwiperSlide key={service.id}>
+                              {({ isActive }) => (
+                                <Link href={service.href}>
                                   <div
-                                    className={`flex h-20 w-20 items-center justify-center rounded-lg transition-all duration-500 ${
-                                      isActive ? "bg-white" : "bg-blue-100"
+                                    className={`group relative cursor-pointer overflow-hidden rounded-xl p-6 shadow-lg transition-transform duration-300 ${
+                                      isActive ? "services_active" : "bg-gray"
                                     }`}
                                   >
-                                    <Image
-                                      src={service.icon}
-                                      alt="icon"
-                                      width={64} // 👈 match h-12
-                                      height={64} // 👈 match w-12
-                                      className="h-12 w-12"
-                                      loading="lazy" // ✅ lazy load images
-                                    />
-                                  </div>
-
-                                  {/* Title */}
-                                  <h4
-                                    className={`mt-5 mb-2 text-lg font-semibold transition-colors duration-500 ${
-                                      isActive ? "text-white" : "text-gray-900"
-                                    }`}
-                                  >
-                                    {service.text}
-                                  </h4>
-
-                                  {/* Read More */}
-                                  <div className="mt-4 flex items-center text-sm font-medium transition-colors duration-300">
-                                    <span
-                                      className={`flex cursor-pointer items-center gap-2 ${
-                                        isActive
-                                          ? "text-white hover:text-gray-200"
-                                          : "text-blue-600 hover:text-blue-800"
+                                    {/* Icon */}
+                                    <div
+                                      className={`flex h-20 w-20 items-center justify-center rounded-lg transition-all duration-500 ${
+                                        isActive ? "bg-white" : "bg-blue-100"
                                       }`}
                                     >
-                                      Read More
-                                      <i className="ri-arrow-right-line text-lg"></i>
-                                    </span>
+                                      <Image
+                                        src={service.icon}
+                                        alt="icon"
+                                        width={64}
+                                        height={64}
+                                        className="h-12 w-12"
+                                        loading="lazy"
+                                      />
+                                    </div>
+
+                                    {/* Title */}
+                                    <h4
+                                      className={`mt-5 mb-2 text-lg font-semibold transition-colors duration-500 ${
+                                        isActive ? "text-white" : "text-gray-900"
+                                      }`}
+                                    >
+                                      {service.text}
+                                    </h4>
+
+                                    {/* Read More */}
+                                    <div className="mt-4 flex items-center text-sm font-medium transition-colors duration-300">
+                                      <span
+                                        className={`flex cursor-pointer items-center gap-2 ${
+                                          isActive
+                                            ? "text-white hover:text-gray-200"
+                                            : "text-blue-600 hover:text-blue-800"
+                                        }`}
+                                      >
+                                        Read More
+                                        <i className="ri-arrow-right-line text-lg"></i>
+                                      </span>
+                                    </div>
                                   </div>
-                                </div>
-                              </Link>
-                            )}
-                          </SwiperSlide>
-                        ))}
-                      </Swiper>
+                                </Link>
+                              )}
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
+                      </div>
                     </div>
                   </section>
 
                   {/*  Shop By CategoriesSection */}
                   <section>
-                    <div className="relative mx-auto w-full max-w-7xl bg-[#f8f8f9] p-6 font-sans">
-                      <div className="mb-10 flex items-center justify-between">
+                    <div className="relative mx-auto w-full max-w-7xl bg-[#f8f8f9] p-4 font-sans sm:p-6">
+                      {/* Header */}
+                      <div className="mb-6 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-center sm:justify-between sm:gap-0">
                         <div>
-                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                          <h2 className="mb-2 text-2xl font-bold text-gray-900 sm:text-3xl">
                             Shop By <span className="text-[#017efc]">Categories</span>
                           </h2>
-                          <p className="text-md text-gray-500">
+                          <p className="sm:text-md text-sm text-gray-500">
                             Hover on a card to reveal the theme gradient and highlight the service.
                           </p>
                         </div>
 
-                        {/* Custom Arrows with Remix Icons */}
-                        <div className="flex space-x-3">
-                          <button className="flex items-center rounded-lg bg-[#1c90f2] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
-                            All Categories <i className="ri-arrow-right-s-line text-xl"></i>
+                        {/* Button / All Categories */}
+                        <div className="flex-shrink-0">
+                          <button className="flex items-center rounded-lg bg-[#1c90f2] px-4 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90 sm:px-5 sm:text-base">
+                            All Categories{" "}
+                            <i className="ri-arrow-right-s-line ml-1 text-lg sm:text-xl"></i>
                           </button>
                         </div>
                       </div>
 
-                      <div className="flex flex-wrap gap-6">
+                      {/* Categories Grid */}
+                      <div className="flex flex-wrap justify-center gap-4 sm:gap-3">
                         {SHOP_BY_CATEGORIES.map((category) => {
                           const catSlug = slugify(category.title);
                           return (
                             <Link
                               key={category.id}
                               href={`/shop/${catSlug}?sub=all`}
-                              className="w-full sm:w-[48%] lg:w-[31.5%]" // ✅ responsive width for 4 cards in row
+                              className="xs:w-[31%] w-full sm:w-[31%] md:w-[32%] lg:w-[31%]"
                             >
-                              <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                              <div className="flex h-full min-h-[120px] cursor-pointer flex-row items-center gap-3 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-shadow duration-300 hover:shadow-lg sm:gap-4 sm:p-6">
                                 {/* Icon */}
-                                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center overflow-hidden">
+                                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center overflow-hidden sm:h-14 sm:w-14">
                                   <Image
                                     src={category.images}
                                     alt={category.title}
                                     width={64}
                                     height={64}
                                     className="h-full w-full object-contain"
-                                    loading="lazy" // ✅ lazy load images
+                                    loading="lazy"
                                   />
                                 </div>
 
                                 {/* Text */}
-                                <h6 className="line-clamp-2 text-sm font-semibold text-gray-700">
+                                <h6 className="line-clamp-2 text-sm font-semibold text-gray-700 sm:text-base">
                                   {category.title}
                                 </h6>
                               </div>
@@ -522,8 +516,6 @@ export default function Home() {
                           );
                         })}
                       </div>
-
-                      {/* Swiper Slider with Custom Class */}
                     </div>
                   </section>
 
@@ -531,27 +523,26 @@ export default function Home() {
                   <section className="bg-[#edf6ff] bg-gradient-to-b py-16 lg:py-20">
                     <div className="mx-auto max-w-7xl px-4">
                       {/* Section Header */}
-                      <div className="mb-10 flex items-center justify-between">
+                      <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-center md:justify-between md:gap-0">
                         {/* Left: Title + Subtitle */}
                         <div>
-                          <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
+                          <h2 className="mb-2 text-2xl font-bold text-gray-900 sm:text-3xl">
                             Why Choose <span className="text-[#017efc]">Byyizzy?</span>
                           </h2>
-                          <p className="text-md text-gray-500">
+                          <p className="sm:text-md text-sm text-gray-500">
                             Discover the benefits that make Byyizzy stand out from the rest.
                           </p>
                         </div>
 
-                        {/* Right: Arrows + Button */}
-                        <div className="flex items-center space-x-4">
-                          {/* Arrows */}
-
-                          {/* Action Button */}
-                          <button className="flex items-center rounded-lg bg-[#1c90f2] px-5 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90">
-                            Learn More <i className="ri-arrow-right-s-line text-xl"></i>
+                        {/* Right: Action Button */}
+                        <div className="flex-shrink-0">
+                          <button className="flex items-center rounded-lg bg-[#1c90f2] px-4 py-2 text-sm font-medium text-white shadow-md transition hover:opacity-90 sm:px-5 sm:text-base">
+                            Learn More{" "}
+                            <i className="ri-arrow-right-s-line ml-1 text-lg sm:text-xl"></i>
                           </button>
                         </div>
                       </div>
+
                       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {whyByizzy.map((card, index) => (
                           <div
