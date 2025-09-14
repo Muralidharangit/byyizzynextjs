@@ -19,10 +19,15 @@ export default function Header() {
   ];
 
   return (
+
     <header className="fixed top-0 left-0 z-[100] w-full bg-white shadow-md">
+  {/* Top Header = 40px */}
+  <div className="bg-[#1c90f2] h-10 flex items-center">
+    <div className="container mx-auto flex w-full items-center justify-between px-4">
+    {/* <header className="fixed top-0 left-0 z-[100] w-full bg-white shadow-md"> */}
       {/* Top Header */}
-      <div className="bg-[#1c90f2] py-3">
-        <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 lg:flex-row lg:gap-0">
+      {/* <div className="bg-[#1c90f2] py-3"> */}
+        {/* <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 lg:flex-row lg:gap-0"> */}
           {/* Left */}
           <ul className="text-white-600 flex flex-wrap justify-center gap-4 text-center text-sm lg:justify-start">
             <li className="border-r border-gray-300 pr-4 last:border-r-0">
@@ -54,12 +59,15 @@ export default function Header() {
       </div>
 
       {/* Middle Header */}
-      <div className="border-b border-gray-300 py-4">
-        <div className="container mx-auto grid grid-cols-2 items-center gap-4 px-4 lg:grid-cols-12">
+      {/* Middle Header = 80px */}
+  <div className="border-b border-gray-200 h-20">
+    <div className="container mx-auto grid h-full grid-cols-2 items-center gap-4 px-4 lg:grid-cols-12">
+      {/* <div className="border-b border-gray-300 py-4"> */}
+        {/* <div className="container mx-auto grid grid-cols-2 items-center gap-4 px-4 lg:grid-cols-12"> */}
           {/* Logo */}
           <div className="col-span-1 lg:col-span-2">
             <Link href="/">
-              <Image src={logoblue} alt="Logo" className="w-24 lg:w-40" priority />
+              <Image src={logoblue} alt="Logo" className="w-24 lg:w-40" width={160} height={40} priority />
             </Link>
           </div>
 
