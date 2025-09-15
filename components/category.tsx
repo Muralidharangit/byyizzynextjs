@@ -1,57 +1,52 @@
-"use client";
-import { useState } from "react";
-import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
+import Image from "next/image";
 import Link from "next/link";
+import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 
 export default function Category() {
-  const [openCategory, setOpenCategory] = useState(null);
-  const [isOpen, setIsOpen] = useState(false); // ✅ Offcanvas state
-
   return (
     <>
-      {/* ✅ Desktop Aside (only visible above 1000px) */}
-      <aside className="relative z-50 hidden xl:col-span-3 xl:block">
+      {/* ✅ Desktop Aside (SSR, no JS) */}
+      <aside className="relative z-40 hidden xl:col-span-3 xl:block">
         <div className="sticky top-[130px] rounded shadow">
           <div className="rounded-lg border border-gray-100 shadow-sm">
-            <ul className="text-gray-700">
-              {SHOP_BY_CATEGORIES.slice(0, 15).map((cat, idx) => {
+            <ul className="text-gray-700" style={{ contentVisibility: "auto", containIntrinsicSize: "600px 400px" }}>
+              {SHOP_BY_CATEGORIES.slice(0, 15).map((cat) => {
                 const catSlug = slugify(cat.title);
-
                 return (
-                  <li
-                    key={cat.id}
-                    className="group relative border-b border-gray-100 last:border-b-0"
-                  >
-                    {/* Desktop link */}
+                  <li key={cat.id} className="group relative border-b border-gray-100 last:border-b-0">
                     <Link
                       href={`/shop/${catSlug}?sub=all`}
+                      // prefetch={false}
                       className="flex items-center justify-between px-5 py-3 transition hover:bg-gray-100 hover:text-[#067afd]"
+                      aria-label={cat.title}
                     >
-                      {/* Icon */}
                       <span className="flex items-center">
-                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center overflow-hidden">
-                          <img
+                        <span className="mr-2 flex h-6 w-6 items-center justify-center overflow-hidden">
+                          <Image
                             src={cat.images}
                             alt={cat.title}
-                            className="h-full w-50 object-contain"
+                            width={24}
+                            height={24}
+                            sizes="24px"
                           />
-                        </div>
-                        <span className="mx-2">{cat.title}</span>
+                        </span>
+                        <span>{cat.title}</span>
                       </span>
                       <i className="ri-arrow-right-s-line text-gray-400" />
                     </Link>
 
-                    {/* Desktop hover submenu */}
-                    <div className="invisible absolute top-0 left-full z-50 hidden w-[600px] flex-wrap bg-white p-6 opacity-0 shadow-lg transition-all duration-300 ease-out group-hover:visible group-hover:opacity-100 xl:flex">
+                    {/* Hover submenu (kept light) */}
+                    <div className="invisible absolute top-0 left-full z-50 hidden w-[560px] flex-wrap bg-white p-6 opacity-0 shadow-lg transition group-hover:visible group-hover:opacity-100 xl:flex">
                       <div className="w-1/2 px-4">
                         <h4 className="mb-3 text-sm font-semibold uppercase">Sub Categories</h4>
                         <ul className="space-y-1">
-                          {cat.categories.map((sub, idx2) => {
+                          {cat.categories.map((sub, i) => {
                             const subSlug = slugify(sub);
                             return (
-                              <li key={idx2}>
+                              <li key={i}>
                                 <Link
                                   href={`/shop/${catSlug}?sub=${subSlug}`}
+                                  // prefetch={false}
                                   className="block transition hover:text-[#067afd]"
                                 >
                                   {sub}
@@ -66,10 +61,10 @@ export default function Category() {
                 );
               })}
 
-              {/* Show All Categories button */}
               <li className="border-b border-gray-100 last:border-b-0">
                 <Link
                   href="/shop"
+                  // prefetch={false}
                   className="flex items-center justify-center px-5 py-3 font-semibold text-[#067afd] transition hover:bg-gray-100"
                 >
                   All Categories
@@ -80,83 +75,57 @@ export default function Category() {
         </div>
       </aside>
 
-      {/* ✅ Mobile Trigger (below 1000px) */}
-      {/* <div className="px-4 py-2 xl:hidden">
-        <button
-          onClick={() => setIsOpen(true)}
-          className="flex items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white shadow"
-        >
-          <i className="ri-menu-line"></i> Categories
-        </button>
-      </div> */}
+      {/* ✅ Mobile accordion (CSS-only, no JS) */}
+      <section className="px-4 py-2 xl:hidden">
+        <details className="rounded border border-gray-200 bg-white">
+          <summary className="flex cursor-pointer list-none items-center gap-2 rounded px-4 py-3 font-medium text-white"
+                   style={{ background: "#067afd" }}>
+            <i className="ri-menu-line"></i> Categories
+          </summary>
 
-      {/* ✅ Mobile Offcanvas */}
-      {isOpen && (
-        <div className="fixed inset-0 z-[999]">
-          {/* Overlay */}
-          <div
-            className="bg-opacity-50 absolute inset-0 bg-black"
-            onClick={() => setIsOpen(false)}
-          ></div>
-
-          {/* Drawer */}
-          <div className="absolute top-0 left-0 h-full w-80 overflow-y-auto bg-white p-4 shadow-lg">
-            <div className="mb-4 flex items-center justify-between">
-              <h2 className="text-lg font-semibold">Categories</h2>
-              <button onClick={() => setIsOpen(false)}>
-                <i className="ri-close-line text-2xl"></i>
-              </button>
-            </div>
-
+        {/* panel */}
+          <div className="p-2">
             <ul className="text-gray-700">
-              {SHOP_BY_CATEGORIES.map((cat, idx) => {
+              {SHOP_BY_CATEGORIES.map((cat) => {
                 const catSlug = slugify(cat.title);
-
                 return (
-                  <li key={cat.id} className="border-b border-gray-200">
-                    <button
-                      onClick={() => setOpenCategory(openCategory === idx ? null : idx)}
-                      className="flex w-full items-center justify-between px-2 py-3 text-left"
-                    >
+                  <details key={cat.id} className="border-b border-gray-200 last:border-b-0">
+                    <summary className="flex cursor-pointer list-none items-center justify-between px-2 py-3">
                       <span className="flex items-center">
-                        <i className="ri-flashlight-line mr-2" /> {cat.title}
+                        <span className="mr-2 flex h-5 w-5 items-center justify-center overflow-hidden">
+                          <Image src={cat.images} alt={cat.title} width={20} height={20} sizes="20px" />
+                        </span>
+                        {cat.title}
                       </span>
-                      <i
-                        className={`ri-arrow-down-s-line transition-transform ${
-                          openCategory === idx ? "rotate-180 text-[#067afd]" : ""
-                        }`}
-                      />
-                    </button>
+                      <i className="ri-arrow-down-s-line transition-transform"></i>
+                    </summary>
 
-                    {/* Mobile accordion submenu */}
-                    {openCategory === idx && (
-                      <div className="bg-gray-50 px-4 py-2">
-                        <h4 className="mb-2 text-sm font-semibold uppercase">Sub Categories</h4>
-                        <ul className="space-y-1">
-                          {cat.categories.map((sub, idx2) => {
-                            const subSlug = slugify(sub);
-                            return (
-                              <li key={idx2}>
-                                <Link
-                                  href={`/shop/${catSlug}?sub=${subSlug}`}
-                                  className="block py-1 hover:text-[#067afd]"
-                                  onClick={() => setIsOpen(false)}
-                                >
-                                  {sub}
-                                </Link>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    )}
-                  </li>
+                    <div className="bg-gray-50 px-4 pb-3">
+                      <h4 className="mb-2 text-sm font-semibold uppercase">Sub Categories</h4>
+                      <ul className="space-y-1">
+                        {cat.categories.map((sub, i) => {
+                          const subSlug = slugify(sub);
+                          return (
+                            <li key={i}>
+                              <Link
+                                href={`/shop/${catSlug}?sub=${subSlug}`}
+                                // prefetch={false}
+                                className="block py-1 hover:text-[#067afd]"
+                              >
+                                {sub}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  </details>
                 );
               })}
             </ul>
           </div>
-        </div>
-      )}
+        </details>
+      </section>
     </>
   );
 }

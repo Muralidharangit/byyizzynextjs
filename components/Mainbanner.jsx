@@ -86,7 +86,7 @@ export default function Mainbanner() {
           pagination={{ clickable: true }}
           navigation={false}
           loop
-          effect="fade"
+          // effect="fade"
           fadeEffect={{ crossFade: true }}
           aria-live="polite"
         >

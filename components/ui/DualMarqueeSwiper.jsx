@@ -25,8 +25,8 @@ function Row({ items, reverse = false, speedMs = 2000 }) {
           className="w-full bg-[#edf6ff] select-none"
           slidesPerView="auto"
           spaceBetween={7}
-          loop
-          loopedSlides={items.length} // ✅ only duplicate what's needed
+          // loop
+          // loopedSlides={items.length} // ✅ only duplicate what's needed
           allowTouchMove={false}
           speed={speedMs}
           autoplay={{
