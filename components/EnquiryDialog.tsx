@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { log } from "console";
+// import { log } from "console";
 import Link from "next/link";
 
 type EnquiryDialogProps = {
@@ -31,30 +31,7 @@ export default function EnquiryDialog({
 }: EnquiryDialogProps) {
   const formRef = React.useRef<HTMLFormElement>(null);
   const [loading, setLoading] = React.useState(false);
-  // function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-  //   const fd = new FormData(e.currentTarget);
-  //   const payload = {
-  //     material_code: (fd.get("material_code") as string) || "",
-  //     material_name: (fd.get("material_name") as string) || "",
-  //     name: (fd.get("name") as string) || "",
-  //     email: (fd.get("email") as string) || "",
-  //     phone: (fd.get("phone") as string) || "",
-  //     message: (fd.get("message") as string) || "",
-  //     agreed: fd.get("agree") === "on",
-  //   };
-  //   if (!payload.agreed) {
-  //     alert("Please agree to the terms & policy.");
-  //     return;
-  //   }
-  //   // TODO: POST to your API route, e.g. /api/enquiry
-  //   // await fetch("/api/enquiry", { method: "POST", body: fd });
-
-  //   console.log("enquiry:", payload);
-  //   alert("Enquiry submitted!");
-  //   onOpenChange(false);
-  //   formRef.current?.reset();
-  // }
+ 
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -86,15 +63,19 @@ export default function EnquiryDialog({
       alert("Enquiry submitted!");
       onOpenChange(false);
       formRef.current?.reset();
-    } catch (err: any) {
-      alert(err?.message || "Something went wrong. Please try again.");
-    } finally {
+    } catch (e: unknown) {
+  if (e instanceof Error) {
+    alert(e.message);
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+} finally {
       setLoading(false);
     }
   }
-
-  const defaultMessage = productName
-    ? `Hi, I’m interested in ${productName}. Please share a quote.`
+const defaultMessage =
+  productName || productCode
+    ? `Hi, I’m interested in ${productName} (${productCode}). Please share a quote.`
     : "";
 
   return (
@@ -156,7 +137,7 @@ export default function EnquiryDialog({
 
           {/* Agree checkbox */}
           <div className="flex items-start gap-2">
-            <input id="agree" name="agree" type="checkbox" className="mt-1 h-4 w-4" required />
+           <input id="agree" name="agree" type="checkbox" className="mt-1 h-4 w-4"  required />
             <Label htmlFor="agree" className="text-sm">
               I agree to the{" "}
               <Link href="/terms" className="underline">

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { useRouter } from "next/navigation";
 import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
+import Image from "next/image";
 
 type CatItem = {
   id: string;
@@ -22,16 +23,17 @@ export default function GlobalSearch({ className = "" }: { className?: string })
   const inputRef = useRef<HTMLInputElement>(null);
 
   // --- Build the list once ---
-  const cats: CatItem[] = useMemo(
-    () =>
-      SHOP_BY_CATEGORIES.map((c) => ({
-        id: c.id,
-        title: c.title,
-        slug: slugify(c.title),
-        image: (c as any).images,
-      })),
-    []
-  );
+const cats: CatItem[] = useMemo(
+  () =>
+    SHOP_BY_CATEGORIES.map((c) => ({
+      id: c.id,
+      title: c.title,
+      slug: slugify(c.title),
+      image: c.images, // ✅ no `any` here
+    })),
+  []
+);
+  
 
   // --- Filtered suggestions ---
   const suggestions: CatItem[] = useMemo(() => {
@@ -121,22 +123,23 @@ export default function GlobalSearch({ className = "" }: { className?: string })
   return (
     <div className={`relative ${className}`} ref={wrapRef}>
       <form className="relative mx-auto w-full max-w-md" onSubmit={handleSubmit}>
-        <input
-          ref={inputRef}
-          type="text"
-          value={q}
-          onChange={(e) => {
-            setQ(e.target.value);
-            setOpen(true);
-          }}
-          onFocus={() => setOpen(true)}
-          onKeyDown={handleKeyDown}
-          placeholder="Search Products..."
-          className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
-          aria-autocomplete="list"
-          aria-expanded={open}
-          role="combobox"
-        />
+      <input
+  ref={inputRef}
+  type="text"
+  value={q}
+  onChange={(e) => {
+    setQ(e.target.value);
+    setOpen(true);
+  }}
+  onFocus={() => setOpen(true)}
+  onKeyDown={handleKeyDown}
+  placeholder="Search Products..."
+  className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
+  role="combobox"                // ✅ add this
+  aria-autocomplete="list"
+  aria-expanded={open}            // now valid
+  aria-controls="global-search-list" // optional: ID of the dropdown list
+/>
         <button
           type="submit"
           className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#067afd] px-4 py-2 text-white hover:bg-blue-700"
@@ -172,11 +175,19 @@ export default function GlobalSearch({ className = "" }: { className?: string })
                         aria-selected={isActive}
                       >
                         {cat.image ? (
-                          <img
-                            src={cat.image}
-                            alt=""
-                            className="h-8 w-8 shrink-0 rounded object-contain"
-                          />
+                          // <img
+                          //   src={cat.image}
+                          //   alt=""
+                          //   className="h-8 w-8 shrink-0 rounded object-contain"
+                          // />
+
+                          <Image
+  src={cat.image ?? "/placeholder.png"} // fallback in case image is missing
+  alt={cat.title}
+  width={32} // h-8 → 32px
+  height={32} // w-8 → 32px
+  className="h-8 w-8 shrink-0 rounded object-contain"
+/>
                         ) : (
                           <div className="h-8 w-8 shrink-0 rounded bg-gray-100" />
                         )}

@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Factory, ShoppingCart, Package, Globe, Boxes } from "lucide-react"; // Example icons
+// import { Factory, ShoppingCart, Package, Globe, Boxes } from "lucide-react"; // Example icons
 
 export default function ServicesPage() {
   const services = [
@@ -59,11 +60,19 @@ export default function ServicesPage() {
       {/* End Page Title Area */}
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
-        <img
+        {/* <img
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
           alt="About Banner"
           className="h-full w-full object-cover"
-        />
+        /> */}
+         <Image
+            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+            alt="About Banner"
+            fill
+            sizes="100vw"
+            className="object-cover filter blur-xs"
+            priority
+          />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Services
@@ -113,11 +122,22 @@ export default function ServicesPage() {
                 >
                   {/* Icon */}
                   <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-blue-100 transition-all duration-500 group-hover:bg-white">
-                    <img
+                    {/* <img
                       src={service.icon}
                       className="h-12 w-12 transition-colors duration-500 group-hover:invert"
                       alt={service.title}
-                    />
+                    /> */}
+
+                     <Image
+                       src={service.icon}
+                      className="h-12 w-12 transition-colors duration-500 group-hover:invert"
+                      alt={service.title}
+                        fill
+                        sizes="100vw"
+                        // className="object-cover filter blur-xs"
+                        // priority
+                      />
+
                   </div>
 
                   {/* Title */}
@@ -126,11 +146,11 @@ export default function ServicesPage() {
                   </h4>
 
                   {/* Description */}
-                  {service.description && (
+                  {/* {service.description && (
                     <p className="text-sm text-gray-600 transition-colors duration-500 group-hover:text-gray-200">
                       {service.description}
                     </p>
-                  )}
+                  )} */}
 
                   {/* Read More */}
                   <div className="mt-4 flex items-center justify-center text-sm font-medium">

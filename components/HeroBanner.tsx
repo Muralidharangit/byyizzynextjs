@@ -1,4 +1,5 @@
-"use client"; // required for Swiper (uses client-side JS)
+
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-interface Slide {
+export interface Slide {
   title: string;
   description: string;
   highlights?: string[];
@@ -18,7 +19,7 @@ interface Slide {
   link2: { href: string; text: string };
 }
 
-interface HeroBannerProps {
+export interface HeroBannerProps {
   slides: Slide[];
 }
 
@@ -32,7 +33,7 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
           slidesPerView={1}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
-          navigation={false} // disable arrows
+          navigation={false}
           loop
           effect="fade"
           fadeEffect={{ crossFade: true }}
@@ -43,10 +44,10 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
                 {/* Left Content */}
                 <div className="animate-fadeIn space-y-6 text-white">
                   <h1 className="text-1xl font-700 leading-tight md:text-3xl">{slide.title}</h1>
-                  <p className="text-md text-white-200 md:text-md">{slide.description}</p>
+                  <p className="text-md text-gray-200 md:text-md">{slide.description}</p>
 
                   {/* Highlights */}
-                  <ul className="text-white-200 list-inside list-disc space-y-1">
+                  <ul className="text-gray-200 list-inside list-disc space-y-1">
                     {slide.highlights?.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
@@ -82,9 +83,9 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
                       width={1200}
                       height={450}
                       className="rounded-xl object-cover"
-                      priority
-                      fetchPriority="high" // Hint browser to load this image first
-                      decoding="auto" // Let browser choose optimal decoding
+                      priority={index === 0}
+                      fetchPriority={index === 0 ? "high" : "auto"}
+                      decoding="auto"
                     />
                   </div>
                 </div>

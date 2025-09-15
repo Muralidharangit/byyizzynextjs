@@ -20,9 +20,13 @@ export default function ContactForm() {
 
       alert("Thanks! We received your message and will contact you soon.");
       formRef.current?.reset();
-    } catch (e: any) {
-      alert(e?.message || "Something went wrong. Please try again.");
-    } finally {
+    }  catch (e: unknown) {
+  if (e instanceof Error) {
+    alert(e.message);
+  } else {
+    alert("Something went wrong. Please try again.");
+  }
+} finally {
       setLoading(false);
     }
   }

@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logoblue from "@/public/images/blue.png"; // adjust path
+// import logoblue from "@/public/images/blue.png"; // adjust path
 import logowhite from "@/public/images/white.png"; // adjust path
 
 export default function Footer() {

@@ -2,7 +2,7 @@
 export type Product = {
   image: string;
   materialName: string;
-  category: string;
+  category: string;          // subcategory display name (e.g., "Harvester")
   price?: number | string;
   popularity?: number | string;
   materialCode?: string;
@@ -11,10 +11,10 @@ export type Product = {
 
 export type ShopCategory = {
   id: string;
-  title: string;
+  title: string;             // display title
   images: string;
-  path: string; // e.g. "agriculture_garden_landscaping" (slug or url segment)
-  categories: string[]; // subcategory display names incl. "All"
+  path: string;              // url segment in your data (may have spaces/underscores/mixed case)
+  categories: string[];      // subcategory display names (can include "All")
   product: Product[];
 };
 
@@ -2680,37 +2680,54 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
 ] as const;
 
 // --- helpers ---
-
-export function slugify(input: string) {
-  return input
+// Slug helpers (keeps routing stable no matter your data casing/underscores)
+export const slugify = (s: string): string =>
+  s
+    .normalize("NFKD")                 // split diacritics
+    .replace(/[\u0300-\u036f]/g, "")   // remove diacritics
     .toLowerCase()
     .trim()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .replace(/&/g, " and ")            // avoid dropping '&' into nothing
+    .replace(/[_\s]+/g, "-")           // spaces/underscores -> hyphen
+    .replace(/[^a-z0-9-]/g, "")        // strip non-url chars
+    .replace(/--+/g, "-")              // collapse -- to -
+    .replace(/^-+|-+$/g, "");          // trim leading/trailing -
+const categoryMatchesSlug = (cat: ShopCategory, slug: string) =>
+  slugify(cat.path || cat.title) === slugify(slug);
+
+// ------------------------------------------------------
+// API you’re importing in your pages
+
+/** Find the main category by the URL slug (case/underscore agnostic). */
+export function getMainBySlug(categorySlug: string): ShopCategory | null {
+  const s = slugify(categorySlug);
+  return SHOP_BY_CATEGORIES.find((c) => categoryMatchesSlug(c, s)) ?? null;
 }
 
-// find a main category by its *slugified title*
-export function getMainBySlug(slug: string) {
-  return SHOP_BY_CATEGORIES.find((c) => slugify(c.title) === slug);
+/** Get subcategories as {slug, name} tabs (All first). */
+export function getSubcats(categorySlug: string): Array<{ slug: string; name: string }> {
+  const main = getMainBySlug(categorySlug);
+  if (!main) return [{ slug: "all", name: "All" }];
+
+  const names = main.categories.filter((n) => n.toLowerCase() !== "all");
+  const tabs = names.map((name) => ({ name, slug: slugify(name) }));
+  return tabs; // you’ll add "All" in the page if you want it first
 }
 
-// get subcategory list (from `categories`, ignoring "All")
-export function getSubcats(slug: string) {
-  const main = getMainBySlug(slug);
+/** Filter products by category + sub-category (slug from ?sub=). */
+export function filterProductsBy(categorySlug: string, subSlug: string): Product[] {
+  const main = getMainBySlug(categorySlug);
   if (!main) return [];
-  return (main.categories || [])
-    .filter((c) => c.toLowerCase() !== "all")
-    .map((name) => ({ slug: slugify(name), name }));
+
+  const sub = slugify(subSlug || "all");
+  if (sub === "all") return main.product;
+
+  // match by product.category display name → convert it to slug and compare
+  return main.product.filter((p) => slugify(p.category) === sub);
 }
 
-// filter products for a main category + optional subcat
-export function filterProductsBy(slug: string, sub?: string) {
-  const main = getMainBySlug(slug);
-  if (!main) return [];
-  // normalize sub
-  const subSlug = (sub || "all").toLowerCase();
-  if (subSlug === "all") return main.product;
-
-  return main.product.filter((p) => slugify(p.category || "") === subSlug);
+// ------------------------------------------------------
+// (Optional) helpers if you need all tabs ready in one call
+export function getTabsWithAll(categorySlug: string): Array<{ slug: string; name: string }> {
+  return [{ slug: "all", name: "All" }, ...getSubcats(categorySlug)];
 }
