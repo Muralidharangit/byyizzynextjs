@@ -58,7 +58,10 @@ return (
               </div>
             {/* </LazyOnVisible> */}
           </section>
-        </main>
+        </main>              
+          </div>
+        </div>
+
       </div>
     </div>
   );
