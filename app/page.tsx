@@ -71,6 +71,8 @@ export default function Home() {
                       </video> 
                     </div>
                   </section> */}
+
+                  {/* changes */}
                   <Serv1 />
                   <Serv2 />
 
