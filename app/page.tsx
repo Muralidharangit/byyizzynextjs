@@ -55,6 +55,8 @@ export default function Home() {
                       </p>
                     </div>
 
+                    // chanesd
+
                     <div className="md:flex-column flex flex-col gap-4">
                       <video className="mb-3 w-full rounded-lg" autoPlay loop muted playsInline>
                         <source
@@ -75,7 +77,7 @@ export default function Home() {
                   {/* changes */}
                   <Serv1 />
                   <Serv2 />
-
+{/* changes */}
                   <Ourbrand />
 
                   <DualMarqueeSwiper />
