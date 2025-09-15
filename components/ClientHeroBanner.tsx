@@ -6,7 +6,6 @@ const HeroBannerDyn = dynamic<HeroBannerProps>(
   () => import("@/components/HeroBanner"),
   {
     ssr: false,
-    // ⬇️ reserve exact layout; no jump when slider mounts
     loading: () => (
       <section className="primary-color relative flex h-[500px] items-center py-4">
         <div className="container mx-auto px-6 lg:px-12">

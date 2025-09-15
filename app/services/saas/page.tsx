@@ -1,4 +1,4 @@
-import { Mail, MapPin } from "lucide-react";
+// import { Mail, MapPin } from "lucide-react";
 import { CheckCircle } from "lucide-react";
 
 import { Cog, Workflow, BarChart3 } from "lucide-react";
@@ -12,6 +12,7 @@ import {
   CreditCard,
   TrendingUp,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function SaaSService() {
@@ -22,13 +23,13 @@ export default function SaaSService() {
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <Link href="#" className="font-medium hover:text-black">
+              <Link href="/" className="font-medium hover:text-black">
                 Byyizzy
               </Link>
             </li>
             <li>/</li>
             <li>
-              <Link href="#" className="font-medium hover:text-black">
+              <Link href="/" className="font-medium hover:text-black">
                 Home
               </Link>
             </li>
@@ -40,11 +41,20 @@ export default function SaaSService() {
       {/* End Page Title Area */}
 
       <div className="relative h-64 w-full overflow-hidden md:h-96">
-        <img
+        {/* <img
           src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
           className="h-full w-full object-cover blur-xs filter"
-        />
+        /> */}
+
+         <Image
+            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+            alt="About Banner"
+            fill
+            sizes="100vw"
+            className="object-cover filter blur-xs"
+            priority
+          />
 
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -59,11 +69,20 @@ export default function SaaSService() {
         <section className="m-0 flex flex-col items-center gap-5 py-5 lg:flex-row">
           {/* Image */}
           <div className="text-center lg:w-1/2">
-            <img
+            {/* <img
               src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fimg01.jpg?alt=media&token=4e9163fa-8026-4fe3-9cae-9a670ecf30d8"
               alt="Partner Management"
               className="mx-auto w-full max-w-md"
+            /> */}
+
+              <Image
+              src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fimg01.jpg?alt=media&token=4e9163fa-8026-4fe3-9cae-9a670ecf30d8"
+              alt="Partner Management"
+              width={640}             // put the real size if you know it
+              height={480}
+              className="mx-auto lg:ml-auto h-auto w-full max-w-md"
             />
+                 
           </div>
 
           {/* Content */}
@@ -96,10 +115,18 @@ export default function SaaSService() {
         <section className="m-0 flex flex-col items-center gap-5 py-5 lg:flex-row-reverse">
           {/* Left Image */}
           <div className="text-center lg:w-1/2">
-            <img
+            {/* <img
               src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fabout2.svg?alt=media&token=d76eed87-d222-4a14-bc63-489abf58e6c8"
               alt="Source-to-Pay"
               className="mx-auto w-3/4"
+            /> */}
+
+                    <Image
+                            src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fabout2.svg?alt=media&token=d76eed87-d222-4a14-bc63-489abf58e6c8"
+              alt="Source-to-Pay"
+              width={640}             // put the real size if you know it
+              height={480}
+              className="mx-auto lg:ml-auto h-auto w-full max-w-md"
             />
           </div>
 
@@ -152,10 +179,19 @@ export default function SaaSService() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               {/* Left Image */}
               <div className="text-center lg:text-left">
-                <img
+                {/* <img
                   src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FprocuretoPay.jpg?alt=media&token=d68c483a-40dd-4b87-ac0f-baac26f8c156"
                   alt="Procure to Pay"
                   className="mx-auto lg:mx-0"
+                /> */}
+
+
+                               <Image
+                   src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FprocuretoPay.jpg?alt=media&token=d68c483a-40dd-4b87-ac0f-baac26f8c156"
+                  alt="Procure to Pay"
+                  width={640}             // put the real size if you know it
+                  height={480}
+                  className="mx-auto lg:ml-auto h-auto w-full max-w-md"
                 />
               </div>
 
@@ -282,11 +318,20 @@ export default function SaaSService() {
 
           {/* Right Image */}
           <div className="text-center lg:w-1/2">
-            <img
+            {/* <img
               src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FpaymentAutomation.jpg?alt=media&token=0a4d5a90-c8ee-47aa-88de-4def3167575d"
               alt="Payment Automation"
               className="mx-auto w-3/4"
-            />
+            /> */}
+
+               <Image
+ src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FpaymentAutomation.jpg?alt=media&token=0a4d5a90-c8ee-47aa-88de-4def3167575d"
+              alt="Payment Automation"
+  width={640}             // put the real size if you know it
+  height={480}
+  className="mx-auto lg:ml-auto h-auto w-full max-w-md"
+/>
+            
           </div>
         </section>
 
@@ -294,10 +339,18 @@ export default function SaaSService() {
         <section className="flex flex-col items-center gap-5 py-5 lg:flex-row">
           {/* Left Image */}
           <div className="text-center lg:w-1/2">
-            <img
+            {/* <img
               src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FpaymentAutomation.jpg?alt=media&token=0a4d5a90-c8ee-47aa-88de-4def3167575d"
               alt="Analytics"
               className="mx-auto w-3/4"
+            /> */}
+
+                           <Image
+                src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2FpaymentAutomation.jpg?alt=media&token=0a4d5a90-c8ee-47aa-88de-4def3167575d"
+              alt="Analytics"
+              width={640}             // put the real size if you know it
+              height={480}
+              className="mx-auto lg:ml-auto h-auto w-full max-w-md"
             />
           </div>
 

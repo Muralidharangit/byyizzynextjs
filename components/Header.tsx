@@ -10,7 +10,7 @@ import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openCategory, setOpenCategory] = useState(null);
+const [openCategory, setOpenCategory] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false); // Offcanvas state
   const navLinks = [
     { href: "/", label: "Home" },

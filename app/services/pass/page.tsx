@@ -1,4 +1,5 @@
-import { Check, Settings, Mail, MapPin, Cog, Workflow, BarChart3 } from "lucide-react";
+import { Check, Cog, Workflow, BarChart3 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProcurementAsAService() {
@@ -9,13 +10,13 @@ export default function ProcurementAsAService() {
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <Link href="#" className="font-medium hover:text-black">
+              <Link href="/" className="font-medium hover:text-black">
                 Byyizzy
               </Link>
             </li>
             <li>/</li>
             <li>
-              <Link href="#" className="font-medium hover:text-black">
+              <Link href="/" className="font-medium hover:text-black">
                 Home
               </Link>
             </li>
@@ -27,11 +28,20 @@ export default function ProcurementAsAService() {
 
       {/* Banner */}
       <div className="relative h-64 w-full overflow-hidden md:h-96">
-        <img
+        {/* <img
           src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
           alt="About Banner"
           className="h-full w-full object-cover blur-xs filter"
-        />
+        /> */}
+
+         <Image
+            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+            alt="About Banner"
+            fill
+            sizes="100vw"
+            className="object-cover filter blur-xs"
+            priority
+          />
 
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -47,10 +57,18 @@ export default function ProcurementAsAService() {
             {/* Right Content shows first on mobile, second on desktop */}
             <div className="order-1 space-y-8 lg:order-2">
               <div className="text-center">
-                <img
+                {/* <img
                   src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fpass.jpeg?alt=media&token=70709f7d-427e-4e2f-9131-3c774b008836"
                   alt="Procurement as a Service"
                   className="mx-auto w-3/4 rounded-lg"
+                /> */}
+
+                  <Image
+                  src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fpass.jpeg?alt=media&token=70709f7d-427e-4e2f-9131-3c774b008836"
+                  alt="Procurement as a Service"
+                  width={640}             // put the real size if you know it
+                  height={480}
+                  className="mx-auto lg:ml-auto h-auto w-full max-w-md"
                 />
               </div>
 

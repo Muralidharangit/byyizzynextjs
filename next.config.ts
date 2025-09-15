@@ -11,3 +11,12 @@ const nextConfig = {
 };
 
 export default nextConfig; // ✅ only in .mjs (or if package.json has "type":"module")
+
+
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   eslint: {
+//     ignoreDuringBuilds: true, // temporary: don't block build on lint errors
+//   },
+// };
+// module.exports = nextConfig;
