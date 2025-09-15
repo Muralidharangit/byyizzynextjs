@@ -40,7 +40,10 @@ export default function Home() {
                   {/* <Serv2 /> */}
             {/* <DualMarqueeSwiper /> */}
           </section>
-        </main>
+        </main>              
+          </div>
+        </div>
+
       </div>
     </div>
   );
