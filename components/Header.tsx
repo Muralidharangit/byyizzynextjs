@@ -1,79 +1,87 @@
 "use client";
 
+import React from "react";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logoblue from "@/public/images/blue.png"; // adjust your image path
+import logoblue from "@/public/images/blue.png"; // adjust path
+import GlobalSearch from "./GlobalSearch";
+import { SHOP_BY_CATEGORIES, slugify } from "@/data/shopBycatlog";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [openCategory, setOpenCategory] = useState<number | null>(null);
+  const [isOpen, setIsOpen] = useState(false); // Offcanvas state
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
-    <header className="w-full shadow-md fixed top-0 left-0 z-100 bg-white ">
+
+    <header className="fixed top-0 left-0 z-[100] w-full bg-white shadow-md">
+  {/* Top Header = 40px */}
+  <div className="bg-[#1c90f2] h-10 flex items-center">
+    <div className="container mx-auto flex w-full items-center justify-between px-4">
+    {/* <header className="fixed top-0 left-0 z-[100] w-full bg-white shadow-md"> */}
       {/* Top Header */}
-      <div className="top-header bg-[#f8f8f9] py-3">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
+      {/* <div className="bg-[#1c90f2] py-3"> */}
+        {/* <div className="container mx-auto flex flex-col items-center justify-between gap-2 px-4 lg:flex-row lg:gap-0"> */}
           {/* Left */}
-          <ul className="flex flex-wrap justify-center md:justify-start gap-4 text-gray-600 text-sm text-center">
-            <li className="pr-4 border-r border-gray-300 last:border-r-0">
-              <Link href="/store-location" className="hover:text-[#067afd]">
+          <ul className="text-white-600 flex flex-wrap justify-center gap-4 text-center text-sm lg:justify-start">
+            <li className="border-r border-gray-300 pr-4 last:border-r-0">
+              <Link href="/store-location" className="text-white hover:text-[#067afd]">
                 Store Location
               </Link>
             </li>
-            <li className="pr-4 border-r border-gray-300 last:border-r-0">
-              <Link href="/order-tracking" className="hover:text-[#067afd]">
+            <li className="border-r border-gray-300 pr-4 last:border-r-0">
+              <Link href="/order-tracking" className="text-white hover:text-[#067afd]">
                 Order Tracking
               </Link>
             </li>
-            <li className="pr-0">
+            <li className="pr-0 text-white">
               Call:{" "}
-              <a
-                href="tel:+112345678909"
-                className="text-[#067afd] font-semibold"
-              >
+              <Link href="tel:+112345678909" className="text-[#067afd] text-white">
                 +11 2345678909
-              </a>
+              </Link>
             </li>
           </ul>
 
           {/* Right */}
-          <div className="flex items-center gap-4 text-sm mt-2 md:mt-0">
-            <Link href="/my-account" className="hover:text-[#067afd]">
+          <div className="mt-2 flex items-center gap-4 text-sm lg:mt-0">
+            <Link href="/my-account" className="text-white hover:text-[#067afd]">
               My Account
             </Link>
-            <button className="text-gray-800 hover:text-[#067afd]">
-              Sign in
-            </button>
+            <button className="text-gray-800 text-white hover:text-[#067afd]">Sign in</button>
           </div>
         </div>
       </div>
 
       {/* Middle Header */}
-      <div className="middle-header border-b border-gray-300 py-4">
-        <div className="container mx-auto px-4 grid grid-cols-2 md:grid-cols-12 gap-4 items-center">
+      {/* Middle Header = 80px */}
+  <div className="border-b border-gray-200 h-20">
+    <div className="container mx-auto grid h-full grid-cols-2 items-center gap-4 px-4 lg:grid-cols-12">
+      {/* <div className="border-b border-gray-300 py-4"> */}
+        {/* <div className="container mx-auto grid grid-cols-2 items-center gap-4 px-4 lg:grid-cols-12"> */}
           {/* Logo */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 lg:col-span-2">
             <Link href="/">
-              <Image
-                src={logoblue}
-                alt="Logo"
-                className="w-24 md:w-40"
-                priority
-              />
+              <Image src={logoblue} alt="Logo" className="w-24 lg:w-40" width={160} height={40} priority />
             </Link>
           </div>
 
-          {/* Search (hidden on mobile) */}
-          <div className="hidden md:block md:col-span-5">
-            <form className="relative w-full max-w-md mx-auto">
+          {/* Search (desktop only: from 992px) */}
+          <div className="hidden lg:col-span-5 lg:block">
+            <form className="relative mx-auto w-full max-w-md">
               <input
                 type="text"
                 placeholder="Search Products..."
-                className="w-full h-[45px] pr-24 px-3 rounded border border-[#067afd] focus:outline-none"
+                className="h-[45px] w-full rounded border border-[#067afd] px-3 pr-24 focus:outline-none"
               />
               <button
                 type="submit"
-                className="absolute right-1 top-1/2 -translate-y-1/2 bg-[#067afd] text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2"
+                className="absolute top-1/2 right-1 flex -translate-y-1/2 items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
               >
                 <i className="ri-search-line" /> Search
               </button>
@@ -81,123 +89,164 @@ export default function Header() {
           </div>
 
           {/* Nav + Icons */}
-          <div className="col-span-1 md:col-span-5 flex justify-end items-center gap-4">
-            {/* Desktop Menu */}
-            <ul className="hidden md:flex gap-6 items-center">
+          <div className="col-span-1 flex items-center justify-end gap-4 lg:col-span-5">
+            {/* Desktop Nav */}
+            <ul className="hidden items-center gap-6 lg:flex">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="hover:text-[#067afd]">
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
               <li>
-                <Link href="/" className="hover:text-[#067afd]">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#067afd]">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/shop" className="hover:text-[#067afd]">
-                  Product
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="hover:text-[#067afd]">
-                  Contact
-                </Link>
-              </li>
-
-              <li>
-                <Link href="/product" className="hover:text-[#067afd]">
+                <Link href="/shop">
                   <button
-                    type="submit"
-                    className=" right-1 top-1/2  bg-[#067afd] text-white px-4 py-2 rounded hover:bg-blue-700 flex items-center gap-2"
+                    type="button"
+                    className="flex items-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
                   >
-                    <i className="ri-user-line"></i> Enquiry
+                    All Categories
                   </button>
                 </Link>
               </li>
             </ul>
 
-            {/* Wishlist */}
-            <ul className="flex flex-col md:flex-row gap-6 wish-cart text-sm">
-              {/* Wishlist */}
-              {/* <li>
-                <Link
-                  href="/wishlist"
-                  className="flex items-center gap-2 hover:text-[#067afd] transition"
-                >
-                  <span className="relative wish-icon flex items-center justify-center w-10 h-10 rounded-full bg-[#fff1e8] text-[#067afd]">
-                    <i className="ri-heart-line text-lg" />
-                    <span className="count absolute -top-1 -right-1 w-5 h-5 text-xs flex items-center justify-center bg-[#067afd] text-white rounded-full">
-                      0
-                    </span>
-                  </span>
-                  <div className="flex flex-col leading-tight">
-                    <span className="favorite text-xs text-gray-500">
-                      Favorite
-                    </span>
-                    <span className="font-medium">My Wishlist</span>
-                  </div>
-                </Link>
-              </li> */}
+            {/* Mobile Trigger */}
+            <div className="px-1 py-2 xl:hidden">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-[#fff1e8] text-[#067afd] shadow-md transition hover:bg-[#f0f4ff]"
+              >
+                {/* <i className="ri-indent-increase text-xl"></i> */}
+                <i className="ri-list-check text-xl"></i>
+              </button>
+            </div>
 
-              {/* Cart */}
-              <li>
-                <button
-                  className="flex items-center gap-2 hover:text-[#067afd] transition"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal-cart"
-                >
-                  <span className="relative wish-icon flex items-center justify-center w-10 h-10 rounded-full bg-[#fff1e8] text-[#067afd]">
-                    <i className="ri-shopping-cart-line text-lg" />
-                    <span className="count absolute -top-1 -right-1 w-5 h-5 text-xs flex items-center justify-center bg-[#067afd] text-white rounded-full">
-                      0
-                    </span>
-                  </span>
-                  {/* <div className="flex flex-col leading-tight">
-                    <span className="favorite text-xs text-gray-500">
-                      Your Cart:
-                    </span>
-                    <span className="font-medium">$00.00</span>
-                  </div> */}
-                </button>
-              </li>
-            </ul>
+            {/* Mobile Offcanvas */}
+            <div
+              className={`fixed inset-0 z-[999] transition-opacity duration-300 ${
+                isOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+              }`}
+            >
+              {/* Overlay */}
+              <div
+                className="bg-opacity-50 absolute inset-0 bg-black"
+                onClick={() => setIsOpen(false)}
+              ></div>
+
+              {/* Drawer */}
+              <div
+                className={`absolute top-0 left-0 h-full w-80 transform overflow-y-auto bg-white p-4 shadow-lg transition-transform duration-300 ${
+                  isOpen ? "translate-x-0" : "-translate-x-full"
+                }`}
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <h2 className="text-lg font-semibold">Categories</h2>
+                  <button onClick={() => setIsOpen(false)}>
+                    <i className="ri-close-line text-2xl"></i>
+                  </button>
+                </div>
+
+                <ul className="text-gray-700">
+                  {SHOP_BY_CATEGORIES.map((cat, idx) => {
+                    const catSlug = slugify(cat.title);
+
+                    return (
+                      <li key={cat.id} className="border-b border-gray-200">
+                        <button
+                          onClick={() => setOpenCategory(openCategory === idx ? null : idx)}
+                          className="flex w-full items-center justify-between px-2 py-3 text-left"
+                        >
+                          <span className="flex items-center">
+                            <i className="ri-flashlight-line mr-2" /> {cat.title}
+                          </span>
+                          <i
+                            className={`ri-arrow-down-s-line transition-transform duration-300 ${
+                              openCategory === idx ? "rotate-180 text-[#067afd]" : ""
+                            }`}
+                          />
+                        </button>
+
+                        {/* Mobile accordion submenu */}
+                        <div
+                          className={`overflow-hidden transition-[max-height] duration-300 ${
+                            openCategory === idx ? "max-h-[500px]" : "max-h-0"
+                          }`}
+                        >
+                          <div className="bg-gray-50 px-4 py-2">
+                            <h4 className="mb-2 text-sm font-semibold uppercase">Sub Categories</h4>
+                            <ul className="space-y-1">
+                              {cat.categories.map((sub, idx2) => {
+                                const subSlug = slugify(sub);
+                                return (
+                                  <li key={idx2}>
+                                    <Link
+                                      href={`/shop/${catSlug}?sub=${subSlug}`}
+                                      className="block py-1 hover:text-[#067afd]"
+                                      onClick={() => setIsOpen(false)}
+                                    >
+                                      {sub}
+                                    </Link>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+
+            {/* Cart */}
+            <button
+              className="flex items-center gap-2 transition hover:text-[#067afd] lg:mr-2"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal-cart"
+            >
+              <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-[#fff1e8] text-[#067afd]">
+                <i className="ri-shopping-cart-line text-lg" />
+                <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-[#1c90f2] text-xs text-white">
+                  0
+                </span>
+              </span>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-2xl text-gray-700 hover:text-[#067afd]"
+              className="text-2xl text-gray-700 hover:text-[#067afd] lg:hidden"
             >
               <i className={isMenuOpen ? "ri-close-line" : "ri-menu-line"}></i>
             </button>
-
-            
           </div>
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown Nav (< 992px) */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white px-4 py-3">
-          <ul className="flex flex-col gap-3 text-gray-700">
+        <div className="space-y-4 border-t border-gray-200 bg-white px-4 py-4 lg:hidden">
+          <GlobalSearch className="w-full" />
+
+          {/* Nav links */}
+          <ul className="flex flex-col gap-4 text-gray-700">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="block hover:text-[#067afd]">
+                  {link.label}
+                </Link>
+              </li>
+            ))}
             <li>
-              <Link href="/" className="hover:text-[#067afd]">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-[#067afd]">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/product" className="hover:text-[#067afd]">
-                Product
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-[#067afd]">
-                Contact
+              <Link href="/product">
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-center gap-2 rounded bg-[#1c90f2] px-4 py-2 text-white hover:bg-blue-700"
+                >
+                  <i className="ri-user-line"></i> Enquiry
+                </button>
               </Link>
             </li>
           </ul>

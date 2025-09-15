@@ -1,74 +1,64 @@
 "use client";
-
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logoblue from "@/public/images/blue.png"; // adjust path
+// import logoblue from "@/public/images/blue.png"; // adjust path
 import logowhite from "@/public/images/white.png"; // adjust path
 
 export default function Footer() {
   return (
     <>
       {/* ✅ Subscribe Area */}
-      <section className="bg-[#067afd] py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            {/* Logo */}
-            <div className="lg:w-2/12 flex justify-center lg:justify-start">
-              <Link href="/">
-                <Image src={logowhite} alt="Logo" className="w-40" priority />
-              </Link>
-            </div>
-
-            {/* Text */}
-            <div className="lg:w-5/12 text-center lg:text-left">
-              <span className="block text-white text-sm mb-2">
-                30% Discount For Your First Order
-              </span>
-              <h3 className="text-xl font-semibold text-white">
-                Subscribe To Our Newsletter
-              </h3>
-              <p className="text-white mt-2">
-                Subscribe to the newsletter for all the latest updates
+      <section className="border-b border-gray-400 bg-[#1c90f2] py-16">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+            {/* Left Content */}
+            <div className="text-center lg:w-7/12 lg:text-left">
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                Ready to Take Your Business to the Next Level?
+              </h2>
+              <p className="mt-4 text-lg text-white/90">
+                Get in touch with us today and explore how we can help you achieve your goals.
               </p>
             </div>
 
-            {/* Form */}
-            <div className="lg:w-5/12 w-full">
-              <form className="relative w-full">
-                <input
-                  type="email"
-                  placeholder="Your email address"
-                  className="w-full h-[55px] pr-[140px] px-4 rounded-sm focus:outline-none bg-white text-gray-700 placeholder-gray-400"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-1 top-1/2 -translate-y-1/2 h-[50px] bg-[#067afd] text-white px-6 rounded-sm hover:bg-blue-600 transition"
-                >
-                  Subscribe
-                </button>
-              </form>
+            {/* CTA Button */}
+            <div className="flex justify-center lg:w-5/12 lg:justify-end">
+              <Link
+                href="/contact"
+                className="rounded-lg bg-white px-8 py-4 text-lg font-semibold text-[#067afd] shadow-md transition hover:scale-105 hover:bg-gray-100"
+              >
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* ✅ Footer Area */}
-      <footer className="bg-white pt-12 pb-6">
+      <footer className="bg-[#1c90f2] pt-12 pb-6">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {/* Info */}
             <div>
-              <Image src={logoblue} alt="Logo" className="w-40 mb-2" priority />
-              <p className="text-sm text-[#9c9c9c]">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                architecto amet quae nesciunt quod molestiae.
+              <Image
+                src={logowhite}
+                alt="Logo"
+                className="mb-2 w-40"
+                width={165} // adjust for display
+                height={44}
+                priority
+              />
+              <p className="text-sm text-[#fff]">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto amet quae
+                nesciunt quod molestiae.
               </p>
             </div>
 
             {/* Information */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Information</h3>
-              <ul className="space-y-2 text-sm text-[#9c9c9c]">
+              <h3 className="mb-4 text-lg font-semibold text-white">Information</h3>
+              <ul className="space-y-2 text-sm text-[#fff]">
                 <li>
                   <Link href="/about" className="hover:text-[#067afd]">
                     About
@@ -80,10 +70,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/terms-conditions"
-                    className="hover:text-[#067afd]"
-                  >
+                  <Link href="/terms-conditions" className="hover:text-[#067afd]">
                     Terms &amp; Conditions
                   </Link>
                 </li>
@@ -107,8 +94,8 @@ export default function Footer() {
 
             {/* Customer Service */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Customer Service</h3>
-              <ul className="space-y-2 text-sm text-[#9c9c9c]">
+              <h3 className="mb-4 text-lg font-semibold text-white">Customer Service</h3>
+              <ul className="space-y-2 text-sm text-[#fff]">
                 <li>
                   <Link href="/faq" className="hover:text-[#067afd]">
                     Help Center
@@ -120,10 +107,7 @@ export default function Footer() {
                   </Link>
                 </li>
                 <li>
-                  <Link
-                    href="/terms-conditions"
-                    className="hover:text-[#067afd]"
-                  >
+                  <Link href="/terms-conditions" className="hover:text-[#067afd]">
                     Money-back Guarantee!
                   </Link>
                 </li>
@@ -147,29 +131,23 @@ export default function Footer() {
 
             {/* Quick Info */}
             <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Information</h3>
-              <ul className="space-y-3 text-sm text-[#9c9c9c]">
+              <h3 className="mb-4 text-lg font-semibold text-white">Quick Information</h3>
+              <ul className="space-y-3 text-sm text-[#fff]">
                 <li className="flex items-start gap-2">
                   <i className="ri-map-pin-line text-[#067afd]" />
                   2491 Reel Avenue Albuquerque, NM
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-phone-line text-[#067afd]" />
-                  <a
-                    href="tel:+1-(514)-321-4566"
-                    className="hover:text-[#067afd]"
-                  >
+                  <Link href="tel:+1-(514)-321-4566" className="hover:text-[#067afd]">
                     +1 (514) 321-4566
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-mail-send-line text-[#067afd]" />
-                  <a
-                    href="mailto:[email protected]"
-                    className="hover:text-[#067afd]"
-                  >
+                  <Link href="mailto:[email protected]" className="hover:text-[#067afd]">
                     [email protected]
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-start gap-2">
                   <i className="ri-time-line text-[#067afd]" />
@@ -179,38 +157,36 @@ export default function Footer() {
 
               {/* Socials */}
               <div className="mt-4">
-                <span className="block text-black-800 mb-2">
-                  Stay connected:
-                </span>
+                <span className="text-black-800 mb-2 block text-white">Stay connected:</span>
                 <div className="flex gap-3 text-lg">
-                  <a
+                  <Link
                     href="https://facebook.com"
                     target="_blank"
-                    className="hover:text-[#067afd]"
+                    className="text-white hover:text-[#067afd]"
                   >
                     <i className="ri-facebook-fill" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://twitter.com"
                     target="_blank"
-                    className="hover:text-[#067afd]"
+                    className="text-white hover:text-[#067afd]"
                   >
                     <i className="ri-twitter-fill" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://linkedin.com"
                     target="_blank"
-                    className="hover:text-[#067afd]"
+                    className="text-white hover:text-[#067afd]"
                   >
                     <i className="ri-linkedin-fill" />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://instagram.com"
                     target="_blank"
-                    className="hover:text-[#067afd]"
+                    className="text-white hover:text-[#067afd]"
                   >
                     <i className="ri-instagram-fill" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -219,16 +195,12 @@ export default function Footer() {
       </footer>
 
       {/* ✅ Copy Right */}
-      <div className="border-t border-gray-300 py-4 text-center text-sm text-[#9c9c9c]">
+      <div className="border-t border-gray-300 bg-[#edf6ff] py-4 text-center text-sm text-[#9c9c9c]">
         <p>
           © {new Date().getFullYear()} Murali is Proudly Owned by{" "}
-          <a
-            href="#"
-            target="_blank"
-            className="text-[#067afd] hover:underline"
-          >
+          <Link href="#" target="_blank" className="text-[#067afd] hover:underline">
             Syscorptheme
-          </a>
+          </Link>
         </p>
       </div>
     </>

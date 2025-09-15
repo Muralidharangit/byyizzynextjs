@@ -20,8 +20,16 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "types": ["node"],
+    "skipLibCheck": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/contact/page.tsx"
+  ],
   "exclude": ["node_modules"]
 }
