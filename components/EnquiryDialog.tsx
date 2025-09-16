@@ -31,7 +31,6 @@ export default function EnquiryDialog({
 }: EnquiryDialogProps) {
   const formRef = React.useRef<HTMLFormElement>(null);
   const [loading, setLoading] = React.useState(false);
- 
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -64,19 +63,19 @@ export default function EnquiryDialog({
       onOpenChange(false);
       formRef.current?.reset();
     } catch (e: unknown) {
-  if (e instanceof Error) {
-    alert(e.message);
-  } else {
-    alert("Something went wrong. Please try again.");
-  }
-} finally {
+      if (e instanceof Error) {
+        alert(e.message);
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } finally {
       setLoading(false);
     }
   }
-const defaultMessage =
-  productName || productCode
-    ? `Hi, I’m interested in ${productName} (${productCode}). Please share a quote.`
-    : "";
+  const defaultMessage =
+    productName || productCode
+      ? `Hi, I’m interested in ${productName} (${productCode}). Please share a quote.`
+      : "";
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -137,7 +136,7 @@ const defaultMessage =
 
           {/* Agree checkbox */}
           <div className="flex items-start gap-2">
-           <input id="agree" name="agree" type="checkbox" className="mt-1 h-4 w-4"  required />
+            <input id="agree" name="agree" type="checkbox" className="mt-1 h-4 w-4" required />
             <Label htmlFor="agree" className="text-sm">
               I agree to the{" "}
               <Link href="/terms" className="underline">

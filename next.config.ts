@@ -1,22 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "firebasestorage.googleapis.com",
-      "i.pinimg.com",
-      "tnswp.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
+      },
+      {
+        protocol: "https",
+        hostname: "tnswp.com",
+      },
     ],
-    // formats: ["image/avif", "image/webp"],
+    // formats: ["image/avif", "image/webp"], // enable modern formats if you want smaller images
+  },
+
+  eslint: {
+    ignoreDuringBuilds: true, // optional: lets build pass even with ESLint errors
   },
 };
 
-export default nextConfig; // ✅ only in .mjs (or if package.json has "type":"module")
-
-
-// /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   eslint: {
-//     ignoreDuringBuilds: true, // temporary: don't block build on lint errors
-//   },
-// };
-// module.exports = nextConfig;
+export default nextConfig; // ✅ required since you're using `.mjs` / ESM

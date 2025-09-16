@@ -34,14 +34,14 @@ export default function ProcurementAsAService() {
           className="h-full w-full object-cover blur-xs filter"
         /> */}
 
-         <Image
-            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
-            alt="About Banner"
-            fill
-            sizes="100vw"
-            className="object-cover filter blur-xs"
-            priority
-          />
+        <Image
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+          alt="About Banner"
+          fill
+          sizes="100vw"
+          className="object-cover blur-xs filter"
+          priority
+        />
 
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -63,12 +63,12 @@ export default function ProcurementAsAService() {
                   className="mx-auto w-3/4 rounded-lg"
                 /> */}
 
-                  <Image
+                <Image
                   src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fpass.jpeg?alt=media&token=70709f7d-427e-4e2f-9131-3c774b008836"
                   alt="Procurement as a Service"
-                  width={640}             // put the real size if you know it
+                  width={640} // put the real size if you know it
                   height={480}
-                  className="mx-auto lg:ml-auto h-auto w-full max-w-md"
+                  className="mx-auto h-auto w-full max-w-md lg:ml-auto"
                 />
               </div>
 

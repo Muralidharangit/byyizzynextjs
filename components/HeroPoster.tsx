@@ -17,9 +17,11 @@ export default function HeroPoster({
               src={img}
               alt={alt}
               fill
-              priority
+              priority // ✅ preload only the first hero
               fetchPriority="high"
-              sizes="(min-width:1024px) 50vw, 0px"
+              sizes="(max-width: 768px) 100vw,
+         (max-width: 1200px) 80vw,
+         50vw"
               className="rounded-xl object-cover"
             />
           </div>

@@ -32,14 +32,14 @@ export default function ProductsIndex() {
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-blue-50 to-blue-100">
         <div className="relative h-64 overflow-hidden md:h-96">
-            <Image
-                      src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
-                      alt="About Banner"
-                      fill
-                      sizes="100vw"
-                      className="object-cover filter blur-xs"
-                      priority
-                    />
+          <Image
+            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+            alt="About Banner"
+            fill
+            sizes="100vw"
+            className="object-cover blur-xs filter"
+            priority
+          />
           <div className="absolute inset-0 flex items-center justify-center bg-black/30">
             <h1 className="text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
               Product Categories
@@ -68,7 +68,7 @@ export default function ProductsIndex() {
                       alt={cat.title}
                       className="h-full w-full object-contain"
                     /> */}
-                                              <Image src={cat.images} alt={cat.title} width={20} height={20} sizes="20px" />
+                    <Image src={cat.images} alt={cat.title} width={20} height={20} sizes="20px" />
                   </div>
 
                   {/* Text */}

@@ -8,34 +8,42 @@ export default function ChainHardware() {
   return (
     <div>
       {/* Start Page Title Area */}
-      <div className="bg-white py-5 w-full mt-[110px]">
+      <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
-  <li><Link href="/" className="font-medium hover:text-black">Byyizzy</Link></li>
-  <li>/</li>
-  <li><Link href="/" className="font-medium hover:text-black">Home</Link></li>
-  <li>/</li>
-  <li className="font-semibold text-[#1c90f2]">Hardware</li>
-</ol>
+            <li>
+              <Link href="/" className="font-medium hover:text-black">
+                Byyizzy
+              </Link>
+            </li>
+            <li>/</li>
+            <li>
+              <Link href="/" className="font-medium hover:text-black">
+                Home
+              </Link>
+            </li>
+            <li>/</li>
+            <li className="font-semibold text-[#1c90f2]">Hardware</li>
+          </ol>
         </nav>
       </div>
       {/* End Page Title Area */}
 
-  <div className="relative h-64 w-full overflow-hidden md:h-96">
-  <Image
-    src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
-    alt="About Banner"
-    fill
-    sizes="100vw"
-    className="object-cover filter blur-xs"
-    priority
-  />
-  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-    <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-      Chain of Hardware
-    </h1>
-  </div>
-</div>
+      <div className="relative h-64 w-full overflow-hidden md:h-96">
+        <Image
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+          alt="About Banner"
+          fill
+          sizes="100vw"
+          className="object-cover blur-xs filter"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+            Chain of Hardware
+          </h1>
+        </div>
+      </div>
 
       <div className="mx-auto max-w-7xl space-y-24 px-4 py-16">
         {/* Hero / Intro Section */}
@@ -88,14 +96,13 @@ export default function ChainHardware() {
 
               {/* Right Image */}
               <div className="text-center lg:text-right">
-               <Image
-  src="/assets/images/chainHardware.png" // file should live under /public/assets/images/...
-  alt="Chain of Hardware Stores"
-  width={640}             // put the real size if you know it
-  height={480}
-  className="mx-auto lg:ml-auto h-auto w-full max-w-md"
-/>
-                
+                <Image
+                  src="/assets/images/chainHardware.png" // file should live under /public/assets/images/...
+                  alt="Chain of Hardware Stores"
+                  width={640} // put the real size if you know it
+                  height={480}
+                  className="mx-auto h-auto w-full max-w-md lg:ml-auto"
+                />
               </div>
             </div>
           </div>

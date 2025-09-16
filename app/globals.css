@@ -1,37 +1,4 @@
 @import "tailwindcss";
-/* @import "swiper/swiper-bundle.css"; */
-/* @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap'); */
-
-/* globals.css */
-/* 
-body {
-  font-family: "Rubik", sans-serif;
-} */
-
-/* h1,
-h2,
-h3 {
-  font-family: "Rubik", sans-serif;
-} */
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
@@ -150,14 +117,6 @@ button.flex.h-10.w-10.items-center.justify-center.rounded-full.bg-\[\#1c90f2\].t
   background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
 }
 
-/* button.flex.items-center.rounded-lg.bg-gradient-to-r.from-\[\#017efc\].to-\[\#004aad\].px-5.py-2.text-sm.font-medium.text-white.shadow-md.transition.hover\:opacity-90{
-  background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
-} */
-
-/* .container.mx-auto.grid.grid-cols-1.items-center.gap-10.px-6.py-16.md\:px-12.lg\:grid-cols-2{
-  background-image: -webkit-linear-gradient(0, #4dabff 0, #62ddff 100%);
-} */
-
 .swiper-button-next {
   display: none;
 }
@@ -230,4 +189,14 @@ i[class*=" ri-"] {
   height: 28px;
 }
 
-html { scrollbar-gutter: stable both-edges; }
+html {
+  scrollbar-gutter: stable both-edges;
+}
+footer {
+  min-height: 200px; /* or exact height */
+}
+@font-face {
+  font-family: "RemixIcon";
+  src: url("/remixicon.woff2") format("woff2");
+  font-display: swap;
+}
