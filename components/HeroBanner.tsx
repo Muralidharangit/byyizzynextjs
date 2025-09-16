@@ -1,4 +1,3 @@
-
 "use client";
 
 import Image from "next/image";
@@ -44,10 +43,10 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
                 {/* Left Content */}
                 <div className="animate-fadeIn space-y-6 text-white">
                   <h1 className="text-1xl font-700 leading-tight md:text-3xl">{slide.title}</h1>
-                  <p className="text-md text-gray-200 md:text-md">{slide.description}</p>
+                  <p className="text-md md:text-md text-gray-200">{slide.description}</p>
 
                   {/* Highlights */}
-                  <ul className="text-gray-200 list-inside list-disc space-y-1">
+                  <ul className="list-inside list-disc space-y-1 text-gray-200">
                     {slide.highlights?.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
@@ -76,16 +75,14 @@ export default function HeroBanner({ slides }: HeroBannerProps) {
 
                 {/* Right Image */}
                 <div className="animate-fadeIn hidden justify-center lg:flex lg:justify-end">
-                  <div className="relative flex h-[450px] w-full items-center">
+                  <div className="relative h-[500px] w-full items-center">
                     <Image
                       src={slide.img}
                       alt="Banner Illustration"
                       width={1200}
-                      height={450}
+                      height={600}
                       className="rounded-xl object-cover"
-                      priority={index === 0}
-                      fetchPriority={index === 0 ? "high" : "auto"}
-                      decoding="auto"
+                      priority
                     />
                   </div>
                 </div>

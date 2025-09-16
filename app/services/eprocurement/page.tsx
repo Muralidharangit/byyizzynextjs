@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Eprocurement() {
   return (
     <div className="bg-[#edf6ff]">
-      <div className="bg-white py-5 w-full mt-[110px]">
+      <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>

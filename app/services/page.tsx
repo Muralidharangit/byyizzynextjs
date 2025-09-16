@@ -65,14 +65,14 @@ export default function ServicesPage() {
           alt="About Banner"
           className="h-full w-full object-cover"
         /> */}
-         <Image
-            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
-            alt="About Banner"
-            fill
-            sizes="100vw"
-            className="object-cover filter blur-xs"
-            priority
-          />
+        <Image
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+          alt="About Banner"
+          fill
+          sizes="100vw"
+          className="object-cover blur-xs filter"
+          priority
+        />
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Services
@@ -128,16 +128,15 @@ export default function ServicesPage() {
                       alt={service.title}
                     /> */}
 
-                     <Image
-                       src={service.icon}
+                    <Image
+                      src={service.icon}
                       className="h-12 w-12 transition-colors duration-500 group-hover:invert"
                       alt={service.title}
-                        fill
-                        sizes="100vw"
-                        // className="object-cover filter blur-xs"
-                        // priority
-                      />
-
+                      fill
+                      sizes="100vw"
+                      // className="object-cover filter blur-xs"
+                      // priority
+                    />
                   </div>
 
                   {/* Title */}

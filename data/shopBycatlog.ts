@@ -2,7 +2,7 @@
 export type Product = {
   image: string;
   materialName: string;
-  category: string;          // subcategory display name (e.g., "Harvester")
+  category: string; // subcategory display name (e.g., "Harvester")
   price?: number | string;
   popularity?: number | string;
   materialCode?: string;
@@ -11,10 +11,10 @@ export type Product = {
 
 export type ShopCategory = {
   id: string;
-  title: string;             // display title
+  title: string; // display title
   images: string;
-  path: string;              // url segment in your data (may have spaces/underscores/mixed case)
-  categories: string[];      // subcategory display names (can include "All")
+  path: string; // url segment in your data (may have spaces/underscores/mixed case)
+  categories: string[]; // subcategory display names (can include "All")
   product: Product[];
 };
 
@@ -2683,15 +2683,15 @@ export const SHOP_BY_CATEGORIES: ShopCategory[] = [
 // Slug helpers (keeps routing stable no matter your data casing/underscores)
 export const slugify = (s: string): string =>
   s
-    .normalize("NFKD")                 // split diacritics
-    .replace(/[\u0300-\u036f]/g, "")   // remove diacritics
+    .normalize("NFKD") // split diacritics
+    .replace(/[\u0300-\u036f]/g, "") // remove diacritics
     .toLowerCase()
     .trim()
-    .replace(/&/g, " and ")            // avoid dropping '&' into nothing
-    .replace(/[_\s]+/g, "-")           // spaces/underscores -> hyphen
-    .replace(/[^a-z0-9-]/g, "")        // strip non-url chars
-    .replace(/--+/g, "-")              // collapse -- to -
-    .replace(/^-+|-+$/g, "");          // trim leading/trailing -
+    .replace(/&/g, " and ") // avoid dropping '&' into nothing
+    .replace(/[_\s]+/g, "-") // spaces/underscores -> hyphen
+    .replace(/[^a-z0-9-]/g, "") // strip non-url chars
+    .replace(/--+/g, "-") // collapse -- to -
+    .replace(/^-+|-+$/g, ""); // trim leading/trailing -
 const categoryMatchesSlug = (cat: ShopCategory, slug: string) =>
   slugify(cat.path || cat.title) === slugify(slug);
 

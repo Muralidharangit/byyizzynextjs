@@ -42,11 +42,15 @@ export default function CategoryPage() {
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
-              <Link href="/" className="font-medium hover:text-black">Home</Link>
+              <Link href="/" className="font-medium hover:text-black">
+                Home
+              </Link>
             </li>
             <li>/</li>
             <li>
-              <Link href="/shop" className="font-medium hover:text-black">Shop</Link>
+              <Link href="/shop" className="font-medium hover:text-black">
+                Shop
+              </Link>
             </li>
             <li>/</li>
             <li className="font-semibold text-[#1c90f2]">{cat.title}</li>
@@ -60,7 +64,8 @@ export default function CategoryPage() {
           <h2 className="mb-6 text-xl font-bold text-black">Categories</h2>
           <ul className="space-y-1 text-gray-700">
             {tabs.map((t) => {
-              const href = t.slug === "all" ? `/shop/${category}?sub=all` : `/shop/${category}?sub=${t.slug}`;
+              const href =
+                t.slug === "all" ? `/shop/${category}?sub=all` : `/shop/${category}?sub=${t.slug}`;
               const active = sub === t.slug;
               return (
                 <li key={t.slug} className="border-b border-gray-200">

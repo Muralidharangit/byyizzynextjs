@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function EprocurementPage() {
   return (
     <div className="bg-[#edf6ff]">
-      <div className="bg-white py-5 w-full mt-[110px]">
+      <div className="mt-[110px] w-full bg-white py-5">
         <nav className="container mx-auto px-6 py-4 text-sm text-gray-600">
           <ol className="flex flex-wrap items-center space-x-2">
             <li>
@@ -33,14 +33,14 @@ export default function EprocurementPage() {
           className="h-full w-full object-cover blur-xs filter"
         /> */}
 
-          <Image
-            src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
-            alt="About Banner"
-            fill
-            sizes="100vw"
-            className="object-cover filter blur-xs"
-            priority
-          />
+        <Image
+          src="https://tnswp.com/DIGIGOV/themes/tnswp/images/prelogin-pages-images/sectors/focus/Machine%20tool/machine_banner.png"
+          alt="About Banner"
+          fill
+          sizes="100vw"
+          className="object-cover blur-xs filter"
+          priority
+        />
 
         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
           <h1 className="px-4 text-center text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -87,11 +87,11 @@ export default function EprocurementPage() {
             /> */}
 
             <Image
-              src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fe2eprocurement.png?alt=media&token=39021019-fd98-440d-86e1-35da41bb4e28"// file should live under /public/assets/images/...
+              src="https://firebasestorage.googleapis.com/v0/b/byizzy-5aa57.appspot.com/o/website%2FourSource%2Fe2eprocurement.png?alt=media&token=39021019-fd98-440d-86e1-35da41bb4e28" // file should live under /public/assets/images/...
               alt="Chain of Hardware Stores"
-              width={640}             // put the real size if you know it
+              width={640} // put the real size if you know it
               height={480}
-              className="mx-auto lg:ml-auto h-auto w-full max-w-md"
+              className="mx-auto h-auto w-full max-w-md lg:ml-auto"
             />
           </div>
         </section>

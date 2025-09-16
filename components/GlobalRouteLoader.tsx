@@ -14,7 +14,7 @@ export default function SplashLoader({ children }: { children: React.ReactNode }
   if (loading) {
     return (
       <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
-        <Image src={logowhite} alt="Logo" width={120} height={120} className="animate-pulse" />
+        <Image src={logowhite} alt="Logo" width={120} height={120} />
       </div>
     );
   }

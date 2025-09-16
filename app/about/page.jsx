@@ -89,7 +89,7 @@ export default function AboutPage() {
           <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Images */}
             <div className="relative grid gap-6 sm:grid-cols-2">
-              <img
+              {/* <img
                 className="transform rounded-xl shadow-lg transition duration-500 hover:scale-105"
                 src="https://pagedone.io/asset/uploads/1717741205.png"
                 alt="About Image 1"
@@ -98,7 +98,7 @@ export default function AboutPage() {
                 className="mt-12 transform rounded-xl shadow-lg transition duration-500 hover:scale-105 sm:mt-0"
                 src="https://pagedone.io/asset/uploads/1717741215.png"
                 alt="About Image 2"
-              />
+              /> */}
             </div>
 
             {/* Content */}

@@ -1,18 +1,16 @@
-"use client";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-// import logoblue from "@/public/images/blue.png"; // adjust path
-import logowhite from "@/public/images/white.png"; // adjust path
+import logowhite from "@/public/images/white.png";
+import { MapPin, Phone, Mail, Clock, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
     <>
-      {/* ✅ Subscribe Area */}
+      {/* Subscribe Area */}
       <section className="border-b border-gray-400 bg-[#1c90f2] py-16">
         <div className="container mx-auto px-6">
           <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
-            {/* Left Content */}
             <div className="text-center lg:w-7/12 lg:text-left">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">
                 Ready to Take Your Business to the Next Level?
@@ -22,7 +20,6 @@ export default function Footer() {
               </p>
             </div>
 
-            {/* CTA Button */}
             <div className="flex justify-center lg:w-5/12 lg:justify-end">
               <Link
                 href="/contact"
@@ -35,21 +32,16 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* ✅ Footer Area */}
+      {/* Footer Area */}
       <footer className="bg-[#1c90f2] pt-12 pb-6">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Info */}
+            {/* Logo */}
             <div>
-              <Image
-                src={logowhite}
-                alt="Logo"
-                className="mb-2 w-40"
-                width={165} // adjust for display
-                height={44}
-                priority
-              />
-              <p className="text-sm text-[#fff]">
+              <div className="relative mb-2 h-[40px] w-[120px]">
+                <Image src={logowhite} alt="Footer Logo" fill className="object-contain" priority />
+              </div>
+              <p className="text-sm text-white">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto amet quae
                 nesciunt quod molestiae.
               </p>
@@ -58,34 +50,34 @@ export default function Footer() {
             {/* Information */}
             <div>
               <h3 className="mb-4 text-lg font-semibold text-white">Information</h3>
-              <ul className="space-y-2 text-sm text-[#fff]">
+              <ul className="space-y-2 text-sm text-white">
                 <li>
                   <Link href="/about" className="hover:text-[#067afd]">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/order-tracking" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Order Tracking
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms-conditions" className="hover:text-[#067afd]">
-                    Terms &amp; Conditions
+                  <Link href="/" className="hover:text-[#067afd]">
+                    Terms & Conditions
                   </Link>
                 </li>
                 <li>
-                  <Link href="/store-location" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Store Location
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy-policy" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/faq" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Delivery Information
                   </Link>
                 </li>
@@ -95,24 +87,24 @@ export default function Footer() {
             {/* Customer Service */}
             <div>
               <h3 className="mb-4 text-lg font-semibold text-white">Customer Service</h3>
-              <ul className="space-y-2 text-sm text-[#fff]">
+              <ul className="space-y-2 text-sm text-white">
                 <li>
-                  <Link href="/faq" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Help Center
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Products
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms-conditions" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Money-back Guarantee!
                   </Link>
                 </li>
                 <li>
-                  <Link href="/blog" className="hover:text-[#067afd]">
+                  <Link href="/" className="hover:text-[#067afd]">
                     Blog
                   </Link>
                 </li>
@@ -132,69 +124,65 @@ export default function Footer() {
             {/* Quick Info */}
             <div>
               <h3 className="mb-4 text-lg font-semibold text-white">Quick Information</h3>
-              <ul className="space-y-3 text-sm text-[#fff]">
+              <ul className="space-y-3 text-sm text-white">
                 <li className="flex items-start gap-2">
-                  <i className="ri-map-pin-line text-[#067afd]" />
-                  2491 Reel Avenue Albuquerque, NM
+                  <MapPin className="h-5 w-5 flex-none text-[#067afd]" />
+                  <span>2491 Reel Avenue Albuquerque, NM</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-phone-line text-[#067afd]" />
+                  <Phone className="h-5 w-5 flex-none text-[#067afd]" />
                   <Link href="tel:+1-(514)-321-4566" className="hover:text-[#067afd]">
                     +1 (514) 321-4566
                   </Link>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-mail-send-line text-[#067afd]" />
+                  <Mail className="h-5 w-5 flex-none text-[#067afd]" />
                   <Link href="mailto:[email protected]" className="hover:text-[#067afd]">
                     [email protected]
                   </Link>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-time-line text-[#067afd]" />
-                  Mon-Sat 8:00 AM - 8:00 PM
+                  <Clock className="h-5 w-5 flex-none text-[#067afd]" />
+                  <span>Mon–Sat 8:00 AM – 8:00 PM</span>
                 </li>
               </ul>
 
-              {/* Socials */}
-              <div className="mt-4">
-                <span className="text-black-800 mb-2 block text-white">Stay connected:</span>
-                <div className="flex gap-3 text-lg">
-                  <Link
-                    href="https://facebook.com"
-                    target="_blank"
-                    className="text-white hover:text-[#067afd]"
-                  >
-                    <i className="ri-facebook-fill" />
-                  </Link>
-                  <Link
-                    href="https://twitter.com"
-                    target="_blank"
-                    className="text-white hover:text-[#067afd]"
-                  >
-                    <i className="ri-twitter-fill" />
-                  </Link>
-                  <Link
-                    href="https://linkedin.com"
-                    target="_blank"
-                    className="text-white hover:text-[#067afd]"
-                  >
-                    <i className="ri-linkedin-fill" />
-                  </Link>
-                  <Link
-                    href="https://instagram.com"
-                    target="_blank"
-                    className="text-white hover:text-[#067afd]"
-                  >
-                    <i className="ri-instagram-fill" />
-                  </Link>
-                </div>
+              <div className="mt-4 flex gap-3">
+                <Link
+                  href="https://facebook.com"
+                  target="_blank"
+                  className="text-white hover:text-[#067afd]"
+                >
+                  <Facebook className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://twitter.com"
+                  target="_blank"
+                  className="text-white hover:text-[#067afd]"
+                >
+                  <Twitter className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://linkedin.com"
+                  target="_blank"
+                  className="text-white hover:text-[#067afd]"
+                >
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://instagram.com"
+                  target="_blank"
+                  className="text-white hover:text-[#067afd]"
+                >
+                  <Instagram className="h-5 w-5" />
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </footer>
 
-      {/* ✅ Copy Right */}
+      {/* Copy Right */}
       <div className="border-t border-gray-300 bg-[#edf6ff] py-4 text-center text-sm text-[#9c9c9c]">
         <p>
           © {new Date().getFullYear()} Murali is Proudly Owned by{" "}
