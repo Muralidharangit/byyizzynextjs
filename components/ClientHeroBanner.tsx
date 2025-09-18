@@ -6,7 +6,7 @@ import type { HeroBannerProps } from "@/components/HeroBanner";
 // ✅ Keep SSR (don’t disable it), just add skeleton loader for text
 const HeroBannerDyn = dynamic<HeroBannerProps>(() => import("@/components/HeroBanner"), {
   loading: () => (
-    <section className="primary-color relative flex h-[500px] items-center py-4">
+    <section className="primary-color relative flex h-[500px] items-center py-4 pt-[120px]">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2">
           {/* Skeleton text */}

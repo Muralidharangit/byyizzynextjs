@@ -1,6 +1,6 @@
 export default function Ourbrand() {
   return (
-    <div className="bg-[#edf6ff] py-5 text-center">
+    <div className="py-5 text-center">
       <h2 className="mb-2 text-3xl font-bold text-gray-900 md:text-2xl">
         Our <span className="text-[#017efc]">Brand</span>
       </h2>

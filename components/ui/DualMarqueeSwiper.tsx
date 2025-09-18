@@ -35,7 +35,7 @@ function Row({ items, reverse = false, speedMs = 2000 }: RowProps) {
     >
       <Swiper
         modules={[Autoplay]}
-        className="w-full bg-[#edf6ff] select-none"
+        className="w-full  select-none"
         slidesPerView="auto"
         spaceBetween={7}
         allowTouchMove={false}

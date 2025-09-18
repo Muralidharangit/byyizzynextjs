@@ -24,7 +24,7 @@ export interface HeroBannerProps {
 
 export default function HeroBanner({ slides }: HeroBannerProps) {
   return (
-    <section className="primary-color relative flex h-[500px] items-center py-4">
+    <section className="primary-color relative flex h-[500px] items-center py-4 ">
       <div className="container mx-auto px-6 lg:px-12">
         <Swiper
           modules={[Autoplay, Pagination, Navigation, EffectFade]}

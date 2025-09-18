@@ -25,7 +25,7 @@ const rubik = Rubik({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} pt-[120px]`}>
+      <body className={`${rubik.className}`}>
         <Header />
         {children}
         <Footer />
